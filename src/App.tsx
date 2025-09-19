@@ -12,10 +12,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Faster loading - reduced from 1000ms to 300ms
+    // Optimized loading - even faster
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 300)
+    }, 150)
 
     return () => clearTimeout(timer)
   }, [])

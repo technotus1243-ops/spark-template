@@ -131,7 +131,7 @@ export function Projects() {
           {/* Featured Projects */}
           <div className="space-y-12 mb-20">
             {featuredProjects.map((project, index) => (
-              <Card key={index} className={`glass border-primary/20 overflow-hidden glow-primary ${
+              <Card key={index} className={`glass border-primary/20 overflow-hidden shadow-lg ${
                 index % 2 === 0 ? '' : 'lg:flex-row-reverse'
               }`}>
                 <div className="lg:flex">

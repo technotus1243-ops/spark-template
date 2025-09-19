@@ -83,7 +83,7 @@ export function Contact() {
           <div className="grid lg:grid-cols-3 gap-12">
             {/* Contact Form */}
             <div className="lg:col-span-2">
-              <Card className="glass border-primary/20 glow-primary">
+              <Card className="glass border-primary/20 shadow-lg">
                 <CardHeader>
                   <CardTitle className="text-2xl font-display">Start Your Project</CardTitle>
                   <p className="text-muted-foreground">
@@ -167,7 +167,7 @@ export function Contact() {
 
                     <Button 
                       type="submit" 
-                      className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 glow-primary"
+                      className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 shadow-lg hover:shadow-xl"
                       size="lg"
                     >
                       Send Project Inquiry

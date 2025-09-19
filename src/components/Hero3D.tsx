@@ -1,6 +1,43 @@
+import { Suspense } from "react"
+import { Canvas } from "@react-three/fiber"
+import { OrbitControls, Float } from "@react-three/drei"
 import { Button } from "@/components/ui/button"
 import { Download, ArrowRight, Code, Lightning, Globe } from "@phosphor-icons/react"
 import { toast } from "sonner"
+
+// 3D Scene Component - Optimized for performance
+function Scene() {
+  return (
+    <>
+      <ambientLight intensity={0.4} />
+      <pointLight position={[10, 10, 10]} intensity={0.3} />
+      
+      {/* Floating geometric shapes - reduced count for performance */}
+      <Float speed={1.5} rotationIntensity={0.6} floatIntensity={0.4}>
+        <mesh position={[-1.5, 0.5, -2]}>
+          <boxGeometry args={[0.4, 0.4, 0.4]} />
+          <meshStandardMaterial color="#3b82f6" wireframe transparent opacity={0.7} />
+        </mesh>
+      </Float>
+      
+      <Float speed={1.8} rotationIntensity={0.5} floatIntensity={0.3}>
+        <mesh position={[1.8, -0.8, -1.5]}>
+          <icosahedronGeometry args={[0.25]} />
+          <meshStandardMaterial color="#8b5cf6" wireframe transparent opacity={0.6} />
+        </mesh>
+      </Float>
+      
+      <OrbitControls 
+        enableZoom={false} 
+        enablePan={false} 
+        maxPolarAngle={Math.PI / 2}
+        minPolarAngle={Math.PI / 2}
+        autoRotate
+        autoRotateSpeed={0.3}
+      />
+    </>
+  )
+}
 
 export function Hero3D() {
   const handleNavClick = (href: string) => {
@@ -12,14 +49,17 @@ export function Hero3D() {
 
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Optimized background elements - fewer particles for better performance */}
-      <div className="absolute inset-0 opacity-30">
-        <div className="absolute top-10 left-10 w-2 h-2 bg-primary rounded-full"></div>
-        <div className="absolute top-20 right-20 w-1 h-1 bg-accent rounded-full"></div>
-        <div className="absolute bottom-20 left-20 w-2 h-2 bg-primary/60 rounded-full"></div>
-        <div className="absolute bottom-40 right-40 w-1 h-1 bg-accent/60 rounded-full"></div>
-        <div className="absolute top-1/2 left-1/4 w-1 h-1 bg-primary/40 rounded-full"></div>
-        <div className="absolute top-1/3 right-1/4 w-2 h-2 bg-accent/40 rounded-full"></div>
+      {/* 3D Background Scene - Wrapped in error boundary */}
+      <div className="absolute inset-0 opacity-20">
+        <Canvas 
+          camera={{ position: [0, 0, 5], fov: 45 }}
+          dpr={[1, 1.5]} // Limit pixel ratio for performance
+          performance={{ min: 0.5 }} // Performance monitoring
+        >
+          <Suspense fallback={null}>
+            <Scene />
+          </Suspense>
+        </Canvas>
       </div>
 
       {/* Performance-optimized floating elements */}

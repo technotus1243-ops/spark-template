@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react"
-import { GithubLogo, LinkedinLogo, List, X, Download, Code } from "@phosphor-icons/react"
+import { GithubLogo, LinkedinLogo, List, X, Code, Terminal } from "@phosphor-icons/react"
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -30,7 +30,7 @@ export function Navigation() {
   const navItems = [
     { href: "#about", label: "About", id: "about" },
     { href: "#skills", label: "Skills", id: "skills" },
-    { href: "#projects", label: "Projects", id: "projects" },
+    { href: "#projects", label: "Work", id: "projects" },
     { href: "#contact", label: "Contact", id: "contact" },
   ]
 
@@ -44,15 +44,15 @@ export function Navigation() {
 
   return (
     <>
-      <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+      <nav className={`fixed top-0 w-full z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-background/95 backdrop-blur-xl border-b border-border/50' 
+          ? 'bg-background/80 backdrop-blur-xl border-b border-border/50 shadow-lg' 
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16">
             
-            {/* Professional Brand */}
+            {/* Brand Identity */}
             <div className="flex-shrink-0">
               <a 
                 href="#" 
@@ -60,19 +60,20 @@ export function Navigation() {
                   e.preventDefault()
                   window.scrollTo({ top: 0, behavior: 'smooth' })
                 }}
-                className="group flex items-center space-x-3"
+                className="group flex items-center space-x-3 transition-all duration-300"
               >
                 <div className="relative">
-                  <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-lg flex items-center justify-center group-hover:scale-105 transition-transform duration-200">
-                    <Code size={20} className="text-background" />
+                  <div className="w-10 h-10 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center group-hover:scale-105 transition-all duration-300 shadow-lg">
+                    <Terminal size={20} className="text-white" />
                   </div>
+                  <div className="absolute -inset-1 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl blur opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </div>
                 <div className="hidden sm:block">
-                  <div className="font-display font-bold text-lg text-foreground">
-                    Tushar Khokhar
+                  <div className="font-display font-bold text-lg text-foreground group-hover:text-primary transition-colors duration-300">
+                    TK
                   </div>
-                  <div className="text-xs text-muted-foreground font-mono">
-                    Blockchain Engineer
+                  <div className="text-xs text-muted-foreground font-mono opacity-80">
+                    Developer
                   </div>
                 </div>
               </a>
@@ -80,7 +81,7 @@ export function Navigation() {
 
             {/* Desktop Navigation */}
             <div className="hidden md:block">
-              <div className="ml-10 flex items-baseline space-x-1">
+              <div className="ml-10 flex items-center space-x-2">
                 {navItems.map((item) => (
                   <a
                     key={item.href}
@@ -89,40 +90,45 @@ export function Navigation() {
                       e.preventDefault()
                       handleNavClick(item.href)
                     }}
-                    className={`relative px-4 py-2 text-sm font-medium transition-all duration-200 rounded-lg ${
+                    className={`relative px-4 py-2 text-sm font-medium transition-all duration-300 rounded-lg group ${
                       activeSection === item.id
-                        ? 'text-primary bg-primary/10'
+                        ? 'text-primary bg-primary/5 shadow-md'
                         : 'text-foreground/70 hover:text-foreground hover:bg-foreground/5'
                     }`}
                   >
-                    {item.label}
+                    <span className="relative z-10">{item.label}</span>
+                    {activeSection === item.id && (
+                      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-accent/10 rounded-lg"></div>
+                    )}
                   </a>
                 ))}
               </div>
             </div>
 
             {/* Desktop Actions */}
-            <div className="hidden md:flex items-center space-x-3">
-              <a
-                href="https://github.com/tusharkhokhar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
-                aria-label="GitHub Profile"
-              >
-                <GithubLogo size={18} />
-              </a>
-              <a
-                href="https://linkedin.com/in/tusharkhokhar"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
-                aria-label="LinkedIn Profile"
-              >
-                <LinkedinLogo size={18} />
-              </a>
+            <div className="hidden md:flex items-center space-x-4">
+              <div className="flex items-center space-x-2">
+                <a
+                  href="https://github.com/tusharkhokhar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300 group"
+                  aria-label="GitHub Profile"
+                >
+                  <GithubLogo size={18} className="group-hover:scale-110 transition-transform duration-300" />
+                </a>
+                <a
+                  href="https://linkedin.com/in/tusharkhokhar"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="p-2.5 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300 group"
+                  aria-label="LinkedIn Profile"
+                >
+                  <LinkedinLogo size={18} className="group-hover:scale-110 transition-transform duration-300" />
+                </a>
+              </div>
               
-              <div className="w-px h-6 bg-border/50 mx-2"></div>
+              <div className="w-px h-6 bg-border/50 mx-1"></div>
               
               <a
                 href="#contact"
@@ -130,9 +136,10 @@ export function Navigation() {
                   e.preventDefault()
                   handleNavClick('#contact')
                 }}
-                className="px-6 py-2 text-sm font-semibold text-primary-foreground bg-gradient-to-r from-primary to-accent rounded-lg hover:shadow-lg hover:shadow-primary/25 transition-all duration-200"
+                className="relative px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-primary to-accent rounded-lg hover:from-primary/90 hover:to-accent/90 transition-all duration-300 group overflow-hidden"
               >
-                Hire Me
+                <span className="relative z-10">Let's Work</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-accent to-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </a>
             </div>
 
@@ -140,7 +147,7 @@ export function Navigation() {
             <div className="md:hidden">
               <button
                 onClick={() => setIsOpen(!isOpen)}
-                className="p-2 text-foreground/80 hover:text-foreground hover:bg-foreground/5 rounded-lg transition-all duration-200"
+                className="p-2.5 text-foreground/80 hover:text-foreground hover:bg-foreground/5 rounded-lg transition-all duration-300"
                 aria-label="Toggle menu"
               >
                 {isOpen ? <X size={24} /> : <List size={24} />}
@@ -150,10 +157,10 @@ export function Navigation() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className={`md:hidden transition-all duration-300 overflow-hidden ${
+        <div className={`md:hidden transition-all duration-500 overflow-hidden ${
           isOpen ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
         }`}>
-          <div className="px-4 pt-2 pb-6 space-y-1 bg-background/95 backdrop-blur-xl border-t border-border/50">
+          <div className="px-4 pt-2 pb-6 space-y-2 bg-background/95 backdrop-blur-xl border-t border-border/50">
             {navItems.map((item) => (
               <a
                 key={item.href}
@@ -162,7 +169,7 @@ export function Navigation() {
                   e.preventDefault()
                   handleNavClick(item.href)
                 }}
-                className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-200 ${
+                className={`block px-4 py-3 text-base font-medium rounded-lg transition-all duration-300 ${
                   activeSection === item.id
                     ? 'text-primary bg-primary/10'
                     : 'text-foreground/70 hover:text-foreground hover:bg-foreground/5'
@@ -172,14 +179,14 @@ export function Navigation() {
               </a>
             ))}
             
-            <div className="pt-4 mt-4 border-t border-border/50">
+            <div className="pt-4 mt-4 border-t border-border/30">
               <div className="flex items-center justify-between px-4 py-2">
                 <div className="flex items-center space-x-3">
                   <a
                     href="https://github.com/tusharkhokhar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
+                    className="p-2.5 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300"
                     aria-label="GitHub"
                   >
                     <GithubLogo size={20} />
@@ -188,7 +195,7 @@ export function Navigation() {
                     href="https://linkedin.com/in/tusharkhokhar"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="p-2 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-200"
+                    className="p-2.5 text-foreground/60 hover:text-primary hover:bg-primary/10 rounded-lg transition-all duration-300"
                     aria-label="LinkedIn"
                   >
                     <LinkedinLogo size={20} />
@@ -200,9 +207,9 @@ export function Navigation() {
                     e.preventDefault()
                     handleNavClick('#contact')
                   }}
-                  className="px-6 py-2 text-sm font-semibold text-primary-foreground bg-gradient-to-r from-primary to-accent rounded-lg"
+                  className="px-6 py-2.5 text-sm font-semibold text-white bg-gradient-to-r from-primary to-accent rounded-lg"
                 >
-                  Hire Me
+                  Let's Work
                 </a>
               </div>
             </div>

@@ -67,7 +67,7 @@ export function About() {
 
           {/* Bio Section */}
           <div className="mb-16">
-            <Card className="glass border-primary/20 glow-primary">
+            <Card className="glass border-primary/20 shadow-lg">
               <CardContent className="p-8">
                 <div className="prose prose-lg max-w-none text-foreground/90 leading-relaxed">
                   <p className="text-lg mb-6">

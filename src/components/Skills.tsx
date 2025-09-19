@@ -91,7 +91,7 @@ export function Skills() {
           {/* Skills Grid */}
           <div className="grid md:grid-cols-2 gap-8 mb-16">
             {skillCategories.map((category, index) => (
-              <Card key={index} className="glass border-primary/20 hover:border-primary/40 transition-all duration-300 glow-primary">
+              <Card key={index} className="glass border-primary/20 hover:border-primary/40 transition-all duration-300 shadow-lg">
                 <CardHeader>
                   <CardTitle className="flex items-center gap-3 text-xl font-display">
                     <span className="text-2xl">{category.icon}</span>
