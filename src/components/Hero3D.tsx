@@ -1,155 +1,120 @@
-import { Canvas } from '@react-three/fiber'
-import { OrbitControls, Float, Text3D, useTexture } from '@react-three/drei'
-import { Suspense, useRef } from 'react'
-import { Mesh } from 'three'
-import * as THREE from 'three'
-
-function CodeBlock({ position, text, color = "#00D4FF" }: { position: [number, number, number], text: string, color?: string }) {
-  const meshRef = useRef<Mesh>(null)
-  
-  return (
-    <Float speed={2} rotationIntensity={0.5} floatIntensity={0.5}>
-      <mesh ref={meshRef} position={position}>
-        <boxGeometry args={[2, 0.3, 0.1]} />
-        <meshStandardMaterial 
-          color={color} 
-          emissive={color}
-          emissiveIntensity={0.3}
-          transparent
-          opacity={0.8}
-        />
-      </mesh>
-      <Text3D
-        position={[position[0] - 0.8, position[1], position[2] + 0.1]}
-        font="https://threejs.org/examples/fonts/helvetiker_regular.typeface.json"
-        size={0.1}
-        height={0.02}
-      >
-        {text}
-        <meshStandardMaterial 
-          color="#ffffff" 
-          emissive="#ffffff"
-          emissiveIntensity={0.2}
-        />
-      </Text3D>
-    </Float>
-  )
-}
-
-function BlockchainNode({ position }: { position: [number, number, number] }) {
-  const meshRef = useRef<Mesh>(null)
-  
-  return (
-    <Float speed={1.5} rotationIntensity={1} floatIntensity={1}>
-      <mesh ref={meshRef} position={position}>
-        <icosahedronGeometry args={[0.5, 0]} />
-        <meshStandardMaterial 
-          color="#10B981" 
-          emissive="#10B981"
-          emissiveIntensity={0.4}
-          wireframe
-        />
-      </mesh>
-    </Float>
-  )
-}
-
-function DataStream({ position }: { position: [number, number, number] }) {
-  return (
-    <Float speed={3} rotationIntensity={0.2} floatIntensity={2}>
-      <mesh position={position}>
-        <cylinderGeometry args={[0.02, 0.02, 4, 8]} />
-        <meshStandardMaterial 
-          color="#8B5CF6" 
-          emissive="#8B5CF6"
-          emissiveIntensity={0.5}
-          transparent
-          opacity={0.6}
-        />
-      </mesh>
-    </Float>
-  )
-}
-
-function Scene() {
-  return (
-    <>
-      {/* Ambient and point lights */}
-      <ambientLight intensity={0.3} color="#ffffff" />
-      <pointLight position={[10, 10, 10]} intensity={1} color="#00D4FF" />
-      <pointLight position={[-10, -10, -10]} intensity={0.5} color="#8B5CF6" />
-      <pointLight position={[0, 0, 10]} intensity={0.8} color="#10B981" />
-
-      {/* Code blocks floating around */}
-      <CodeBlock position={[-3, 2, -2]} text="Rust" color="#00D4FF" />
-      <CodeBlock position={[3, -1, -1]} text="Solidity" color="#10B981" />
-      <CodeBlock position={[-2, -2, 1]} text="Django" color="#8B5CF6" />
-      <CodeBlock position={[2, 3, 0]} text="Web3" color="#00D4FF" />
-      <CodeBlock position={[0, 1, -3]} text="DeFi" color="#10B981" />
-      <CodeBlock position={[-4, 0, 2]} text="AI/ML" color="#8B5CF6" />
-
-      {/* Blockchain nodes */}
-      <BlockchainNode position={[4, 2, 2]} />
-      <BlockchainNode position={[-3, -1, 3]} />
-      <BlockchainNode position={[1, -3, -2]} />
-      
-      {/* Data streams */}
-      <DataStream position={[0, 0, 0]} />
-      <DataStream position={[5, 0, 0]} />
-      <DataStream position={[-5, 0, 0]} />
-
-      {/* Interactive controls */}
-      <OrbitControls 
-        enableZoom={false}
-        enablePan={false}
-        autoRotate
-        autoRotateSpeed={0.5}
-        maxPolarAngle={Math.PI / 2}
-        minPolarAngle={Math.PI / 2}
-      />
-    </>
-  )
-}
-
-function LoadingFallback() {
-  return (
-    <div className="w-full h-full flex items-center justify-center">
-      <div className="text-center">
-        <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-        <p className="text-muted-foreground font-mono">Loading 3D Experience...</p>
-      </div>
-    </div>
-  )
-}
+import { Button } from "@/components/ui/button"
+import { Download, ArrowRight } from "@phosphor-icons/react"
+import { toast } from "sonner"
 
 export function Hero3D() {
   return (
-    <div className="relative h-[60vh] md:h-[70vh] w-full overflow-hidden">
-      <Suspense fallback={<LoadingFallback />}>
-        <Canvas
-          camera={{ position: [0, 0, 8], fov: 60 }}
-          className="w-full h-full"
-        >
-          <Scene />
-        </Canvas>
-      </Suspense>
-      
-      {/* Overlay content */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="text-center max-w-4xl px-6">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-display mb-6 animate-neon-pulse">
-            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* Animated background particles */}
+      <div className="absolute inset-0">
+        {Array.from({ length: 50 }).map((_, i) => (
+          <div
+            key={i}
+            className="absolute w-1 h-1 bg-primary/30 rounded-full animate-pulse"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${Math.random() * 2}s`,
+              animationDuration: `${2 + Math.random() * 3}s`,
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Floating tech icons */}
+      <div className="absolute inset-0 pointer-events-none hidden md:block">
+        <div className="absolute top-20 left-10 w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center animate-float">
+          <span className="text-primary font-mono font-bold">RS</span>
+        </div>
+        <div className="absolute top-32 right-20 w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '1s' }}>
+          <span className="text-accent font-mono text-sm">Web3</span>
+        </div>
+        <div className="absolute bottom-40 left-20 w-14 h-14 bg-primary/10 rounded-lg flex items-center justify-center animate-float" style={{ animationDelay: '2s' }}>
+          <span className="text-primary font-mono">AI</span>
+        </div>
+        <div className="absolute bottom-32 right-16 w-18 h-18 bg-accent/10 rounded-full flex items-center justify-center animate-float" style={{ animationDelay: '0.5s' }}>
+          <span className="text-accent font-mono text-xs">DeFi</span>
+        </div>
+      </div>
+
+      {/* Main content */}
+      <div className="relative z-10 text-center max-w-5xl mx-auto px-6">
+        <div className="mb-8">
+          <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold font-display mb-6 leading-tight">
+            <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
               Tushar Khokhar
             </span>
           </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground font-mono mb-8 animate-fade-in">
-            Blockchain & Backend Engineer
+          
+          <div className="flex flex-wrap justify-center gap-4 mb-6">
+            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-mono border border-primary/20 animate-fade-in">
+              Blockchain Engineer
+            </span>
+            <span className="px-4 py-2 bg-accent/10 text-accent rounded-full text-sm font-mono border border-accent/20 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              Backend Architect
+            </span>
+            <span className="px-4 py-2 bg-primary/10 text-primary rounded-full text-sm font-mono border border-primary/20 animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              DeFi Developer
+            </span>
+          </div>
+
+          <p className="text-xl md:text-2xl text-foreground/80 max-w-3xl mx-auto leading-relaxed mb-8 animate-fade-in" style={{ animationDelay: '0.6s' }}>
+            Building the future of <span className="text-primary font-semibold">decentralized finance</span>, 
+            <span className="text-accent font-semibold"> AI-powered systems</span>, and 
+            <span className="text-primary font-semibold"> high-performance infrastructure</span> 
+            that scales globally.
           </p>
-          <p className="text-lg md:text-xl text-foreground/90 max-w-2xl mx-auto leading-relaxed animate-fade-in">
-            Building the future of <span className="text-primary font-semibold">DeFi</span>, 
-            <span className="text-accent font-semibold"> AI systems</span>, and 
-            <span className="text-primary font-semibold"> high-performance infrastructure</span>
+
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-12 animate-fade-in" style={{ animationDelay: '0.8s' }}>
+            IIT Kharagpur graduate with expertise in Rust, Solidity, and modern backend technologies. 
+            Specialized in creating secure, scalable systems that power the next generation of digital innovation.
           </p>
+        </div>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center items-center animate-fade-in" style={{ animationDelay: '1s' }}>
+          <Button 
+            size="lg"
+            className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 glow-primary group px-8 py-6 text-lg"
+            asChild
+          >
+            <a href="#projects" className="flex items-center gap-2">
+              View My Work
+              <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />
+            </a>
+          </Button>
+          
+          <Button 
+            variant="outline" 
+            size="lg"
+            className="border-primary/30 hover:bg-primary/10 px-8 py-6 text-lg group"
+            asChild
+          >
+            <a href="#" onClick={(e) => { e.preventDefault(); toast.info("Resume download will be available soon!"); }} className="flex items-center gap-2">
+              <Download size={20} className="group-hover:translate-y-1 transition-transform" />
+              Download Resume
+            </a>
+          </Button>
+        </div>
+
+        {/* Quick stats */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-16 pt-8 border-t border-border/50 animate-fade-in" style={{ animationDelay: '1.2s' }}>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-primary mb-2">$8M+</div>
+            <div className="text-sm text-muted-foreground">Assets Managed</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-accent mb-2">500K+</div>
+            <div className="text-sm text-muted-foreground">Transactions Processed</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-primary mb-2">35%</div>
+            <div className="text-sm text-muted-foreground">Gas Fee Reduction</div>
+          </div>
+          <div className="text-center">
+            <div className="text-2xl md:text-3xl font-bold text-accent mb-2">40%</div>
+            <div className="text-sm text-muted-foreground">Cost Optimization</div>
+          </div>
         </div>
       </div>
 
@@ -159,6 +124,6 @@ export function Hero3D() {
           <div className="w-1 h-3 bg-primary rounded-full mt-2 animate-pulse"></div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

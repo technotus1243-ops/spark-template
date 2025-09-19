@@ -101,6 +101,11 @@
     @apply bg-accent/20 text-foreground;
   }
 
+  /* Enhanced scrolling */
+  html {
+    scroll-behavior: smooth;
+  }
+
   /* Custom animations */
   @keyframes gradient {
     0%, 100% { background-position: 0% 50%; }

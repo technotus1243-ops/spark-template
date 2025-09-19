@@ -1,6 +1,5 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Progress } from "@/components/ui/progress"
 
 export function Skills() {
   const skillCategories = [
@@ -8,44 +7,44 @@ export function Skills() {
       title: "Blockchain & Web3",
       icon: "🔗",
       skills: [
-        { name: "Solidity", level: 95 },
-        { name: "Rust", level: 90 },
-        { name: "Web3.js/Ethers.js", level: 88 },
-        { name: "DeFi Protocols", level: 92 },
-        { name: "Smart Contract Security", level: 85 }
+        "Solidity",
+        "Rust",
+        "Web3.js/Ethers.js",
+        "DeFi Protocols",
+        "Smart Contract Security"
       ]
     },
     {
       title: "Backend Development",
       icon: "⚡",
       skills: [
-        { name: "Python/Django", level: 92 },
-        { name: "Node.js", level: 88 },
-        { name: "PostgreSQL", level: 90 },
-        { name: "Redis", level: 85 },
-        { name: "Microservices", level: 87 }
+        "Python/Django",
+        "Node.js",
+        "PostgreSQL",
+        "Redis",
+        "Microservices"
       ]
     },
     {
       title: "Cloud & DevOps",
       icon: "☁️",
       skills: [
-        { name: "Kubernetes", level: 85 },
-        { name: "AWS", level: 82 },
-        { name: "Docker", level: 88 },
-        { name: "CI/CD", level: 80 },
-        { name: "Infrastructure as Code", level: 78 }
+        "Kubernetes",
+        "AWS",
+        "Docker",
+        "CI/CD",
+        "Infrastructure as Code"
       ]
     },
     {
       title: "AI & Machine Learning",
       icon: "🤖",
       skills: [
-        { name: "Python/TensorFlow", level: 80 },
-        { name: "GPU Computing", level: 85 },
-        { name: "Zero-Knowledge Proofs", level: 75 },
-        { name: "ML Ops", level: 82 },
-        { name: "Data Pipeline Design", level: 88 }
+        "Python/TensorFlow",
+        "GPU Computing",
+        "Zero-Knowledge Proofs",
+        "ML Ops",
+        "Data Pipeline Design"
       ]
     }
   ]
@@ -99,19 +98,15 @@ export function Skills() {
                     {category.title}
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-4">
-                  {category.skills.map((skill, skillIndex) => (
-                    <div key={skillIndex} className="space-y-2">
-                      <div className="flex justify-between items-center">
-                        <span className="font-medium text-foreground">{skill.name}</span>
-                        <span className="text-sm text-muted-foreground font-mono">{skill.level}%</span>
+                <CardContent className="space-y-3">
+                  <div className="grid grid-cols-1 gap-2">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div key={skillIndex} className="flex items-center">
+                        <span className="text-accent mr-2">▸</span>
+                        <span className="font-medium text-foreground">{skill}</span>
                       </div>
-                      <Progress 
-                        value={skill.level} 
-                        className="h-2"
-                      />
-                    </div>
-                  ))}
+                    ))}
+                  </div>
                 </CardContent>
               </Card>
             ))}
