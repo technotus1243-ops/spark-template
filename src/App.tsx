@@ -1,5 +1,5 @@
 import { Navigation } from "./components/Navigation"
-import { SimpleHero } from "./components/SimpleHero"
+import { Hero3D } from "./components/Hero3D"
 import { About } from "./components/About"
 import { Skills } from "./components/Skills"
 import { Projects } from "./components/Projects"
@@ -9,10 +9,10 @@ import { Toaster } from "@/components/ui/sonner"
 
 function App() {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background text-foreground">
       <Navigation />
-      <main className="relative">
-        <SimpleHero />
+      <main>
+        <Hero3D />
         <About />
         <Skills />
         <Projects />
@@ -23,9 +23,9 @@ function App() {
         position="bottom-right"
         toastOptions={{
           style: {
-            background: 'hsl(var(--card))',
-            border: '1px solid hsl(var(--border))',
-            color: 'hsl(var(--foreground))',
+            background: 'var(--card)',
+            border: '1px solid var(--border)',
+            color: 'var(--foreground)',
           },
         }}
       />
