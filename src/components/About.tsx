@@ -37,13 +37,13 @@ const values = [
 export function About() {
   return (
     <section id="about" className="relative py-24 px-4 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-muted/50 via-muted/30 to-transparent" />
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-3xl opacity-50" />
+      {/* Professional background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-muted/20 to-background/80" />
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-gradient-to-br from-accent/6 to-primary/4 rounded-full blur-3xl opacity-40" />
 
       <div className="relative max-w-6xl mx-auto">
         <div className="text-center space-y-6 mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/60 backdrop-blur-sm border rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
             <span className="text-sm font-medium text-muted-foreground">About Me</span>
           </div>
@@ -64,7 +64,7 @@ export function About() {
         <div className="grid gap-12 lg:grid-cols-3 items-start">
           {/* Story Section */}
           <div className="lg:col-span-2 space-y-8">
-            <Card className="bg-gradient-to-br from-card/50 to-card backdrop-blur-sm border-2 border-border/50 hover:border-accent/30 transition-all duration-500">
+            <Card className="glass-strong border-2 border-border/30 hover:border-accent/20 transition-all duration-500 shadow-lg">
               <CardContent className="p-10">
                 <div className="space-y-6 text-lg leading-relaxed">
                   <p className="text-xl font-medium text-foreground">
@@ -88,8 +88,8 @@ export function About() {
                     advances in web technologies.
                   </p>
                   
-                  <div className="pt-6 border-t border-border/50">
-                    <div className="bg-gradient-to-r from-accent/10 to-primary/10 p-6 rounded-lg border border-accent/20">
+                  <div className="pt-6 border-t border-border/30">
+                    <div className="glass p-6 rounded-lg border border-accent/20">
                       <p className="font-semibold text-accent text-lg">
                         Currently seeking opportunities with innovative teams building products 
                         that challenge the status quo and create lasting value.
@@ -101,14 +101,14 @@ export function About() {
             </Card>
 
             {/* Core Values */}
-            <Card className="bg-gradient-to-br from-card/50 to-card backdrop-blur-sm border-2 border-border/50">
+            <Card className="glass-strong border-2 border-border/30 shadow-lg">
               <CardContent className="p-10">
                 <h3 className="text-3xl font-bold mb-8 text-center">Core Values</h3>
                 <div className="grid gap-6 md:grid-cols-2">
                   {values.map((value, index) => {
                     const Icon = value.icon
                     return (
-                      <div key={value.title} className="group p-6 rounded-lg border border-border/30 hover:border-accent/30 bg-background/30 hover:bg-accent/5 transition-all duration-300">
+                      <div key={value.title} className="group p-6 rounded-lg border border-border/20 hover:border-accent/30 glass hover:glass-strong transition-all duration-300">
                         <div className="flex items-start gap-4">
                           <div className="p-3 rounded-lg bg-gradient-to-br from-accent/10 to-primary/10 group-hover:from-accent/20 group-hover:to-primary/20 transition-all duration-300">
                             <Icon className="h-6 w-6 text-accent" />
@@ -132,7 +132,7 @@ export function About() {
 
           {/* Skills Section */}
           <div className="space-y-8">
-            <Card className="bg-gradient-to-br from-card/50 to-card backdrop-blur-sm border-2 border-border/50 hover:border-accent/30 transition-all duration-500 sticky top-24">
+            <Card className="glass-strong border-2 border-border/30 hover:border-accent/20 transition-all duration-500 sticky top-24 shadow-lg">
               <CardContent className="p-8">
                 <h3 className="text-2xl font-bold mb-8 text-center">Technical Arsenal</h3>
                 <div className="space-y-6">
@@ -146,7 +146,7 @@ export function About() {
                           <Badge 
                             key={tech} 
                             variant="secondary" 
-                            className="text-xs px-3 py-1 bg-background/50 border border-accent/20 hover:bg-accent/10 hover:border-accent/40 hover:scale-105 transition-all duration-300 cursor-default"
+                            className="text-xs px-3 py-1 glass border border-accent/20 hover:glass-strong hover:border-accent/40 hover:scale-105 transition-all duration-300 cursor-default"
                           >
                             {tech}
                           </Badge>

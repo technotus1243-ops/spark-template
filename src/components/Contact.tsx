@@ -44,13 +44,13 @@ export function Contact() {
 
   return (
     <section id="contact" className="relative py-24 px-4 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-accent/5" />
-      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-gradient-to-t from-accent/10 to-primary/10 rounded-full blur-3xl opacity-40" />
+      {/* Professional background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/80 via-primary/3 to-accent/3" />
+      <div className="absolute bottom-0 left-1/3 w-96 h-96 bg-gradient-to-t from-accent/6 to-primary/4 rounded-full blur-3xl opacity-40" />
 
       <div className="relative max-w-5xl mx-auto">
         <div className="text-center space-y-6 mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/60 backdrop-blur-sm border rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
             <Sparkle className="w-4 h-4 text-accent animate-pulse" />
             <span className="text-sm font-medium text-muted-foreground">Let's Connect</span>
           </div>
@@ -71,7 +71,7 @@ export function Contact() {
         <div className="grid gap-8 lg:grid-cols-5">
           {/* Contact Form */}
           <div className="lg:col-span-3">
-            <Card className="bg-gradient-to-br from-card/50 to-card backdrop-blur-sm border-2 border-border/50 hover:border-accent/30 transition-all duration-500">
+            <Card className="glass-strong border-2 border-border/30 hover:border-accent/20 transition-all duration-500 shadow-lg">
               <CardHeader className="pb-6">
                 <CardTitle className="text-2xl font-bold">Send me a message</CardTitle>
                 <p className="text-muted-foreground">
@@ -159,7 +159,7 @@ export function Contact() {
 
           {/* Contact Info */}
           <div className="lg:col-span-2 space-y-6">
-            <Card className="bg-gradient-to-br from-card/50 to-card backdrop-blur-sm border-2 border-border/50">
+            <Card className="glass-strong border-2 border-border/30 shadow-lg">
               <CardHeader>
                 <CardTitle className="text-xl font-bold">Get in touch</CardTitle>
               </CardHeader>

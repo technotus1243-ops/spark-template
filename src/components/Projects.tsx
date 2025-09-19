@@ -123,7 +123,7 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="group relative overflow-hidden bg-gradient-to-br from-card/50 to-card backdrop-blur-sm border-2 border-border/50 hover:border-accent/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+    <Card className="group relative overflow-hidden glass-strong border-2 border-border/30 hover:border-accent/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
       {/* Gradient overlay on hover */}
       <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
@@ -233,14 +233,14 @@ export function Projects() {
 
   return (
     <section id="projects" className="relative py-24 px-4 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
-      <div className="absolute top-1/4 left-0 w-72 h-72 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl opacity-30" />
-      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-l from-primary/10 to-accent/10 rounded-full blur-3xl opacity-30" />
+      {/* Professional background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-b from-background/60 via-accent/3 to-background/60" />
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-gradient-to-r from-accent/6 to-primary/4 rounded-full blur-3xl opacity-40" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-l from-primary/4 to-accent/6 rounded-full blur-3xl opacity-40" />
 
       <div className="relative max-w-7xl mx-auto">
         <div className="text-center space-y-6 mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/60 backdrop-blur-sm border rounded-full">
+          <div className="inline-flex items-center gap-2 px-4 py-2 glass rounded-full">
             <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
             <span className="text-sm font-medium text-muted-foreground">Portfolio Showcase</span>
           </div>

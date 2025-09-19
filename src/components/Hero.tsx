@@ -8,18 +8,22 @@ export function Hero() {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 overflow-hidden">
-      {/* Animated background gradient */}
-      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 via-transparent to-primary/5 animate-pulse opacity-40" />
-      
-      {/* Floating geometric shapes */}
-      <div className="absolute top-20 left-1/4 w-32 h-32 bg-gradient-to-br from-accent/10 to-primary/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '0s', animationDuration: '6s' }} />
-      <div className="absolute bottom-32 right-1/4 w-24 h-24 bg-gradient-to-br from-primary/10 to-accent/10 rounded-full blur-xl animate-bounce" style={{ animationDelay: '2s', animationDuration: '8s' }} />
-      <div className="absolute top-1/2 left-1/6 w-16 h-16 bg-gradient-to-br from-accent/15 to-primary/15 rounded-full blur-lg animate-bounce" style={{ animationDelay: '4s', animationDuration: '7s' }} />
+      {/* Professional background elements */}
+      <div className="absolute inset-0">
+        {/* Subtle gradient overlays */}
+        <div className="absolute inset-0 bg-gradient-to-br from-accent/3 via-transparent to-primary/2 animate-subtle-pulse" />
+        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-accent/2 to-transparent" />
+        
+        {/* Floating orbs for depth */}
+        <div className="absolute top-1/4 left-1/5 w-64 h-64 bg-gradient-to-br from-accent/4 to-primary/3 rounded-full blur-3xl animate-float opacity-60" style={{ animationDelay: '0s', animationDuration: '12s' }} />
+        <div className="absolute bottom-1/4 right-1/5 w-48 h-48 bg-gradient-to-br from-primary/3 to-accent/4 rounded-full blur-3xl animate-float opacity-50" style={{ animationDelay: '4s', animationDuration: '16s' }} />
+        <div className="absolute top-1/2 left-1/12 w-32 h-32 bg-gradient-to-br from-accent/5 to-primary/4 rounded-full blur-2xl animate-float opacity-40" style={{ animationDelay: '8s', animationDuration: '14s' }} />
+      </div>
 
       <div className="relative max-w-5xl mx-auto text-center space-y-12">
         {/* Status badge */}
         <div className="flex items-center justify-center mb-8">
-          <div className="flex items-center gap-2 px-4 py-2 bg-card/60 backdrop-blur-sm border rounded-full shadow-lg">
+          <div className="flex items-center gap-2 px-4 py-2 glass rounded-full shadow-lg">
             <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse" />
             <span className="text-sm font-medium text-muted-foreground">Available for new projects</span>
           </div>
@@ -32,7 +36,7 @@ export function Hero() {
                 Alex Chen
               </span>
             </h1>
-            <div className="absolute -top-4 -right-4 text-accent/30">
+            <div className="absolute -top-4 -right-4 text-accent/20">
               <Sparkle className="w-8 h-8 animate-spin" style={{ animationDuration: '3s' }} />
             </div>
           </div>
@@ -88,7 +92,7 @@ export function Hero() {
               href={href}
               target={href.startsWith('http') ? "_blank" : undefined}
               rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
-              className="group p-4 rounded-2xl border-2 border-transparent bg-card/40 backdrop-blur-sm hover:bg-card/60 hover:border-accent/30 hover:shadow-lg hover:scale-110 transition-all duration-300"
+              className="group p-4 rounded-2xl border-2 border-transparent glass hover:glass-strong hover:border-accent/20 hover:shadow-lg hover:scale-110 transition-all duration-300"
               aria-label={label}
             >
               <Icon className="h-6 w-6 text-muted-foreground group-hover:text-accent transition-colors duration-300" />

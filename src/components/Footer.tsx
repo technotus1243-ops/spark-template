@@ -9,15 +9,15 @@ export function Footer() {
   const currentYear = new Date().getFullYear()
 
   return (
-    <footer className="relative border-t border-border/50 bg-gradient-to-b from-muted/30 to-muted/50 overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-br from-accent/5 to-primary/5 rounded-full blur-3xl opacity-60" />
+    <footer className="relative border-t border-border/30 glass overflow-hidden">
+      {/* Professional background decoration */}
+      <div className="absolute top-0 left-1/4 w-72 h-72 bg-gradient-to-br from-accent/4 to-primary/3 rounded-full blur-3xl opacity-50" />
       
       <div className="relative max-w-7xl mx-auto px-6 py-16">
         <div className="grid gap-12 md:grid-cols-3 lg:grid-cols-4">
           <div className="space-y-6 md:col-span-2">
             <div className="flex items-center gap-3">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-accent to-primary flex items-center justify-center shadow-md">
                 <span className="text-white font-bold text-xl">A</span>
               </div>
               <h3 className="text-2xl font-bold">Alex Chen</h3>
@@ -40,7 +40,7 @@ export function Footer() {
                   href={href}
                   target={href.startsWith('http') ? "_blank" : undefined}
                   rel={href.startsWith('http') ? "noopener noreferrer" : undefined}
-                  className="group p-3 rounded-xl border-2 border-border/50 hover:border-accent/30 hover:bg-accent/5 hover:scale-110 transition-all duration-300"
+                  className="group p-3 rounded-xl border-2 border-border/30 glass hover:glass-strong hover:border-accent/30 hover:scale-110 transition-all duration-300"
                   aria-label={label}
                 >
                   <Icon className="h-5 w-5 text-muted-foreground group-hover:text-accent transition-colors duration-300" />
@@ -85,7 +85,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-between pt-12 mt-12 border-t border-border/50">
+        <div className="flex flex-col sm:flex-row items-center justify-between pt-12 mt-12 border-t border-border/30">
           <div className="flex flex-col sm:flex-row items-center gap-4 text-sm text-muted-foreground">
             <p>© {currentYear} Alex Chen.</p>
             <div className="flex items-center gap-1">

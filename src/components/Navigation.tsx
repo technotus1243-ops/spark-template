@@ -43,7 +43,7 @@ export function Navigation() {
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         isScrolled 
-          ? 'bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-lg' 
+          ? 'glass-strong border-b border-border/30 shadow-lg' 
           : 'bg-transparent'
       }`}>
         <div className="max-w-7xl mx-auto px-6">
@@ -52,7 +52,7 @@ export function Navigation() {
               onClick={scrollToTop}
               className="group flex items-center gap-3 text-xl font-bold hover:text-accent transition-all duration-300"
             >
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-accent to-primary flex items-center justify-center group-hover:scale-110 transition-transform duration-300 shadow-md">
                 <span className="text-white font-bold text-lg">A</span>
               </div>
               <span>Alex Chen</span>
@@ -103,7 +103,7 @@ export function Navigation() {
             className="fixed inset-0 bg-background/90 backdrop-blur-xl" 
             onClick={() => setIsMobileMenuOpen(false)} 
           />
-          <div className="fixed top-20 left-0 right-0 bg-card/95 backdrop-blur-xl border-b border-border/50 shadow-2xl">
+          <div className="fixed top-20 left-0 right-0 glass-strong border-b border-border/30 shadow-2xl">
             <div className="px-6 py-8 space-y-6">
               {navItems.map((item) => (
                 <button
