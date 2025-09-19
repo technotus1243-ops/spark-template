@@ -12,10 +12,10 @@ function App() {
   const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    // Simulate initial loading
+    // Faster loading - reduced from 1000ms to 300ms
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 1000)
+    }, 300)
 
     return () => clearTimeout(timer)
   }, [])
@@ -24,9 +24,9 @@ function App() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-12 h-12 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h2 className="text-xl font-display text-primary mb-2">Tushar Khokhar</h2>
-          <p className="text-muted-foreground font-mono">Loading portfolio...</p>
+          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <h2 className="text-lg font-display text-primary mb-1">Tushar Khokhar</h2>
+          <p className="text-sm text-muted-foreground font-mono">Blockchain Engineer</p>
         </div>
       </div>
     )
