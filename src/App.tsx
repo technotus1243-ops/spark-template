@@ -55,53 +55,58 @@ function App() {
 
   const skills = [
     { 
-      category: "Blockchain & Web3", 
-      items: ["Solidity", "Rust", "Web3.js", "Ethers.js", "Smart Contracts", "DeFi Protocols", "Layer 2 Solutions", "DAO Governance"],
+      category: "Blockchain & Smart Contracts", 
+      items: ["Solidity", "Rust", "Anchor", "Move", "Ethereum", "Solana", "Eclipse", "Mode", "Fuel", "DeFi Protocols"],
       icon: <Lock className="w-5 h-5" />
     },
     { 
-      category: "Backend Architecture", 
-      items: ["Python", "Django", "FastAPI", "Node.js", "PostgreSQL", "Redis", "MongoDB", "GraphQL"],
+      category: "Backend Development", 
+      items: ["Node.js", "Express.js", "Actix/Axum Web", "Python", "REST APIs", "GraphQL", "WebSockets", "JWT", "gRPC"],
       icon: <Database className="w-5 h-5" />
     },
     { 
-      category: "DevOps & Infrastructure", 
-      items: ["Kubernetes", "Docker", "AWS", "Terraform", "CI/CD", "Monitoring", "Load Balancing", "Auto-scaling"],
+      category: "Databases & Caching", 
+      items: ["PostgreSQL", "MongoDB", "MySQL", "Redis", "Prisma", "Mongoose", "Database Optimization", "Query Performance"],
+      icon: <Database className="w-5 h-5" />
+    },
+    { 
+      category: "Cloud & DevOps", 
+      items: ["AWS (EC2, S3, Lambda)", "Docker", "Kubernetes", "Firebase", "Railway", "GitHub Actions", "CI/CD", "Infrastructure"],
       icon: <CloudArrowUp className="w-5 h-5" />
     },
     { 
-      category: "Performance & Security", 
-      items: ["High-frequency Trading", "Zero-Knowledge Proofs", "GPU Computing", "Microservices", "API Security", "Cryptography"],
+      category: "Advanced Technologies", 
+      items: ["Zero-Knowledge Proofs", "Public-Key Cryptography", "GPU Computing", "Ray Framework", "Real-time Systems", "CRDTs"],
       icon: <Shield className="w-5 h-5" />
     }
   ]
 
   const projects = [
     {
-      title: "High-Performance Crypto Trading Bot",
-      description: "Advanced algorithmic trading system built in Rust for high-frequency cryptocurrency trading. Monitors blockchain transactions and replicates successful trader strategies with microsecond precision.",
-      technologies: ["Rust", "WebSocket APIs", "Blockchain Integration", "Real-time Processing", "Memory Optimization"],
-      metrics: "Sub-millisecond execution • 99.99% uptime • $50K+ daily volume • Multi-DEX support",
-      icon: <ChartLineUp className="w-6 h-6" />
+      title: "Real-Time Code Collaboration Platform",
+      description: "Built a blazing-fast Rust backend with WebSockets and CRDTs for seamless real-time multi-user code editing. Features Redis pub/sub architecture and MongoDB sync for conflict-free collaboration at scale.",
+      technologies: ["Rust", "WebSockets", "CRDTs", "Redis Pub/Sub", "MongoDB", "Real-time Sync"],
+      metrics: "Multi-user editing • Near-instant updates • Low-end device optimized • Conflict-free collaboration",
+      icon: <Code className="w-6 h-6" />
     },
     {
       title: "Enterprise DAO Governance Protocol",
       description: "Mission-critical smart contract infrastructure managing $8M+ in protocol assets. Implements advanced governance mechanisms with multi-signature security and automated treasury management.",
-      technologies: ["Solidity", "OpenZeppelin", "Hardhat", "Web3.js", "IPFS", "Governance Tokens"],
+      technologies: ["Solidity", "OpenZeppelin", "Hardhat", "Web3.js", "IPFS", "Multi-sig Security"],
       metrics: "$8M+ assets secured • 500K+ transactions • Security audited • Zero exploits",
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: "Scalable AI Game Backend",
-      description: "Enterprise-grade Django backend powering AI-driven world generation. Handles real-time text-to-world conversion with intelligent load balancing and auto-scaling infrastructure.",
-      technologies: ["Django", "PostgreSQL", "Redis", "Celery", "AI Model Integration", "WebSocket"],
-      metrics: "10K+ concurrent users • <200ms response time • 99.9% availability • Auto-scaling",
+      title: "Tinder-Style Dating App Backend",
+      description: "Full-featured Node.js backend with sophisticated matching algorithms, real-time messaging, and scalable media handling. Deployed on AWS S3 with MySQL for relational data and secure authentication.",
+      technologies: ["Node.js", "Express", "Socket.io", "MySQL", "AWS S3", "JWT Authentication"],
+      metrics: "IIT Kharagpur deployment • Event-based matching • Secure data handling • Real-time messaging",
       icon: <Network className="w-6 h-6" />
     },
     {
       title: "Zero-Knowledge GPU Computing Platform",
-      description: "Cloud-native infrastructure for distributed GPU computing with zero-knowledge privacy layers. Reduces ML compute costs by 40% while maintaining enterprise security standards.",
-      technologies: ["Kubernetes", "GPU Orchestration", "ZK-Proofs", "Terraform", "Monitoring"],
+      description: "Cloud-native infrastructure for distributed GPU computing with zero-knowledge privacy layers. First-of-its-kind platform supporting local GPU connections with Ray framework integration.",
+      technologies: ["Kubernetes", "Docker", "Ray Framework", "ZK-Proofs", "GPU Orchestration"],
       metrics: "40% cost reduction • 60% throughput increase • Privacy-preserving • Enterprise-ready",
       icon: <Cpu className="w-6 h-6" />
     }
@@ -111,38 +116,54 @@ function App() {
     {
       company: "Mode Network",
       role: "Senior Blockchain Developer",
-      period: "2022 - Present",
-      type: "Full-time",
-      description: "Leading blockchain development for Layer 2 scaling solutions",
+      period: "Feb 2025 - Apr 2025",
+      type: "Contract",
+      description: "Architected mission-critical DAO governance infrastructure and DeFi protocol integrations",
       achievements: [
-        "Built DAO governance smart contracts managing $8M+ in protocol assets",
-        "Led Velodrome DEX integration with 35% gas fee reduction",
-        "Architected cross-chain bridge infrastructure handling 100K+ daily transactions"
+        "Engineered DAO governance smart contracts securing $8M+ in protocol treasury assets with multi-signature security",
+        "Led Velodrome DEX integration achieving 35% gas fee reduction through optimized routing and transaction batching",
+        "Automated token flow onboarding logic resulting in 2x increase in new liquidity pool creation",
+        "Implemented cross-chain bridge infrastructure processing 100K+ daily transactions with zero security incidents"
       ]
     },
     {
       company: "Eclipse Network", 
-      role: "Smart Contract Engineer",
-      period: "2021 - 2022",
+      role: "Blockchain Developer",
+      period: "Nov 2024 - Feb 2025",
       type: "Full-time",
-      description: "Developed core infrastructure for high-throughput NFT marketplace",
+      description: "Built high-performance Rust smart contracts for enterprise NFT marketplace infrastructure",
       achievements: [
-        "Built foundational Rust smart contract processing 500K+ transactions",
-        "Implemented high-throughput consensus mechanisms",
-        "Optimized gas efficiency reducing costs by 40%"
+        "Developed foundational Rust smart contract architecture processing 500K+ NFT transactions",
+        "Built bulk NFT minting infrastructure enabling 1,000+ creators to mint collections seamlessly",
+        "Engineered Telegram bot integration for NFT staking, onboarding 500+ active users",
+        "Optimized smart contract gas efficiency reducing transaction costs by 40% through advanced batching"
+      ]
+    },
+    {
+      company: "ZkAGI",
+      role: "Rust Developer & DevOps Engineer", 
+      period: "Nov 2023 - Nov 2024",
+      type: "Full-time",
+      description: "Designed zero-knowledge cloud-native GPU clustering platform with enterprise security",
+      achievements: [
+        "Architected first-of-its-kind zero-knowledge GPU-clustering platform supporting local GPU connections",
+        "Automated Kubernetes workflows with Docker integration and Ray framework for distributed computing",
+        "Engineered ZK-layered pipeline reducing ML compute costs by 40% and increasing GPU throughput by 60%",
+        "Built enterprise-grade infrastructure handling distributed GPU workloads across multiple data centers"
       ]
     },
     {
       company: "Arcane Labs",
-      role: "Backend Developer", 
-      period: "2020 - 2021",
+      role: "Backend Developer & Infrastructure Engineer", 
+      period: "May 2023 - Jun 2025",
       type: "Full-time",
-      description: "Built enterprise-grade blockchain infrastructure and real-time trading systems",
+      description: "Built enterprise-grade trading infrastructure, Oracle services, and high-performance API systems",
       achievements: [
-        "Architected Oracle service using TWAP calculations for real-time crypto price feeds across 200+ tokens",
-        "Built webhook integration system processing 100K+ real-time market updates per second",
-        "Developed 30+ REST APIs with sub-200ms response times and 99.9% uptime",
-        "Engineered distributed caching layer reducing data retrieval latency by 75%"
+        "Architected Oracle service using TWAP calculations delivering real-time price feeds for 200+ cryptocurrency tokens",
+        "Built webhook integration system processing 100K+ real-time market updates per second with sub-millisecond latency",
+        "Developed and maintained 30+ microservice-based REST APIs achieving sub-200ms response times and 99.9% uptime",
+        "Designed scalable feed system handling 50,000+ items with optimized caching, reducing data retrieval latency by 75%",
+        "Delivered secure, scalable APIs enabling smooth integrations and contributing to 20% increase in user engagement"
       ]
     }
   ]
@@ -214,9 +235,9 @@ function App() {
                   <span className="terminal-cursor">enterprise-solutions</span>
                 </div>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  IIT Kharagpur graduate specializing in <span className="text-primary font-semibold">mission-critical blockchain protocols</span>, 
-                  <span className="text-accent font-semibold"> high-performance backend systems</span>, and 
-                  <span className="text-primary font-semibold"> enterprise DevOps infrastructure</span>
+                  IIT Kharagpur graduate specializing in <span className="text-primary font-semibold">secure blockchain protocols</span>, 
+                  <span className="text-accent font-semibold"> scalable backend architectures</span>, and 
+                  <span className="text-primary font-semibold"> cloud-native infrastructure solutions</span>
                 </p>
               </div>
             </div>
@@ -251,9 +272,9 @@ function App() {
             <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-12 border-t border-border animate-slide-up">
               {[
                 { value: "$8M+", label: "Protocol Assets Secured", icon: <Shield className="w-5 h-5" />, color: "text-emerald-400" },
-                { value: "500K+", label: "Blockchain Transactions", icon: <Network className="w-5 h-5" />, color: "text-blue-400" },
-                { value: "99.99%", label: "System Uptime", icon: <Cpu className="w-5 h-5" />, color: "text-purple-400" },
-                { value: "4+", label: "Years Enterprise Experience", icon: <Code className="w-5 h-5" />, color: "text-orange-400" }
+                { value: "500K+", label: "Smart Contract Transactions", icon: <Network className="w-5 h-5" />, color: "text-blue-400" },
+                { value: "99.9%", label: "API System Uptime", icon: <Cpu className="w-5 h-5" />, color: "text-purple-400" },
+                { value: "2+", label: "Years Enterprise Experience", icon: <Code className="w-5 h-5" />, color: "text-orange-400" }
               ].map((metric, index) => (
                 <div key={index} className="metric-card group">
                   <div className="flex justify-center mb-3">
@@ -287,19 +308,21 @@ function App() {
               <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
                 <p>
                   As a <span className="text-primary font-semibold">blockchain architect and backend engineer</span> from IIT Kharagpur, 
-                  I specialize in building enterprise-grade systems that handle 
-                  <span className="text-accent font-semibold"> millions of dollars in assets</span> and 
-                  <span className="text-primary font-semibold"> hundreds of thousands of transactions</span> with zero tolerance for failure.
+                  I specialize in building enterprise-grade systems that secure 
+                  <span className="text-accent font-semibold"> millions of dollars in protocol assets</span> and 
+                  <span className="text-primary font-semibold"> process hundreds of thousands of transactions</span> with zero tolerance for failure.
                 </p>
                 <p>
                   My expertise spans from architecting <span className="text-emerald-400 font-semibold">DAO governance protocols managing $8M+</span> 
-                  to building <span className="text-blue-400 font-semibold">high-frequency trading systems</span> that execute trades in microseconds. 
-                  I create robust, scalable infrastructure that enterprises and protocols depend on daily.
+                  to building <span className="text-blue-400 font-semibold">real-time collaborative platforms</span> and 
+                  <span className="text-purple-400 font-semibold">zero-knowledge GPU computing infrastructure</span>. 
+                  I create robust, scalable systems that enterprises and protocols depend on daily.
                 </p>
                 <p>
-                  Whether developing smart contracts, engineering distributed systems, 
-                  or architecting cloud infrastructure, I bring <span className="text-primary font-semibold">security-first thinking</span> 
-                  and <span className="text-accent font-semibold">performance optimization expertise</span> to every challenge.
+                  Whether developing smart contracts with <span className="text-primary font-semibold">Rust and Solidity</span>, 
+                  engineering distributed systems with <span className="text-accent font-semibold">Node.js and Python</span>, 
+                  or architecting cloud infrastructure with <span className="text-emerald-400 font-semibold">Kubernetes and Docker</span>, 
+                  I bring security-first thinking and performance optimization expertise to every challenge.
                 </p>
               </div>
               
@@ -382,7 +405,7 @@ function App() {
             </Badge>
             <h2 className="text-4xl font-bold mb-8 gradient-text">Enterprise Engineering Experience</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Building mission-critical blockchain protocols, high-performance backend systems, and enterprise infrastructure that handles millions in assets and hundreds of thousands of transactions
+              Building mission-critical blockchain protocols, high-performance backend systems, and enterprise infrastructure across 2+ years of professional experience
             </p>
           </div>
 
@@ -444,7 +467,7 @@ function App() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {skills.map((skillGroup, index) => (
               <Card key={index} className="glass-card group">
                 <CardHeader className="pb-4">
@@ -482,9 +505,9 @@ function App() {
             <h3 className="text-2xl font-bold mb-8 gradient-text">Professional Recognition</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {[
-                { title: "IIT Kharagpur", subtitle: "Computer Science Graduate", icon: "🎓" },
-                { title: "Inter-IIT Tech Meet", subtitle: "Gold Medal Winner", icon: "🏆" },
-                { title: "Blockchain Expert", subtitle: "4+ Years Experience", icon: "⛓️" }
+                { title: "IIT Kharagpur", subtitle: "Bachelor of Technology", icon: "🎓" },
+                { title: "Inter-IIT Tech Meet", subtitle: "Aptos Blockchain Challenge", icon: "🏆" },
+                { title: "Enterprise Developer", subtitle: "2+ Years Experience", icon: "⛓️" }
               ].map((cert, index) => (
                 <div key={index} className="glass-card p-6 text-center group">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{cert.icon}</div>
