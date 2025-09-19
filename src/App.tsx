@@ -111,7 +111,7 @@ function App() {
     {
       company: "Mode Network",
       role: "Senior Blockchain Developer",
-      period: "2023 - Present",
+      period: "2022 - Present",
       type: "Full-time",
       description: "Leading blockchain development for Layer 2 scaling solutions",
       achievements: [
@@ -123,7 +123,7 @@ function App() {
     {
       company: "Eclipse Network", 
       role: "Smart Contract Engineer",
-      period: "2022 - 2023",
+      period: "2021 - 2022",
       type: "Full-time",
       description: "Developed core infrastructure for high-throughput NFT marketplace",
       achievements: [
@@ -135,8 +135,8 @@ function App() {
     {
       company: "Arcane Labs",
       role: "Backend Developer", 
-      period: "2022",
-      type: "Contract",
+      period: "2020 - 2021",
+      type: "Full-time",
       description: "Built scalable microservices architecture for fintech platform",
       achievements: [
         "Developed 30+ REST APIs with sub-200ms response times",
@@ -252,7 +252,7 @@ function App() {
                 { value: "$8M+", label: "Protocol Assets Secured", icon: <Shield className="w-5 h-5" />, color: "text-emerald-400" },
                 { value: "500K+", label: "Blockchain Transactions", icon: <Network className="w-5 h-5" />, color: "text-blue-400" },
                 { value: "99.99%", label: "System Uptime", icon: <Cpu className="w-5 h-5" />, color: "text-purple-400" },
-                { value: "5+", label: "Years Enterprise Experience", icon: <Code className="w-5 h-5" />, color: "text-orange-400" }
+                { value: "4+", label: "Years Enterprise Experience", icon: <Code className="w-5 h-5" />, color: "text-orange-400" }
               ].map((metric, index) => (
                 <div key={index} className="metric-card group">
                   <div className="flex justify-center mb-3">
@@ -483,7 +483,7 @@ function App() {
               {[
                 { title: "IIT Kharagpur", subtitle: "Computer Science Graduate", icon: "🎓" },
                 { title: "Inter-IIT Tech Meet", subtitle: "Gold Medal Winner", icon: "🏆" },
-                { title: "Blockchain Expert", subtitle: "5+ Years Experience", icon: "⛓️" }
+                { title: "Blockchain Expert", subtitle: "4+ Years Experience", icon: "⛓️" }
               ].map((cert, index) => (
                 <div key={index} className="glass-card p-6 text-center group">
                   <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{cert.icon}</div>
