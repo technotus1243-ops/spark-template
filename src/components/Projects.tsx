@@ -123,73 +123,101 @@ interface ProjectCardProps {
 
 function ProjectCard({ project }: ProjectCardProps) {
   return (
-    <Card className="group hover:shadow-lg transition-all duration-300 border-2 hover:border-accent/20">
-      <CardHeader>
-        <div className="flex items-start justify-between">
-          <div className="space-y-2">
-            <CardTitle className="text-xl group-hover:text-accent transition-colors">
-              {project.title}
-            </CardTitle>
-            <CardDescription className="text-base leading-relaxed">
-              {project.description}
-            </CardDescription>
-          </div>
-          {project.featured && (
-            <Badge variant="secondary" className="shrink-0 ml-4">Featured</Badge>
-          )}
+    <Card className="group relative overflow-hidden bg-gradient-to-br from-card/50 to-card backdrop-blur-sm border-2 border-border/50 hover:border-accent/30 hover:shadow-2xl hover:scale-[1.02] transition-all duration-500">
+      {/* Gradient overlay on hover */}
+      <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      
+      {/* Featured badge with glow */}
+      {project.featured && (
+        <div className="absolute top-4 right-4 z-10">
+          <Badge className="bg-gradient-to-r from-accent to-primary text-white shadow-lg animate-pulse">
+            ✨ Featured
+          </Badge>
+        </div>
+      )}
+
+      <CardHeader className="relative z-10 pb-4">
+        <div className="space-y-3">
+          <CardTitle className="text-2xl font-bold group-hover:text-accent transition-colors duration-300">
+            {project.title}
+          </CardTitle>
+          <CardDescription className="text-base leading-relaxed text-muted-foreground">
+            {project.description}
+          </CardDescription>
         </div>
       </CardHeader>
       
-      <CardContent className="space-y-6">
-        <div className="space-y-4">
-          <div>
-            <h4 className="font-medium mb-2">Technical Challenges Solved:</h4>
-            <ul className="space-y-1 text-sm text-muted-foreground">
+      <CardContent className="relative z-10 space-y-6">
+        <div className="space-y-5">
+          <div className="bg-muted/30 p-4 rounded-lg border border-border/30">
+            <h4 className="font-semibold mb-3 flex items-center gap-2">
+              <div className="w-2 h-2 bg-accent rounded-full" />
+              Technical Challenges Solved
+            </h4>
+            <ul className="space-y-2">
               {project.challenges.map((challenge, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-accent mr-2">•</span>
-                  {challenge}
+                <li key={index} className="flex items-start text-sm text-muted-foreground">
+                  <span className="text-accent mr-3 font-bold">•</span>
+                  <span>{challenge}</span>
                 </li>
               ))}
             </ul>
           </div>
           
-          <div>
-            <h4 className="font-medium mb-2">Quantifiable Results:</h4>
-            <ul className="space-y-1 text-sm text-muted-foreground">
+          <div className="bg-accent/5 p-4 rounded-lg border border-accent/20">
+            <h4 className="font-semibold mb-3 flex items-center gap-2">
+              <div className="w-2 h-2 bg-green-500 rounded-full" />
+              Quantifiable Results
+            </h4>
+            <ul className="space-y-2">
               {project.results.map((result, index) => (
-                <li key={index} className="flex items-start">
-                  <span className="text-accent mr-2">✓</span>
-                  {result}
+                <li key={index} className="flex items-start text-sm text-muted-foreground">
+                  <span className="text-green-500 mr-3 font-bold">✓</span>
+                  <span>{result}</span>
                 </li>
               ))}
             </ul>
           </div>
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-4">
           <div>
-            <h4 className="font-medium mb-2">Technologies Used:</h4>
+            <h4 className="font-semibold mb-3 text-sm text-muted-foreground uppercase tracking-wide">
+              Technology Stack
+            </h4>
             <div className="flex flex-wrap gap-2">
               {project.technologies.map((tech) => (
-                <Badge key={tech} variant="outline" className="text-xs">
+                <Badge 
+                  key={tech} 
+                  variant="outline" 
+                  className="text-xs px-3 py-1 bg-background/50 border-accent/30 hover:bg-accent/10 hover:border-accent transition-all duration-300"
+                >
                   {tech}
                 </Badge>
               ))}
             </div>
           </div>
           
-          <div className="flex gap-2 pt-2">
-            <Button asChild size="sm" className="flex-1">
+          <div className="flex gap-3 pt-4">
+            <Button 
+              asChild 
+              size="sm" 
+              className="flex-1 bg-gradient-to-r from-accent to-primary hover:shadow-lg hover:scale-105 transition-all duration-300"
+            >
               <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
                 <Eye className="mr-2 h-4 w-4" />
                 Live Demo
               </a>
             </Button>
-            <Button asChild variant="outline" size="sm" className="flex-1">
+            <Button 
+              asChild 
+              variant="outline" 
+              size="sm" 
+              className="flex-1 border-2 hover:bg-accent/5 hover:border-accent/50 hover:scale-105 transition-all duration-300"
+            >
               <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
                 <GithubLogo className="mr-2 h-4 w-4" />
-                Source Code
+                Source
               </a>
             </Button>
           </div>
@@ -204,48 +232,92 @@ export function Projects() {
   const otherProjects = projects.filter(project => !project.featured)
 
   return (
-    <section id="projects" className="py-20 px-4">
-      <div className="max-w-7xl mx-auto">
-        <div className="text-center space-y-4 mb-16">
-          <h2 className="text-4xl font-bold tracking-tight">Featured Projects</h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            A curated selection of my most impactful work, demonstrating expertise in 
-            full-stack development, system architecture, and problem-solving.
+    <section id="projects" className="relative py-24 px-4 overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-accent/5 to-transparent" />
+      <div className="absolute top-1/4 left-0 w-72 h-72 bg-gradient-to-r from-accent/10 to-primary/10 rounded-full blur-3xl opacity-30" />
+      <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-gradient-to-l from-primary/10 to-accent/10 rounded-full blur-3xl opacity-30" />
+
+      <div className="relative max-w-7xl mx-auto">
+        <div className="text-center space-y-6 mb-20">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-card/60 backdrop-blur-sm border rounded-full">
+            <div className="w-2 h-2 bg-accent rounded-full animate-pulse" />
+            <span className="text-sm font-medium text-muted-foreground">Portfolio Showcase</span>
+          </div>
+          
+          <h2 className="text-5xl md:text-6xl font-bold tracking-tight">
+            <span className="bg-gradient-to-r from-foreground via-accent to-primary bg-clip-text text-transparent">
+              Featured Projects
+            </span>
+          </h2>
+          
+          <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            A curated collection of my most impactful work, showcasing expertise in{" "}
+            <span className="font-semibold text-foreground">full-stack development</span>, {" "}
+            <span className="font-semibold text-foreground">system architecture</span>, and{" "}
+            <span className="font-semibold text-foreground">innovative problem-solving</span>.
           </p>
         </div>
 
-        <div className="space-y-12">
-          <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-2">
-            {featuredProjects.map((project) => (
-              <ProjectCard key={project.id} project={project} />
+        <div className="space-y-16">
+          <div className="grid gap-8 lg:grid-cols-2">
+            {featuredProjects.map((project, index) => (
+              <div 
+                key={project.id}
+                className="animate-fade-in"
+                style={{ animationDelay: `${index * 200}ms` }}
+              >
+                <ProjectCard project={project} />
+              </div>
             ))}
           </div>
 
           {otherProjects.length > 0 && (
             <>
-              <div className="text-center">
-                <h3 className="text-2xl font-semibold mb-8">Additional Projects</h3>
+              <div className="text-center space-y-4">
+                <h3 className="text-3xl font-bold text-foreground">Additional Projects</h3>
+                <p className="text-muted-foreground max-w-2xl mx-auto">
+                  More examples of my technical expertise and creative solutions
+                </p>
               </div>
-              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                {otherProjects.map((project) => (
-                  <ProjectCard key={project.id} project={project} />
+              <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-2">
+                {otherProjects.map((project, index) => (
+                  <div 
+                    key={project.id}
+                    className="animate-fade-in"
+                    style={{ animationDelay: `${(index + featuredProjects.length) * 200}ms` }}
+                  >
+                    <ProjectCard project={project} />
+                  </div>
                 ))}
               </div>
             </>
           )}
         </div>
 
-        <div className="text-center mt-16">
-          <Button variant="outline" size="lg" asChild>
-            <a 
-              href="https://github.com/alexchen" 
-              target="_blank" 
-              rel="noopener noreferrer"
+        <div className="text-center mt-20">
+          <div className="space-y-6">
+            <p className="text-lg text-muted-foreground">
+              Want to see more of my work?
+            </p>
+            <Button 
+              variant="outline" 
+              size="lg" 
+              className="group border-2 hover:bg-accent/5 hover:border-accent/50 hover:scale-105 transition-all duration-300 px-8 py-6 text-lg" 
+              asChild
             >
-              View All Projects on GitHub
-              <ArrowUpRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
+              <a 
+                href="https://github.com/alexchen" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3"
+              >
+                <GithubLogo className="h-6 w-6" />
+                <span>Explore All Projects on GitHub</span>
+                <ArrowUpRight className="h-5 w-5 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
+              </a>
+            </Button>
+          </div>
         </div>
       </div>
     </section>

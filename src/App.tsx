@@ -8,16 +8,25 @@ import { Toaster } from "@/components/ui/sonner"
 
 function App() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-background">
       <Navigation />
-      <main>
+      <main className="relative">
         <Hero />
         <About />
         <Projects />
         <Contact />
       </main>
       <Footer />
-      <Toaster />
+      <Toaster 
+        position="bottom-right"
+        toastOptions={{
+          style: {
+            background: 'hsl(var(--card))',
+            border: '1px solid hsl(var(--border))',
+            color: 'hsl(var(--foreground))',
+          },
+        }}
+      />
     </div>
   )
 }
