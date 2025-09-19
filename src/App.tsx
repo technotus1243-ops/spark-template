@@ -122,7 +122,6 @@ function App() {
       achievements: [
         "Engineered DAO governance smart contracts securing $8M+ in protocol treasury assets with multi-signature security",
         "Led Velodrome DEX integration achieving 35% gas fee reduction through optimized routing and transaction batching",
-        "Automated token flow onboarding logic resulting in 2x increase in new liquidity pool creation",
         "Implemented cross-chain bridge infrastructure processing 100K+ daily transactions with zero security incidents"
       ]
     },
@@ -135,7 +134,6 @@ function App() {
       achievements: [
         "Developed foundational Rust smart contract architecture processing 500K+ NFT transactions",
         "Built bulk NFT minting infrastructure enabling 1,000+ creators to mint collections seamlessly",
-        "Engineered Telegram bot integration for NFT staking, onboarding 500+ active users",
         "Optimized smart contract gas efficiency reducing transaction costs by 40% through advanced batching"
       ]
     },
@@ -148,22 +146,19 @@ function App() {
       achievements: [
         "Architected first-of-its-kind zero-knowledge GPU-clustering platform supporting local GPU connections",
         "Automated Kubernetes workflows with Docker integration and Ray framework for distributed computing",
-        "Engineered ZK-layered pipeline reducing ML compute costs by 40% and increasing GPU throughput by 60%",
-        "Built enterprise-grade infrastructure handling distributed GPU workloads across multiple data centers"
+        "Engineered ZK-layered pipeline reducing ML compute costs by 40% and increasing GPU throughput by 60%"
       ]
     },
     {
       company: "Arcane Labs",
       role: "Backend Developer & Infrastructure Engineer", 
-      period: "May 2023 - Jun 2025",
+      period: "May 2021 - Jun 2025",
       type: "Full-time",
       description: "Built enterprise-grade trading infrastructure, Oracle services, and high-performance API systems",
       achievements: [
         "Architected Oracle service using TWAP calculations delivering real-time price feeds for 200+ cryptocurrency tokens",
         "Built webhook integration system processing 100K+ real-time market updates per second with sub-millisecond latency",
-        "Developed and maintained 30+ microservice-based REST APIs achieving sub-200ms response times and 99.9% uptime",
-        "Designed scalable feed system handling 50,000+ items with optimized caching, reducing data retrieval latency by 75%",
-        "Delivered secure, scalable APIs enabling smooth integrations and contributing to 20% increase in user engagement"
+        "Developed and maintained 30+ microservice-based REST APIs achieving sub-200ms response times and 99.9% uptime"
       ]
     }
   ]
@@ -274,7 +269,7 @@ function App() {
                 { value: "$8M+", label: "Protocol Assets Secured", icon: <Shield className="w-5 h-5" />, color: "text-emerald-400" },
                 { value: "500K+", label: "Smart Contract Transactions", icon: <Network className="w-5 h-5" />, color: "text-blue-400" },
                 { value: "99.9%", label: "API System Uptime", icon: <Cpu className="w-5 h-5" />, color: "text-purple-400" },
-                { value: "2+", label: "Years Enterprise Experience", icon: <Code className="w-5 h-5" />, color: "text-orange-400" }
+                { value: "4+", label: "Years Enterprise Experience", icon: <Code className="w-5 h-5" />, color: "text-orange-400" }
               ].map((metric, index) => (
                 <div key={index} className="metric-card group">
                   <div className="flex justify-center mb-3">
@@ -395,54 +390,63 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-24 px-6 relative">
+      <section id="experience" className="py-16 px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-accent/5"></div>
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-20">
-            <Badge className="mb-8 bg-accent/20 text-accent border-accent/30">
+          <div className="text-center mb-12">
+            <Badge className="mb-6 bg-accent/20 text-accent border-accent/30">
               <Rocket className="w-4 h-4 mr-2" />
               Professional Excellence
             </Badge>
-            <h2 className="text-4xl font-bold mb-8 gradient-text">Enterprise Engineering Experience</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Building mission-critical blockchain protocols, high-performance backend systems, and enterprise infrastructure across 2+ years of professional experience
+            <h2 className="text-3xl font-bold mb-6 gradient-text">Enterprise Engineering Experience</h2>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Building mission-critical blockchain protocols and enterprise infrastructure across 4+ years
             </p>
           </div>
 
-          <div className="space-y-12">
+          <div className="grid lg:grid-cols-2 gap-8">
             {experiences.map((exp, index) => (
-              <Card key={index} className="project-card group overflow-hidden">
-                <CardContent className="p-10">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-8">
-                    <div className="mb-6 lg:mb-0">
-                      <h3 className="text-3xl font-bold mb-3 gradient-text-blue">{exp.role}</h3>
-                      <div className="flex items-center gap-4 mb-4">
-                        <h4 className="text-xl text-primary font-bold">{exp.company}</h4>
-                        <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30">
-                          {exp.type}
-                        </Badge>
+              <Card key={index} className="project-card group overflow-hidden h-fit">
+                <CardContent className="p-6">
+                  <div className="flex flex-col mb-6">
+                    <div className="flex items-start justify-between mb-4">
+                      <div className="flex-1">
+                        <h3 className="text-xl font-bold mb-2 gradient-text-blue">{exp.role}</h3>
+                        <div className="flex items-center gap-3 mb-2">
+                          <h4 className="text-lg text-primary font-bold">{exp.company}</h4>
+                          <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30 text-xs">
+                            {exp.type}
+                          </Badge>
+                        </div>
+                        <p className="text-muted-foreground text-sm mb-3">{exp.description}</p>
                       </div>
-                      <p className="text-muted-foreground text-lg">{exp.description}</p>
+                      <Badge variant="outline" className="glass-card border-white/20 text-accent text-xs ml-4">
+                        {exp.period}
+                      </Badge>
                     </div>
-                    <Badge variant="outline" className="glass-card border-white/20 text-accent w-fit">
-                      {exp.period}
-                    </Badge>
                   </div>
                   
                   <div>
-                    <h5 className="font-bold text-xl mb-6 flex items-center gap-3">
-                      <div className="p-2 bg-accent/20 rounded-lg">
-                        <Lightning className="w-5 h-5 text-accent" />
+                    <h5 className="font-bold text-base mb-4 flex items-center gap-2">
+                      <div className="p-1.5 bg-accent/20 rounded-lg">
+                        <Lightning className="w-4 h-4 text-accent" />
                       </div>
-                      Impact & Achievements
+                      Key Achievements
                     </h5>
-                    <div className="grid gap-4">
-                      {exp.achievements.map((achievement, i) => (
-                        <div key={i} className="flex items-start gap-4 glass-card p-4 rounded-lg">
-                          <div className="w-3 h-3 bg-gradient-to-r from-primary to-accent rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-muted-foreground text-lg">{achievement}</p>
+                    <div className="space-y-3">
+                      {exp.achievements.slice(0, 3).map((achievement, i) => (
+                        <div key={i} className="flex items-start gap-3 glass-card p-3 rounded-lg">
+                          <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-muted-foreground text-sm">{achievement}</p>
                         </div>
                       ))}
+                      {exp.achievements.length > 3 && (
+                        <div className="text-center">
+                          <Badge variant="outline" className="text-xs">
+                            +{exp.achievements.length - 3} more achievements
+                          </Badge>
+                        </div>
+                      )}
                     </div>
                   </div>
                 </CardContent>
@@ -453,31 +457,31 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-24 px-6 relative">
+      <section id="skills" className="py-16 px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5"></div>
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-20">
-            <Badge className="mb-8 bg-primary/20 text-primary border-primary/30">
+          <div className="text-center mb-12">
+            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
               <Cpu className="w-4 h-4 mr-2" />
               Technical Arsenal
             </Badge>
-            <h2 className="text-4xl font-bold mb-8 gradient-text">Technical Expertise & Architecture</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-3xl font-bold mb-6 gradient-text">Technical Expertise & Architecture</h2>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
               Enterprise-grade technology stack spanning blockchain protocols, distributed systems, and cloud-native infrastructure
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {skills.map((skillGroup, index) => (
-              <Card key={index} className="glass-card group">
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-4 mb-6">
-                    <div className="p-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
+              <Card key={index} className="glass-card group h-fit">
+                <CardHeader className="pb-3">
+                  <div className="flex items-center gap-3 mb-4">
+                    <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
                       {skillGroup.icon}
                     </div>
                     <div>
-                      <CardTitle className="text-lg gradient-text-accent">{skillGroup.category}</CardTitle>
-                      <div className="text-sm text-muted-foreground">
+                      <CardTitle className="text-base gradient-text-accent">{skillGroup.category}</CardTitle>
+                      <div className="text-xs text-muted-foreground">
                         {skillGroup.items.length} technologies
                       </div>
                     </div>
@@ -485,15 +489,22 @@ function App() {
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="space-y-3">
-                    {skillGroup.items.map((skill, i) => (
+                  <div className="space-y-2">
+                    {skillGroup.items.slice(0, 6).map((skill, i) => (
                       <div 
                         key={i} 
-                        className="skill-badge group-hover:transform group-hover:scale-105 transition-all"
+                        className="skill-badge group-hover:transform group-hover:scale-105 transition-all text-xs"
                       >
                         {skill}
                       </div>
                     ))}
+                    {skillGroup.items.length > 6 && (
+                      <div className="text-center">
+                        <Badge variant="outline" className="text-xs">
+                          +{skillGroup.items.length - 6} more
+                        </Badge>
+                      </div>
+                    )}
                   </div>
                 </CardContent>
               </Card>
@@ -501,18 +512,18 @@ function App() {
           </div>
           
           {/* Additional Certifications/Achievements */}
-          <div className="mt-20 text-center">
-            <h3 className="text-2xl font-bold mb-8 gradient-text">Professional Recognition</h3>
+          <div className="mt-12 text-center">
+            <h3 className="text-xl font-bold mb-6 gradient-text">Professional Recognition</h3>
             <div className="grid md:grid-cols-3 gap-6">
               {[
                 { title: "IIT Kharagpur", subtitle: "Bachelor of Technology", icon: "🎓" },
                 { title: "Inter-IIT Tech Meet", subtitle: "Aptos Blockchain Challenge", icon: "🏆" },
-                { title: "Enterprise Developer", subtitle: "2+ Years Experience", icon: "⛓️" }
+                { title: "Enterprise Developer", subtitle: "4+ Years Experience", icon: "⛓️" }
               ].map((cert, index) => (
-                <div key={index} className="glass-card p-6 text-center group">
-                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{cert.icon}</div>
-                  <h4 className="font-bold text-lg mb-2 text-primary">{cert.title}</h4>
-                  <p className="text-muted-foreground">{cert.subtitle}</p>
+                <div key={index} className="glass-card p-4 text-center group">
+                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">{cert.icon}</div>
+                  <h4 className="font-bold text-base mb-2 text-primary">{cert.title}</h4>
+                  <p className="text-muted-foreground text-sm">{cert.subtitle}</p>
                 </div>
               ))}
             </div>
@@ -521,126 +532,129 @@ function App() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-24 px-6 relative">
+      <section id="projects" className="py-16 px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-primary/5"></div>
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-20">
-            <Badge className="mb-8 bg-accent/20 text-accent border-accent/30">
+          <div className="text-center mb-12">
+            <Badge className="mb-6 bg-accent/20 text-accent border-accent/30">
               <Code className="w-4 h-4 mr-2" />
               Portfolio Showcase
             </Badge>
-            <h2 className="text-4xl font-bold mb-8 gradient-text">Mission-Critical Project Portfolio</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Enterprise-grade solutions demonstrating advanced technical expertise, security-first architecture, and measurable business impact
+            <h2 className="text-3xl font-bold mb-6 gradient-text">Mission-Critical Project Portfolio</h2>
+            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+              Enterprise-grade solutions demonstrating advanced technical expertise and measurable business impact
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10">
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
             {projects.map((project, index) => (
-              <Card key={index} className="project-card group">
-                <CardHeader className="pb-6">
-                  <div className="flex items-start gap-6 mb-6">
-                    <div className="p-5 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
+              <Card key={index} className="project-card group h-fit">
+                <CardHeader className="pb-4">
+                  <div className="flex items-start gap-4 mb-4">
+                    <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
                       {project.icon}
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl mb-3 gradient-text-accent">{project.title}</CardTitle>
-                      <div className="flex items-center gap-3 text-sm">
-                        <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                      <CardTitle className="text-lg mb-2 gradient-text-accent">{project.title}</CardTitle>
+                      <div className="flex items-center gap-2 text-xs">
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                         <span className="text-emerald-400 font-semibold">Production Ready</span>
-                        <div className="w-px h-4 bg-border"></div>
+                        <div className="w-px h-3 bg-border"></div>
                         <span className="text-muted-foreground">Enterprise Grade</span>
                       </div>
                     </div>
                   </div>
-                  <CardDescription className="text-lg leading-relaxed text-muted-foreground">
+                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
                 
-                <CardContent>
-                  <div className="space-y-8">
-                    <div>
-                      <h4 className="font-bold text-lg mb-4 text-accent flex items-center gap-3">
-                        <div className="p-2 bg-accent/20 rounded-lg">
-                          <Lightning className="w-4 h-4" />
-                        </div>
-                        Performance Metrics
-                      </h4>
-                      <div className="glass-card p-4 rounded-lg">
-                        <p className="text-muted-foreground">{project.metrics}</p>
+                <CardContent className="space-y-6">
+                  <div>
+                    <h4 className="font-bold text-sm mb-3 text-accent flex items-center gap-2">
+                      <div className="p-1 bg-accent/20 rounded">
+                        <Lightning className="w-3 h-3" />
                       </div>
+                      Performance Metrics
+                    </h4>
+                    <div className="glass-card p-3 rounded-lg">
+                      <p className="text-muted-foreground text-xs">{project.metrics}</p>
                     </div>
+                  </div>
 
-                    <div>
-                      <h4 className="font-bold text-lg mb-4 flex items-center gap-3">
-                        <div className="p-2 bg-primary/20 rounded-lg">
-                          <Cpu className="w-4 h-4 text-primary" />
-                        </div>
-                        Technology Stack
-                      </h4>
-                      <div className="flex flex-wrap gap-3">
-                        {project.technologies.map((tech, i) => (
-                          <span key={i} className="skill-badge">
-                            {tech}
-                          </span>
-                        ))}
+                  <div>
+                    <h4 className="font-bold text-sm mb-3 flex items-center gap-2">
+                      <div className="p-1 bg-primary/20 rounded">
+                        <Cpu className="w-3 h-3 text-primary" />
                       </div>
+                      Technology Stack
+                    </h4>
+                    <div className="flex flex-wrap gap-2">
+                      {project.technologies.slice(0, 4).map((tech, i) => (
+                        <span key={i} className="skill-badge text-xs">
+                          {tech}
+                        </span>
+                      ))}
+                      {project.technologies.length > 4 && (
+                        <span className="skill-badge text-xs">
+                          +{project.technologies.length - 4}
+                        </span>
+                      )}
                     </div>
+                  </div>
 
-                    <div className="flex gap-4 pt-6 border-t border-white/10">
-                      <Button 
-                        size="sm" 
-                        className="btn-primary flex-1"
-                        onClick={() => toast.success("Demo access granted", {description: "Contact for live demonstration"})}
-                      >
-                        <Globe className="w-4 h-4 mr-2" />
-                        Live Demo
-                      </Button>
-                      <Button 
-                        size="sm" 
-                        variant="outline"
-                        className="glass-card border-white/20 text-foreground hover:text-white flex-1"
-                        onClick={() => toast.info("Source code available", {description: "Available for technical review"})}
-                      >
-                        <Code className="w-4 h-4 mr-2" />
-                        View Code
-                      </Button>
-                    </div>
+                  <div className="flex gap-3 pt-4 border-t border-white/10">
+                    <Button 
+                      size="sm" 
+                      className="btn-primary flex-1 text-xs py-2"
+                      onClick={() => toast.success("Demo access granted", {description: "Contact for live demonstration"})}
+                    >
+                      <Globe className="w-3 h-3 mr-1" />
+                      Live Demo
+                    </Button>
+                    <Button 
+                      size="sm" 
+                      variant="outline"
+                      className="glass-card border-white/20 text-foreground hover:text-white flex-1 text-xs py-2"
+                      onClick={() => toast.info("Source code available", {description: "Available for technical review"})}
+                    >
+                      <Code className="w-3 h-3 mr-1" />
+                      Code
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
 
-          <div className="text-center mt-20">
-            <Card className="glass-card max-w-4xl mx-auto">
-              <CardContent className="p-12">
-                <div className="mb-8">
-                  <h3 className="text-3xl font-bold mb-6 gradient-text">Enterprise-Ready Architecture Solutions</h3>
-                  <p className="text-lg text-muted-foreground leading-relaxed">
+          <div className="text-center">
+            <Card className="glass-card max-w-3xl mx-auto">
+              <CardContent className="p-8">
+                <div className="mb-6">
+                  <h3 className="text-2xl font-bold mb-4 gradient-text">Enterprise-Ready Architecture Solutions</h3>
+                  <p className="text-base text-muted-foreground leading-relaxed">
                     Partner with me to architect your next breakthrough system. I deliver enterprise-grade technical solutions, 
                     proven security practices, and scalable infrastructure that transforms ambitious visions into production reality.
                   </p>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
                     size="lg"
-                    className="btn-primary text-lg px-8 py-4"
+                    className="btn-primary text-base px-6 py-3"
                     onClick={() => handleNavClick('#contact')}
                   >
-                    <Terminal className="w-5 h-5 mr-3" />
+                    <Terminal className="w-4 h-4 mr-2" />
                     Start Enterprise Project
-                    <ArrowRight className="w-5 h-5 ml-3" />
+                    <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                   <Button 
                     size="lg"
                     variant="outline"
-                    className="glass-card border-border text-foreground hover:text-primary text-lg px-8 py-4"
+                    className="glass-card border-border text-foreground hover:text-primary text-base px-6 py-3"
                     onClick={() => toast.info("Architecture consultation", {description: "Schedule technical consultation"})}
                   >
-                    <Terminal className="w-5 h-5 mr-3" />
+                    <Terminal className="w-4 h-4 mr-2" />
                     Technical Architecture
                   </Button>
                 </div>
