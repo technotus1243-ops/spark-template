@@ -137,11 +137,12 @@ function App() {
       role: "Backend Developer", 
       period: "2020 - 2021",
       type: "Full-time",
-      description: "Built scalable microservices architecture for fintech platform",
+      description: "Built enterprise-grade blockchain infrastructure and real-time trading systems",
       achievements: [
-        "Developed 30+ REST APIs with sub-200ms response times",
-        "Engineered low-latency feed system handling 50K+ concurrent users",
-        "Implemented caching strategies improving performance by 60%"
+        "Architected Oracle service using TWAP calculations for real-time crypto price feeds across 200+ tokens",
+        "Built webhook integration system processing 100K+ real-time market updates per second",
+        "Developed 30+ REST APIs with sub-200ms response times and 99.9% uptime",
+        "Engineered distributed caching layer reducing data retrieval latency by 75%"
       ]
     }
   ]
