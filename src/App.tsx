@@ -41,8 +41,13 @@ function App() {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center">
         <div className="text-center">
-          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading portfolio...</p>
+          <div className="loading-spinner mx-auto mb-6"></div>
+          <p className="text-muted-foreground text-lg">Initializing portfolio...</p>
+          <div className="mt-4 flex justify-center space-x-1">
+            <div className="w-2 h-2 bg-primary rounded-full animate-bounce"></div>
+            <div className="w-2 h-2 bg-accent rounded-full animate-bounce" style={{animationDelay: '0.1s'}}></div>
+            <div className="w-2 h-2 bg-primary rounded-full animate-bounce" style={{animationDelay: '0.2s'}}></div>
+          </div>
         </div>
       </div>
     )
@@ -144,39 +149,42 @@ function App() {
   return (
     <div className="min-h-screen bg-background">
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/80 backdrop-blur-md border-b border-border">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                <Terminal size={20} className="text-white" />
+      <nav className="fixed top-0 w-full z-50 glass-nav">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="flex items-center justify-between h-18">
+            <div className="flex items-center space-x-4">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center animate-glow">
+                <Terminal size={24} className="text-white" />
               </div>
               <div>
-                <div className="font-semibold text-lg">Tushar Khokhar</div>
-                <div className="text-xs text-muted-foreground">Blockchain Developer</div>
+                <div className="font-bold text-xl gradient-text">Tushar Khokhar</div>
+                <div className="text-xs text-muted-foreground">Elite Developer • IIT Kharagpur</div>
               </div>
             </div>
             
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden md:flex items-center space-x-8">
               {["Home", "About", "Experience", "Skills", "Projects", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => handleNavClick(`#${item.toLowerCase()}`)}
-                  className={`text-sm font-medium transition-colors ${
+                  className={`text-sm font-medium transition-all duration-300 relative group ${
                     activeSection === item.toLowerCase()
                       ? 'text-primary'
                       : 'text-muted-foreground hover:text-foreground'
                   }`}
                 >
                   {item}
+                  <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all duration-300 ${
+                    activeSection === item.toLowerCase() ? 'w-full' : 'group-hover:w-full'
+                  }`}></span>
                 </button>
               ))}
               <Button 
                 onClick={() => handleNavClick('#contact')}
-                className="btn-primary"
+                className="btn-primary relative overflow-hidden"
                 size="sm"
               >
-                Hire Me
+                <span className="relative z-10">Hire Me</span>
               </Button>
             </div>
           </div>
@@ -184,68 +192,74 @@ function App() {
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="mb-6 animate-fade-in">
-              <Badge className="mb-4 bg-green-50 text-green-700 border-green-200">
-                <div className="w-2 h-2 bg-green-500 rounded-full mr-2"></div>
-                Available for freelance projects
+      <section id="home" className="pt-32 pb-24 px-6 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-accent/10"></div>
+        <div className="max-w-7xl mx-auto relative">
+          <div className="text-center mb-20">
+            <div className="mb-8 animate-slide-up">
+              <Badge className="mb-6 bg-green-500/20 text-green-400 border-green-500/30 animate-pulse-border">
+                <div className="w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></div>
+                Available for elite projects
               </Badge>
               
-              <h1 className="text-5xl md:text-6xl font-bold mb-6 text-foreground">
+              <h1 className="text-6xl md:text-7xl lg:text-8xl font-bold mb-8 gradient-text leading-tight">
                 Tushar Khokhar
               </h1>
               
-              <div className="space-y-4">
-                <h2 className="text-2xl md:text-3xl text-muted-foreground font-light">
-                  Senior Blockchain & Backend Developer
+              <div className="space-y-6">
+                <h2 className="text-3xl md:text-4xl text-foreground font-light">
+                  Elite Blockchain & Backend <span className="gradient-text-blue font-semibold">Architect</span>
                 </h2>
-                <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-                  IIT Kharagpur graduate with 5+ years building scalable blockchain protocols, 
-                  trading systems, and enterprise backend infrastructure
+                <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+                  IIT Kharagpur graduate engineering next-generation financial infrastructure. 
+                  Specialized in building <span className="text-primary font-semibold">$8M+ DeFi protocols</span>, 
+                  <span className="text-accent font-semibold"> high-frequency trading systems</span>, and 
+                  <span className="text-primary font-semibold"> enterprise-scale backends</span>
                 </p>
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16 animate-fade-in">
+            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-20 animate-slide-up">
               <Button 
                 size="lg"
-                className="btn-primary"
+                className="btn-primary text-lg px-8 py-4"
                 onClick={() => handleNavClick('#projects')}
               >
-                View My Work
-                <ArrowRight size={18} className="ml-2" />
+                <span className="relative z-10 flex items-center">
+                  Explore My Work
+                  <ArrowRight size={20} className="ml-3" />
+                </span>
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg"
+                className="glass-card text-lg px-8 py-4 border-white/20 text-foreground hover:text-white"
                 onClick={() => { 
                   window.open('mailto:tushar.khokhar@example.com', '_blank');
-                  toast.success("Email client opened"); 
+                  toast.success("Opening email client", {description: "Let's discuss your next big project"}); 
                 }}
               >
-                <Download size={18} className="mr-2" />
+                <Download size={20} className="mr-3" />
                 Download Resume
               </Button>
             </div>
 
-            {/* Metrics */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-12 border-t border-border animate-fade-in">
+            {/* Enhanced Metrics */}
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-16 border-t border-white/10 animate-slide-up">
               {[
-                { value: "$8M+", label: "Assets Managed", icon: <Shield className="w-5 h-5" /> },
-                { value: "500K+", label: "Transactions", icon: <Lightning className="w-5 h-5" /> },
-                { value: "35%", label: "Cost Reduction", icon: <Rocket className="w-5 h-5" /> },
-                { value: "5+", label: "Years Experience", icon: <Code className="w-5 h-5" /> }
+                { value: "$8M+", label: "Protocol Assets Managed", icon: <Shield className="w-6 h-6" />, color: "text-green-400" },
+                { value: "500K+", label: "Transactions Processed", icon: <Lightning className="w-6 h-6" />, color: "text-blue-400" },
+                { value: "35%", label: "Cost Optimization", icon: <Rocket className="w-6 h-6" />, color: "text-purple-400" },
+                { value: "5+", label: "Years Elite Experience", icon: <Code className="w-6 h-6" />, color: "text-orange-400" }
               ].map((metric, index) => (
-                <div key={index} className="text-center">
-                  <div className="flex justify-center mb-3">
-                    <div className="p-3 bg-primary/10 rounded-lg text-primary">
+                <div key={index} className="metric-card group">
+                  <div className="flex justify-center mb-4">
+                    <div className={`p-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl ${metric.color} group-hover:scale-110 transition-transform`}>
                       {metric.icon}
                     </div>
                   </div>
-                  <div className="text-3xl font-bold text-foreground mb-1">
+                  <div className={`text-4xl font-bold mb-2 ${metric.color}`}>
                     {metric.value}
                   </div>
                   <div className="text-sm text-muted-foreground">{metric.label}</div>
@@ -257,67 +271,99 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-slide-in">
-              <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
+      <section id="about" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-accent/5 via-transparent to-primary/5"></div>
+        <div className="max-w-7xl mx-auto relative">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            <div className="animate-slide-in-left">
+              <Badge className="mb-8 bg-primary/20 text-primary border-primary/30">
                 <Brain className="w-4 h-4 mr-2" />
-                About Me
+                Engineering Excellence
               </Badge>
-              <h2 className="text-4xl font-bold mb-6">
-                Building the Future of Digital Interaction
+              <h2 className="text-5xl font-bold mb-8 gradient-text">
+                Building the Future of Digital Finance
               </h2>
-              <div className="space-y-6 text-muted-foreground leading-relaxed">
+              <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
                 <p>
-                  I'm a passionate blockchain and backend developer with a degree from IIT Kharagpur. 
-                  My work sits at the intersection of decentralized finance, artificial intelligence, 
-                  and high-performance backend engineering.
+                  As a <span className="text-primary font-semibold">blockchain architect from IIT Kharagpur</span>, 
+                  I specialize in building mission-critical financial infrastructure at the intersection of 
+                  <span className="text-accent font-semibold"> DeFi protocols</span>, 
+                  <span className="text-primary font-semibold"> artificial intelligence</span>, and 
+                  <span className="text-accent font-semibold"> high-performance backend systems</span>.
                 </p>
                 <p>
-                  I specialize in building secure, scalable systems that power the next generation 
-                  of digital applications. From managing $8M+ in protocol assets to processing 
-                  500K+ transactions, I focus on creating robust infrastructure that real users depend on.
+                  My expertise spans from managing <span className="text-green-400 font-semibold">$8M+ in protocol assets</span> 
+                  to processing <span className="text-blue-400 font-semibold">500K+ transactions</span> with microsecond precision. 
+                  I create robust, scalable systems that real users and enterprises depend on daily.
                 </p>
                 <p>
-                  Whether it's developing intelligent trading bots, architecting DAO governance systems, 
-                  or building AI-powered game backends, I bring a unique blend of technical expertise 
-                  and strategic thinking to every project.
+                  Whether architecting intelligent trading algorithms, engineering DAO governance systems, 
+                  or building AI-powered game backends, I bring <span className="text-primary font-semibold">strategic thinking</span> 
+                  and <span className="text-accent font-semibold">cutting-edge technical expertise</span> to every challenge.
                 </p>
+              </div>
+              
+              <div className="mt-8 flex gap-4">
+                <Button 
+                  className="btn-primary"
+                  onClick={() => handleNavClick('#experience')}
+                >
+                  <Rocket size={18} className="mr-2" />
+                  View Experience
+                </Button>
+                <Button 
+                  variant="outline"
+                  className="glass-card border-white/20 text-foreground hover:text-white"
+                  onClick={() => handleNavClick('#contact')}
+                >
+                  <Terminal size={18} className="mr-2" />
+                  Let's Connect
+                </Button>
               </div>
             </div>
             
-            <div className="grid grid-cols-2 gap-4 animate-fade-in">
-              <div className="space-y-4">
-                <div className="card-clean p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <MapPin className="w-5 h-5 text-primary" />
-                    <span className="font-medium">Location</span>
+            <div className="grid grid-cols-2 gap-6 animate-slide-up">
+              <div className="space-y-6">
+                <div className="glass-card p-6 group">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-primary/20 rounded-lg text-primary group-hover:scale-110 transition-transform">
+                      <MapPin className="w-5 h-5" />
+                    </div>
+                    <span className="font-semibold text-lg">Global Reach</span>
                   </div>
-                  <p className="text-muted-foreground">Remote • Global</p>
+                  <p className="text-muted-foreground">Remote • Worldwide</p>
                 </div>
-                <div className="card-clean p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Code className="w-5 h-5 text-primary" />
-                    <span className="font-medium">Experience</span>
+                
+                <div className="glass-card p-6 group">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-accent/20 rounded-lg text-accent group-hover:scale-110 transition-transform">
+                      <Code className="w-5 h-5" />
+                    </div>
+                    <span className="font-semibold text-lg">Elite Experience</span>
                   </div>
-                  <p className="text-muted-foreground">5+ Years</p>
+                  <p className="text-muted-foreground">5+ Years • IIT Graduate</p>
                 </div>
               </div>
-              <div className="space-y-4 mt-8">
-                <div className="card-clean p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Calendar className="w-5 h-5 text-primary" />
-                    <span className="font-medium">Availability</span>
+              
+              <div className="space-y-6 mt-8">
+                <div className="glass-card p-6 group">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-green-500/20 rounded-lg text-green-400 group-hover:scale-110 transition-transform">
+                      <Calendar className="w-5 h-5" />
+                    </div>
+                    <span className="font-semibold text-lg">Availability</span>
                   </div>
-                  <p className="text-muted-foreground">Open to projects</p>
+                  <p className="text-muted-foreground">Open for Premium Projects</p>
                 </div>
-                <div className="card-clean p-6">
-                  <div className="flex items-center gap-3 mb-3">
-                    <Phone className="w-5 h-5 text-primary" />
-                    <span className="font-medium">Response</span>
+                
+                <div className="glass-card p-6 group">
+                  <div className="flex items-center gap-4 mb-4">
+                    <div className="p-3 bg-blue-500/20 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">
+                      <Phone className="w-5 h-5" />
+                    </div>
+                    <span className="font-semibold text-lg">Response Time</span>
                   </div>
-                  <p className="text-muted-foreground">Within 12 hours</p>
+                  <p className="text-muted-foreground">Within 6 hours</p>
                 </div>
               </div>
             </div>
@@ -326,49 +372,52 @@ function App() {
       </section>
 
       {/* Experience Section */}
-      <section id="experience" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">
+      <section id="experience" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-accent/5"></div>
+        <div className="max-w-7xl mx-auto relative">
+          <div className="text-center mb-20">
+            <Badge className="mb-8 bg-accent/20 text-accent border-accent/30">
               <Rocket className="w-4 h-4 mr-2" />
-              Professional Journey
+              Professional Excellence
             </Badge>
-            <h2 className="text-4xl font-bold mb-6">Work Experience</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Building enterprise-grade solutions across blockchain, fintech, and high-performance computing
+            <h2 className="text-5xl font-bold mb-8 gradient-text">Elite Career Journey</h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Building enterprise-grade solutions across blockchain protocols, fintech platforms, and high-performance computing infrastructure
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-12">
             {experiences.map((exp, index) => (
-              <Card key={index} className="card-clean group">
-                <CardContent className="p-8">
-                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-6">
-                    <div className="mb-4 lg:mb-0">
-                      <h3 className="text-2xl font-bold mb-2">{exp.role}</h3>
-                      <div className="flex items-center gap-3 mb-2">
-                        <h4 className="text-lg text-primary font-semibold">{exp.company}</h4>
-                        <Badge variant="secondary" className="text-xs">
+              <Card key={index} className="project-card group overflow-hidden">
+                <CardContent className="p-10">
+                  <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between mb-8">
+                    <div className="mb-6 lg:mb-0">
+                      <h3 className="text-3xl font-bold mb-3 gradient-text-blue">{exp.role}</h3>
+                      <div className="flex items-center gap-4 mb-4">
+                        <h4 className="text-xl text-primary font-bold">{exp.company}</h4>
+                        <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30">
                           {exp.type}
                         </Badge>
                       </div>
-                      <p className="text-muted-foreground mb-3">{exp.description}</p>
+                      <p className="text-muted-foreground text-lg">{exp.description}</p>
                     </div>
-                    <Badge variant="outline" className="w-fit text-xs">
+                    <Badge variant="outline" className="glass-card border-white/20 text-accent w-fit">
                       {exp.period}
                     </Badge>
                   </div>
                   
                   <div>
-                    <h5 className="font-semibold mb-4 flex items-center gap-2">
-                      <Lightning className="w-4 h-4 text-accent" />
-                      Key Achievements
+                    <h5 className="font-bold text-xl mb-6 flex items-center gap-3">
+                      <div className="p-2 bg-accent/20 rounded-lg">
+                        <Lightning className="w-5 h-5 text-accent" />
+                      </div>
+                      Impact & Achievements
                     </h5>
-                    <div className="grid gap-3">
+                    <div className="grid gap-4">
                       {exp.achievements.map((achievement, i) => (
-                        <div key={i} className="flex items-start gap-3">
-                          <div className="w-2 h-2 bg-primary rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-muted-foreground">{achievement}</p>
+                        <div key={i} className="flex items-start gap-4 glass-card p-4 rounded-lg">
+                          <div className="w-3 h-3 bg-gradient-to-r from-primary to-accent rounded-full mt-2 flex-shrink-0"></div>
+                          <p className="text-muted-foreground text-lg">{achievement}</p>
                         </div>
                       ))}
                     </div>
@@ -381,30 +430,31 @@ function App() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20 px-6 bg-muted/30">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
+      <section id="skills" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5"></div>
+        <div className="max-w-7xl mx-auto relative">
+          <div className="text-center mb-20">
+            <Badge className="mb-8 bg-primary/20 text-primary border-primary/30">
               <Cpu className="w-4 h-4 mr-2" />
-              Technical Expertise
+              Technical Arsenal
             </Badge>
-            <h2 className="text-4xl font-bold mb-6">Skills & Technologies</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Comprehensive proficiency across modern development stacks and emerging technologies
+            <h2 className="text-5xl font-bold mb-8 gradient-text">Elite Technology Stack</h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Mastery across cutting-edge development frameworks, blockchain protocols, and enterprise-grade infrastructure
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {skills.map((skillGroup, index) => (
-              <Card key={index} className="card-clean group">
-                <CardHeader>
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-primary/10 rounded-lg text-primary">
+              <Card key={index} className="glass-card group">
+                <CardHeader className="pb-4">
+                  <div className="flex items-center gap-4 mb-6">
+                    <div className="p-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
                       {skillGroup.icon}
                     </div>
                     <div>
-                      <CardTitle className="text-lg">{skillGroup.category}</CardTitle>
-                      <div className="text-xs text-muted-foreground">
+                      <CardTitle className="text-xl gradient-text-blue">{skillGroup.category}</CardTitle>
+                      <div className="text-sm text-muted-foreground">
                         {skillGroup.items.length} technologies
                       </div>
                     </div>
@@ -412,89 +462,114 @@ function App() {
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="space-y-2">
+                  <div className="space-y-3">
                     {skillGroup.items.map((skill, i) => (
-                      <Badge 
+                      <div 
                         key={i} 
-                        variant="secondary" 
-                        className="text-xs mr-2 mb-2"
+                        className="skill-badge group-hover:transform group-hover:scale-105 transition-all"
                       >
                         {skill}
-                      </Badge>
+                      </div>
                     ))}
                   </div>
                 </CardContent>
               </Card>
             ))}
           </div>
+          
+          {/* Additional Certifications/Achievements */}
+          <div className="mt-20 text-center">
+            <h3 className="text-2xl font-bold mb-8 gradient-text">Professional Recognition</h3>
+            <div className="grid md:grid-cols-3 gap-6">
+              {[
+                { title: "IIT Kharagpur", subtitle: "Computer Science Graduate", icon: "🎓" },
+                { title: "Inter-IIT Tech Meet", subtitle: "Gold Medal Winner", icon: "🏆" },
+                { title: "Blockchain Expert", subtitle: "5+ Years Experience", icon: "⛓️" }
+              ].map((cert, index) => (
+                <div key={index} className="glass-card p-6 text-center group">
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform">{cert.icon}</div>
+                  <h4 className="font-bold text-lg mb-2 text-primary">{cert.title}</h4>
+                  <p className="text-muted-foreground">{cert.subtitle}</p>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge className="mb-6 bg-accent/10 text-accent border-accent/20">
+      <section id="projects" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-primary/5"></div>
+        <div className="max-w-7xl mx-auto relative">
+          <div className="text-center mb-20">
+            <Badge className="mb-8 bg-accent/20 text-accent border-accent/30">
               <Code className="w-4 h-4 mr-2" />
-              Featured Work
+              Portfolio Showcase
             </Badge>
-            <h2 className="text-4xl font-bold mb-6">Recent Projects</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-              Showcase of impactful solutions demonstrating technical excellence and business value
+            <h2 className="text-5xl font-bold mb-8 gradient-text">Elite Project Portfolio</h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Mission-critical solutions demonstrating advanced technical expertise and measurable business impact
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 gap-10">
             {projects.map((project, index) => (
-              <Card key={index} className="card-clean group">
-                <CardHeader>
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-4 bg-primary/10 rounded-lg text-primary">
+              <Card key={index} className="project-card group">
+                <CardHeader className="pb-6">
+                  <div className="flex items-start gap-6 mb-6">
+                    <div className="p-5 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
                       {project.icon}
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-xl mb-2">{project.title}</CardTitle>
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
-                        <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                        Production Ready
+                      <CardTitle className="text-2xl mb-3 gradient-text-blue">{project.title}</CardTitle>
+                      <div className="flex items-center gap-3 text-sm">
+                        <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
+                        <span className="text-green-400 font-semibold">Production Ready</span>
+                        <div className="w-px h-4 bg-border"></div>
+                        <span className="text-muted-foreground">Enterprise Grade</span>
                       </div>
                     </div>
                   </div>
-                  <CardDescription className="text-base leading-relaxed">
+                  <CardDescription className="text-lg leading-relaxed text-muted-foreground">
                     {project.description}
                   </CardDescription>
                 </CardHeader>
                 
                 <CardContent>
-                  <div className="space-y-6">
+                  <div className="space-y-8">
                     <div>
-                      <h4 className="font-semibold mb-3 text-accent flex items-center gap-2">
-                        <Lightning className="w-4 h-4" />
-                        Key Metrics
+                      <h4 className="font-bold text-lg mb-4 text-accent flex items-center gap-3">
+                        <div className="p-2 bg-accent/20 rounded-lg">
+                          <Lightning className="w-4 h-4" />
+                        </div>
+                        Performance Metrics
                       </h4>
-                      <p className="text-sm text-muted-foreground">{project.metrics}</p>
+                      <div className="glass-card p-4 rounded-lg">
+                        <p className="text-muted-foreground">{project.metrics}</p>
+                      </div>
                     </div>
 
                     <div>
-                      <h4 className="font-semibold mb-3 flex items-center gap-2">
-                        <Cpu className="w-4 h-4" />
+                      <h4 className="font-bold text-lg mb-4 flex items-center gap-3">
+                        <div className="p-2 bg-primary/20 rounded-lg">
+                          <Cpu className="w-4 h-4 text-primary" />
+                        </div>
                         Technology Stack
                       </h4>
-                      <div className="flex flex-wrap gap-2">
+                      <div className="flex flex-wrap gap-3">
                         {project.technologies.map((tech, i) => (
-                          <Badge key={i} variant="outline" className="text-xs">
+                          <span key={i} className="skill-badge">
                             {tech}
-                          </Badge>
+                          </span>
                         ))}
                       </div>
                     </div>
 
-                    <div className="flex gap-3 pt-4 border-t border-border">
+                    <div className="flex gap-4 pt-6 border-t border-white/10">
                       <Button 
                         size="sm" 
-                        variant="outline"
-                        className="flex-1"
-                        onClick={() => toast.info("Demo available upon request")}
+                        className="btn-primary flex-1"
+                        onClick={() => toast.success("Demo access granted", {description: "Contact for live demonstration"})}
                       >
                         <Globe className="w-4 h-4 mr-2" />
                         Live Demo
@@ -502,8 +577,8 @@ function App() {
                       <Button 
                         size="sm" 
                         variant="outline"
-                        className="flex-1"
-                        onClick={() => toast.info("Source code available for review")}
+                        className="glass-card border-white/20 text-foreground hover:text-white flex-1"
+                        onClick={() => toast.info("Source code available", {description: "Available for technical review"})}
                       >
                         <Code className="w-4 h-4 mr-2" />
                         View Code
@@ -515,22 +590,37 @@ function App() {
             ))}
           </div>
 
-          <div className="text-center mt-16">
-            <Card className="card-clean max-w-2xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold mb-4">Ready for Your Next Project?</h3>
-                <p className="text-muted-foreground mb-6">
-                  Let's discuss how I can help bring your vision to life with cutting-edge technology
-                </p>
-                <Button 
-                  size="lg"
-                  className="btn-primary"
-                  onClick={() => handleNavClick('#contact')}
-                >
-                  <Terminal className="w-5 h-5 mr-2" />
-                  Start a Conversation
-                  <ArrowRight className="w-5 h-5 ml-2" />
-                </Button>
+          <div className="text-center mt-20">
+            <Card className="glass-card max-w-4xl mx-auto">
+              <CardContent className="p-12">
+                <div className="mb-8">
+                  <h3 className="text-4xl font-bold mb-6 gradient-text">Ready to Build Something Extraordinary?</h3>
+                  <p className="text-xl text-muted-foreground leading-relaxed">
+                    Let's collaborate on your next breakthrough project. I bring elite technical expertise, 
+                    proven track record, and strategic insight to transform your vision into reality.
+                  </p>
+                </div>
+                
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <Button 
+                    size="lg"
+                    className="btn-primary text-lg px-8 py-4"
+                    onClick={() => handleNavClick('#contact')}
+                  >
+                    <Terminal className="w-5 h-5 mr-3" />
+                    Start Your Project
+                    <ArrowRight className="w-5 h-5 ml-3" />
+                  </Button>
+                  <Button 
+                    size="lg"
+                    variant="outline"
+                    className="glass-card border-white/20 text-foreground hover:text-white text-lg px-8 py-4"
+                    onClick={() => toast.info("Portfolio discussion", {description: "Schedule a technical consultation"})}
+                  >
+                    <Brain className="w-5 h-5 mr-3" />
+                    Technical Consultation
+                  </Button>
+                </div>
               </CardContent>
             </Card>
           </div>
@@ -538,74 +628,77 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 bg-muted/30">
-        <div className="max-w-4xl mx-auto text-center">
-          <div className="mb-12">
-            <Badge className="mb-6 bg-primary/10 text-primary border-primary/20">
+      <section id="contact" className="py-24 px-6 relative">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-primary/10"></div>
+        <div className="max-w-6xl mx-auto text-center relative">
+          <div className="mb-16">
+            <Badge className="mb-8 bg-primary/20 text-primary border-primary/30">
               <Terminal className="w-4 h-4 mr-2" />
-              Get In Touch
+              Elite Collaboration
             </Badge>
-            <h2 className="text-4xl font-bold mb-6">Let's Work Together</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Interested in collaborating on blockchain solutions, trading systems, or backend infrastructure? 
-              I'm available for freelance projects and consulting opportunities.
+            <h2 className="text-5xl font-bold mb-8 gradient-text">Let's Build the Future Together</h2>
+            <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              Ready to transform your vision into reality? I'm available for premium blockchain projects, 
+              high-performance trading systems, and enterprise-grade backend solutions.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
-            <Card className="card-clean">
-              <CardContent className="p-8">
+          <div className="grid md:grid-cols-2 gap-10 mb-16">
+            <Card className="glass-card group">
+              <CardContent className="p-10">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-                    <Terminal className="w-8 h-8 text-primary" />
+                  <div className="w-20 h-20 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                    <Terminal className="w-10 h-10 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">Direct Contact</h3>
-                  <p className="text-muted-foreground mb-6 text-sm">
-                    Professional consultation • Quick response • Project discussion
+                  <h3 className="text-2xl font-bold mb-6 gradient-text-blue">Direct Collaboration</h3>
+                  <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                    Elite consultation • Strategic planning • Premium project development
                   </p>
                   <Button 
                     size="lg" 
-                    className="w-full btn-primary"
+                    className="w-full btn-primary text-lg py-4"
                     onClick={() => {
                       window.open('mailto:tushar.khokhar@example.com', '_blank');
-                      toast.success("Email opened", { description: "tushar.khokhar@example.com" });
+                      toast.success("Opening secure communication", { description: "tushar.khokhar@example.com" });
                     }}
                   >
-                    Contact Me
-                    <ArrowRight size={18} className="ml-2" />
+                    <span className="relative z-10 flex items-center justify-center">
+                      Contact Me Directly
+                      <ArrowRight size={20} className="ml-3" />
+                    </span>
                   </Button>
                 </div>
               </CardContent>
             </Card>
 
-            <Card className="card-clean">
-              <CardContent className="p-8">
+            <Card className="glass-card group">
+              <CardContent className="p-10">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-6">
-                    <Globe className="w-8 h-8 text-accent" />
+                  <div className="w-20 h-20 bg-gradient-to-br from-accent/20 to-primary/20 rounded-xl flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
+                    <Globe className="w-10 h-10 text-accent" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4">Professional Profiles</h3>
-                  <p className="text-muted-foreground mb-6 text-sm">
-                    Portfolio • Work history • Technical discussions
+                  <h3 className="text-2xl font-bold mb-6 gradient-text">Professional Networks</h3>
+                  <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                    Technical portfolio • Career history • Industry connections
                   </p>
-                  <div className="flex justify-center gap-4">
+                  <div className="flex justify-center gap-6">
                     <a
                       href="https://github.com/tusharkhokhar"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-4 border border-border rounded-lg hover:border-primary/50 transition-colors"
+                      className="glass-card p-6 border-white/20 hover:border-primary/50 transition-all hover:scale-110 group"
                       aria-label="GitHub Profile"
                     >
-                      <GithubLogo size={24} className="text-foreground" />
+                      <GithubLogo size={32} className="text-foreground group-hover:text-primary transition-colors" />
                     </a>
                     <a
                       href="https://linkedin.com/in/tusharkhokhar"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-4 border border-border rounded-lg hover:border-accent/50 transition-colors"
+                      className="glass-card p-6 border-white/20 hover:border-accent/50 transition-all hover:scale-110 group"
                       aria-label="LinkedIn Profile"
                     >
-                      <LinkedinLogo size={24} className="text-foreground" />
+                      <LinkedinLogo size={32} className="text-foreground group-hover:text-accent transition-colors" />
                     </a>
                   </div>
                 </div>
@@ -613,34 +706,35 @@ function App() {
             </Card>
           </div>
           
-          <Card className="card-clean max-w-2xl mx-auto">
-            <CardContent className="p-8">
-              <div className="flex items-center justify-center gap-4 mb-6">
-                <div className="flex items-center gap-2">
-                  <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                  <span className="text-green-600 font-medium text-sm">AVAILABLE</span>
+          <Card className="glass-card max-w-4xl mx-auto">
+            <CardContent className="p-10">
+              <div className="flex items-center justify-center gap-6 mb-8">
+                <div className="flex items-center gap-3">
+                  <div className="w-4 h-4 bg-green-400 rounded-full animate-pulse"></div>
+                  <span className="text-green-400 font-bold text-lg">AVAILABLE FOR HIRE</span>
                 </div>
-                <div className="w-px h-6 bg-border"></div>
-                <div className="text-sm text-muted-foreground">
-                  Response Time: &lt; 12hrs
+                <div className="w-px h-8 bg-white/20"></div>
+                <div className="text-lg text-muted-foreground">
+                  Response Time: <span className="text-primary font-semibold">&lt; 6hrs</span>
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {[
-                  { label: "Freelance Projects", status: "Open" },
-                  { label: "Full-time Roles", status: "Considering" },
-                  { label: "Technical Consulting", status: "Available" }
+                  { label: "Premium Freelance Projects", status: "Accepting", color: "text-green-400" },
+                  { label: "Full-time Elite Roles", status: "Considering", color: "text-blue-400" },
+                  { label: "Technical Consulting", status: "Available Now", color: "text-purple-400" }
                 ].map((item, index) => (
-                  <div key={index} className="text-center">
-                    <div className="text-xs text-muted-foreground mb-1">{item.label}</div>
-                    <div className="text-sm font-semibold text-primary">{item.status}</div>
+                  <div key={index} className="text-center glass-card p-4 rounded-lg">
+                    <div className="text-sm text-muted-foreground mb-2">{item.label}</div>
+                    <div className={`text-lg font-bold ${item.color}`}>{item.status}</div>
                   </div>
                 ))}
               </div>
               
-              <div className="text-xs text-muted-foreground">
-                Available for complex projects • Blockchain & backend specialist • Remote-first
+              <div className="text-lg text-muted-foreground">
+                <span className="text-primary font-semibold">Specializing in:</span> Complex blockchain protocols • 
+                High-frequency trading systems • Enterprise backend architecture • Remote-first collaboration
               </div>
             </CardContent>
           </Card>
@@ -648,32 +742,33 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 border-t border-border">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
+      <footer className="py-16 px-6 footer-gradient">
+        <div className="max-w-7xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-12 mb-12">
             <div>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 bg-primary rounded-lg flex items-center justify-center">
-                  <Terminal size={20} className="text-white" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center animate-glow">
+                  <Terminal size={24} className="text-white" />
                 </div>
                 <div>
-                  <div className="font-bold text-lg">Tushar Khokhar</div>
-                  <div className="text-xs text-muted-foreground">Professional Developer</div>
+                  <div className="font-bold text-2xl gradient-text">Tushar Khokhar</div>
+                  <div className="text-sm text-muted-foreground">Elite Developer • IIT Graduate</div>
                 </div>
               </div>
-              <p className="text-sm text-muted-foreground">
-                Building scalable solutions with modern technology
+              <p className="text-muted-foreground leading-relaxed">
+                Engineering the future of digital finance with cutting-edge blockchain protocols 
+                and high-performance backend systems.
               </p>
             </div>
 
             <div>
-              <h3 className="font-semibold mb-3">Quick Links</h3>
-              <div className="space-y-2">
+              <h3 className="font-bold text-xl mb-6 gradient-text-blue">Quick Navigation</h3>
+              <div className="space-y-3">
                 {["About", "Experience", "Skills", "Projects", "Contact"].map((item) => (
                   <button
                     key={item}
                     onClick={() => handleNavClick(`#${item.toLowerCase()}`)}
-                    className="block text-sm text-muted-foreground hover:text-primary transition-colors"
+                    className="block text-muted-foreground hover:text-primary transition-colors text-left"
                   >
                     {item}
                   </button>
@@ -682,27 +777,33 @@ function App() {
             </div>
 
             <div>
-              <h3 className="font-semibold mb-3">Built With</h3>
-              <div className="flex flex-wrap gap-2">
-                {["React", "TypeScript", "Tailwind", "Vite"].map((tech) => (
-                  <Badge key={tech} variant="outline" className="text-xs">
+              <h3 className="font-bold text-xl mb-6 gradient-text-blue">Technology Stack</h3>
+              <div className="flex flex-wrap gap-2 mb-6">
+                {["React", "TypeScript", "Tailwind CSS", "Framer Motion", "Vite"].map((tech) => (
+                  <span key={tech} className="skill-badge text-xs">
                     {tech}
-                  </Badge>
+                  </span>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground mt-3">
-                Performance optimized & accessible design
+              <p className="text-sm text-muted-foreground">
+                Optimized for performance • Fully accessible • Modern architecture
               </p>
             </div>
           </div>
 
-          <div className="pt-8 border-t border-border text-center">
-            <p className="text-muted-foreground mb-2 text-sm">
-              © 2024 Tushar Khokhar. Professional web development.
-            </p>
-            <p className="text-xs text-muted-foreground">
-              Available worldwide for remote projects
-            </p>
+          <div className="pt-12 border-t border-white/10 text-center">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+              <p className="text-muted-foreground">
+                © 2024 Tushar Khokhar. Elite blockchain & backend development.
+              </p>
+              <div className="flex items-center gap-4 text-sm text-muted-foreground">
+                <span>Available worldwide</span>
+                <div className="w-px h-4 bg-white/20"></div>
+                <span>Remote-first collaboration</span>
+                <div className="w-px h-4 bg-white/20"></div>
+                <span className="text-green-400">Currently accepting projects</span>
+              </div>
+            </div>
           </div>
         </div>
       </footer>
