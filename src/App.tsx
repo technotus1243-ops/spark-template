@@ -1,6 +1,5 @@
-import { useState, useEffect } from "react"
 import { Navigation } from "./components/Navigation"
-import { Hero3D } from "./components/Hero3D"
+import { SimpleHero } from "./components/SimpleHero"
 import { About } from "./components/About"
 import { Skills } from "./components/Skills"
 import { Projects } from "./components/Projects"
@@ -9,34 +8,11 @@ import { Footer } from "./components/Footer"
 import { Toaster } from "@/components/ui/sonner"
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Optimized loading - even faster
-    const timer = setTimeout(() => {
-      setIsLoading(false)
-    }, 150)
-
-    return () => clearTimeout(timer)
-  }, [])
-
-  if (isLoading) {
-    return (
-      <div className="min-h-screen bg-background flex items-center justify-center">
-        <div className="text-center">
-          <div className="w-8 h-8 border-2 border-primary border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <h2 className="text-lg font-display text-primary mb-1">Tushar Khokhar</h2>
-          <p className="text-sm text-muted-foreground font-mono">Blockchain Engineer</p>
-        </div>
-      </div>
-    )
-  }
-
   return (
     <div className="min-h-screen bg-background">
       <Navigation />
       <main className="relative">
-        <Hero3D />
+        <SimpleHero />
         <About />
         <Skills />
         <Projects />
@@ -58,3 +34,5 @@ function App() {
 }
 
 export default App
+
+
