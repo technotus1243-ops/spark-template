@@ -118,11 +118,10 @@ function App() {
       role: "Senior Blockchain Developer",
       period: "Feb 2025 - Apr 2025",
       type: "Contract",
-      description: "Architected mission-critical DAO governance infrastructure and DeFi protocol integrations",
+      description: "Mission-critical DAO governance and DeFi protocol integrations",
       achievements: [
-        "Engineered DAO governance smart contracts securing $8M+ in protocol treasury assets with multi-signature security",
-        "Led Velodrome DEX integration achieving 35% gas fee reduction through optimized routing and transaction batching",
-        "Implemented cross-chain bridge infrastructure processing 100K+ daily transactions with zero security incidents"
+        "Engineered DAO governance smart contracts securing $8M+ in protocol treasury with multi-signature security",
+        "Led Velodrome DEX integration achieving 35% gas fee reduction through optimized routing and batching"
       ]
     },
     {
@@ -130,11 +129,10 @@ function App() {
       role: "Blockchain Developer",
       period: "Nov 2024 - Feb 2025",
       type: "Full-time",
-      description: "Built high-performance Rust smart contracts for enterprise NFT marketplace infrastructure",
+      description: "High-performance Rust smart contracts for enterprise NFT marketplace",
       achievements: [
         "Developed foundational Rust smart contract architecture processing 500K+ NFT transactions",
-        "Built bulk NFT minting infrastructure enabling 1,000+ creators to mint collections seamlessly",
-        "Optimized smart contract gas efficiency reducing transaction costs by 40% through advanced batching"
+        "Built bulk NFT minting infrastructure enabling 1,000+ creators to mint collections seamlessly"
       ]
     },
     {
@@ -142,10 +140,9 @@ function App() {
       role: "Rust Developer & DevOps Engineer", 
       period: "Nov 2023 - Nov 2024",
       type: "Full-time",
-      description: "Designed zero-knowledge cloud-native GPU clustering platform with enterprise security",
+      description: "Zero-knowledge cloud-native GPU clustering platform with enterprise security",
       achievements: [
         "Architected first-of-its-kind zero-knowledge GPU-clustering platform supporting local GPU connections",
-        "Automated Kubernetes workflows with Docker integration and Ray framework for distributed computing",
         "Engineered ZK-layered pipeline reducing ML compute costs by 40% and increasing GPU throughput by 60%"
       ]
     },
@@ -154,11 +151,10 @@ function App() {
       role: "Backend Developer & Infrastructure Engineer", 
       period: "May 2021 - Jun 2025",
       type: "Full-time",
-      description: "Built enterprise-grade trading infrastructure, Oracle services, and high-performance API systems",
+      description: "Enterprise trading infrastructure, Oracle services, and high-performance API systems",
       achievements: [
-        "Architected Oracle service using TWAP calculations delivering real-time price feeds for 200+ cryptocurrency tokens",
-        "Built webhook integration system processing 100K+ real-time market updates per second with sub-millisecond latency",
-        "Developed and maintained 30+ microservice-based REST APIs achieving sub-200ms response times and 99.9% uptime"
+        "Architected Oracle service using TWAP calculations delivering real-time price feeds for 200+ tokens",
+        "Built webhook integration system processing 100K+ real-time market updates per second with sub-ms latency"
       ]
     }
   ]
@@ -289,101 +285,83 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 px-6 relative">
-        <div className="max-w-7xl mx-auto relative">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="animate-slide-in-left">
-              <Badge className="mb-8 bg-primary/20 text-primary border-primary/30">
-                <Terminal className="w-4 h-4 mr-2" />
-                Technical Excellence
-              </Badge>
-              <h2 className="text-4xl font-bold mb-8 gradient-text">
-                Engineering Mission-Critical Infrastructure
-              </h2>
-              <div className="space-y-6 text-muted-foreground leading-relaxed text-lg">
-                <p>
-                  As a <span className="text-primary font-semibold">blockchain architect and backend engineer</span> from IIT Kharagpur, 
-                  I specialize in building enterprise-grade systems that secure 
-                  <span className="text-accent font-semibold"> millions of dollars in protocol assets</span> and 
-                  <span className="text-primary font-semibold"> process hundreds of thousands of transactions</span> with zero tolerance for failure.
-                </p>
-                <p>
-                  My expertise spans from architecting <span className="text-emerald-400 font-semibold">DAO governance protocols managing $8M+</span> 
-                  to building <span className="text-blue-400 font-semibold">real-time collaborative platforms</span> and 
-                  <span className="text-purple-400 font-semibold">zero-knowledge GPU computing infrastructure</span>. 
-                  I create robust, scalable systems that enterprises and protocols depend on daily.
-                </p>
-                <p>
-                  Whether developing smart contracts with <span className="text-primary font-semibold">Rust and Solidity</span>, 
-                  engineering distributed systems with <span className="text-accent font-semibold">Node.js and Python</span>, 
-                  or architecting cloud infrastructure with <span className="text-emerald-400 font-semibold">Kubernetes and Docker</span>, 
-                  I bring security-first thinking and performance optimization expertise to every challenge.
-                </p>
+      <section id="about" className="py-16 px-6 relative">
+        <div className="max-w-6xl mx-auto relative">
+          <div className="text-center mb-12">
+            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+              <Terminal className="w-4 h-4 mr-2" />
+              Technical Excellence
+            </Badge>
+            <h2 className="text-3xl font-bold mb-6 gradient-text">
+              Engineering Mission-Critical Infrastructure
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+              As a <span className="text-primary font-semibold">blockchain architect and backend engineer</span> from IIT Kharagpur, 
+              I specialize in building enterprise-grade systems that secure 
+              <span className="text-accent font-semibold"> millions of dollars in protocol assets</span> and 
+              <span className="text-primary font-semibold"> process hundreds of thousands of transactions</span> with zero tolerance for failure.
+            </p>
+          </div>
+
+          <div className="grid lg:grid-cols-4 gap-6">
+            <div className="glass-card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-primary/20 rounded-lg text-primary group-hover:scale-110 transition-transform">
+                  <MapPin className="w-5 h-5" />
+                </div>
+                <span className="font-semibold">Location</span>
               </div>
-              
-              <div className="mt-8 flex gap-4">
-                <Button 
-                  className="btn-primary"
-                  onClick={() => handleNavClick('#experience')}
-                >
-                  <Rocket size={18} className="mr-2" />
-                  Technical Experience
-                </Button>
-                <Button 
-                  variant="outline"
-                  className="glass-card border-border text-foreground hover:text-primary"
-                  onClick={() => handleNavClick('#contact')}
-                >
-                  <Terminal size={18} className="mr-2" />
-                  Enterprise Consultation
-                </Button>
-              </div>
+              <p className="text-muted-foreground text-sm">Remote • Global</p>
             </div>
             
-            <div className="grid grid-cols-2 gap-6 animate-slide-up">
-              <div className="space-y-6">
-                <div className="glass-card p-6 group">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-primary/20 rounded-lg text-primary group-hover:scale-110 transition-transform">
-                      <MapPin className="w-5 h-5" />
-                    </div>
-                    <span className="font-semibold text-lg">Location</span>
-                  </div>
-                  <p className="text-muted-foreground">Remote • Global</p>
+            <div className="glass-card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-accent/20 rounded-lg text-accent group-hover:scale-110 transition-transform">
+                  <Code className="w-5 h-5" />
                 </div>
-                
-                <div className="glass-card p-6 group">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-accent/20 rounded-lg text-accent group-hover:scale-110 transition-transform">
-                      <Code className="w-5 h-5" />
-                    </div>
-                    <span className="font-semibold text-lg">Specialization</span>
-                  </div>
-                  <p className="text-muted-foreground">Blockchain • Backend • DevOps</p>
-                </div>
+                <span className="font-semibold">Focus</span>
               </div>
-              
-              <div className="space-y-6 mt-8">
-                <div className="glass-card p-6 group">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-emerald-500/20 rounded-lg text-emerald-400 group-hover:scale-110 transition-transform">
-                      <Calendar className="w-5 h-5" />
-                    </div>
-                    <span className="font-semibold text-lg">Availability</span>
-                  </div>
-                  <p className="text-muted-foreground">Enterprise Projects Only</p>
+              <p className="text-muted-foreground text-sm">Blockchain • Backend • DevOps</p>
+            </div>
+            
+            <div className="glass-card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-emerald-500/20 rounded-lg text-emerald-400 group-hover:scale-110 transition-transform">
+                  <Calendar className="w-5 h-5" />
                 </div>
-                
-                <div className="glass-card p-6 group">
-                  <div className="flex items-center gap-4 mb-4">
-                    <div className="p-3 bg-blue-500/20 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">
-                      <Phone className="w-5 h-5" />
-                    </div>
-                    <span className="font-semibold text-lg">Response Time</span>
-                  </div>
-                  <p className="text-muted-foreground">Within 4 hours</p>
-                </div>
+                <span className="font-semibold">Availability</span>
               </div>
+              <p className="text-muted-foreground text-sm">Enterprise Projects</p>
+            </div>
+            
+            <div className="glass-card p-6 group">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">
+                  <Phone className="w-5 h-5" />
+                </div>
+                <span className="font-semibold">Response</span>
+              </div>
+              <p className="text-muted-foreground text-sm">Within 4 hours</p>
+            </div>
+          </div>
+          
+          <div className="mt-12 text-center">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Button 
+                className="btn-primary"
+                onClick={() => handleNavClick('#experience')}
+              >
+                <Rocket size={18} className="mr-2" />
+                View Experience
+              </Button>
+              <Button 
+                variant="outline"
+                className="glass-card border-border text-foreground hover:text-primary"
+                onClick={() => handleNavClick('#contact')}
+              >
+                <Terminal size={18} className="mr-2" />
+                Start Project
+              </Button>
             </div>
           </div>
         </div>
@@ -392,7 +370,7 @@ function App() {
       {/* Experience Section */}
       <section id="experience" className="py-16 px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-accent/5"></div>
-        <div className="max-w-7xl mx-auto relative">
+        <div className="max-w-6xl mx-auto relative">
           <div className="text-center mb-12">
             <Badge className="mb-6 bg-accent/20 text-accent border-accent/30">
               <Rocket className="w-4 h-4 mr-2" />
@@ -404,49 +382,56 @@ function App() {
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="space-y-8">
             {experiences.map((exp, index) => (
-              <Card key={index} className="project-card group overflow-hidden h-fit">
+              <Card key={index} className="project-card group overflow-hidden">
                 <CardContent className="p-6">
-                  <div className="flex flex-col mb-6">
-                    <div className="flex items-start justify-between mb-4">
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-2 gradient-text-blue">{exp.role}</h3>
-                        <div className="flex items-center gap-3 mb-2">
-                          <h4 className="text-lg text-primary font-bold">{exp.company}</h4>
-                          <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30 text-xs">
-                            {exp.type}
-                          </Badge>
+                  <div className="grid lg:grid-cols-3 gap-6">
+                    {/* Company & Role Info */}
+                    <div className="lg:col-span-1">
+                      <div className="flex items-start gap-3 mb-4">
+                        <div className="p-2 bg-primary/20 rounded-lg">
+                          <Lightning className="w-5 h-5 text-primary" />
                         </div>
-                        <p className="text-muted-foreground text-sm mb-3">{exp.description}</p>
+                        <div className="flex-1">
+                          <h3 className="text-lg font-bold gradient-text-blue mb-1">{exp.role}</h3>
+                          <h4 className="text-base text-primary font-semibold mb-2">{exp.company}</h4>
+                          <div className="flex gap-2 mb-3">
+                            <Badge variant="secondary" className="bg-primary/20 text-primary border-primary/30 text-xs">
+                              {exp.type}
+                            </Badge>
+                            <Badge variant="outline" className="glass-card border-white/20 text-accent text-xs">
+                              {exp.period}
+                            </Badge>
+                          </div>
+                          <p className="text-muted-foreground text-sm">{exp.description}</p>
+                        </div>
                       </div>
-                      <Badge variant="outline" className="glass-card border-white/20 text-accent text-xs ml-4">
-                        {exp.period}
-                      </Badge>
                     </div>
-                  </div>
-                  
-                  <div>
-                    <h5 className="font-bold text-base mb-4 flex items-center gap-2">
-                      <div className="p-1.5 bg-accent/20 rounded-lg">
-                        <Lightning className="w-4 h-4 text-accent" />
+                    
+                    {/* Key Achievements */}
+                    <div className="lg:col-span-2">
+                      <h5 className="font-bold text-sm mb-4 flex items-center gap-2">
+                        <div className="p-1 bg-accent/20 rounded">
+                          <ChartLineUp className="w-4 h-4 text-accent" />
+                        </div>
+                        Key Achievements
+                      </h5>
+                      <div className="grid gap-3">
+                        {exp.achievements.slice(0, 2).map((achievement, i) => (
+                          <div key={i} className="flex items-start gap-3 glass-card p-3 rounded-lg">
+                            <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mt-2 flex-shrink-0"></div>
+                            <p className="text-muted-foreground text-sm">{achievement}</p>
+                          </div>
+                        ))}
+                        {exp.achievements.length > 2 && (
+                          <div className="text-center">
+                            <Badge variant="outline" className="text-xs">
+                              +{exp.achievements.length - 2} more achievements
+                            </Badge>
+                          </div>
+                        )}
                       </div>
-                      Key Achievements
-                    </h5>
-                    <div className="space-y-3">
-                      {exp.achievements.slice(0, 3).map((achievement, i) => (
-                        <div key={i} className="flex items-start gap-3 glass-card p-3 rounded-lg">
-                          <div className="w-2 h-2 bg-gradient-to-r from-primary to-accent rounded-full mt-2 flex-shrink-0"></div>
-                          <p className="text-muted-foreground text-sm">{achievement}</p>
-                        </div>
-                      ))}
-                      {exp.achievements.length > 3 && (
-                        <div className="text-center">
-                          <Badge variant="outline" className="text-xs">
-                            +{exp.achievements.length - 3} more achievements
-                          </Badge>
-                        </div>
-                      )}
                     </div>
                   </div>
                 </CardContent>
