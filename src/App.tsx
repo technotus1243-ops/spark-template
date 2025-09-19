@@ -40,7 +40,7 @@ function App() {
   if (!mounted) {
     return (
       <div className="min-h-screen bg-background flex items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 cyber-grid opacity-20"></div>
+        <div className="absolute inset-0 cyber-grid opacity-5"></div>
         <div className="relative z-10 flex flex-col items-center">
           <div className="animate-neon-pulse w-16 h-16 border-4 border-primary rounded-xl flex items-center justify-center mb-4">
             <Terminal size={32} className="text-primary animate-hologram" />
@@ -167,8 +167,8 @@ function App() {
                 </div>
               </div>
               <div>
-                <div className="font-bold text-xl text-glow">TK</div>
-                <div className="text-xs text-primary font-mono">Neural Dev</div>
+                <div className="font-bold text-xl">TK</div>
+                <div className="text-xs text-primary">Professional Dev</div>
               </div>
             </div>
             
@@ -191,10 +191,10 @@ function App() {
               ))}
               <Button 
                 onClick={() => handleNavClick('#contact')}
-                className="relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-background group neon-border"
+                className="relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-background group"
               >
                 <span className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
-                <span className="relative z-10 font-mono">Initialize Contact</span>
+                <span className="relative z-10">Get In Touch</span>
               </Button>
             </div>
           </div>
@@ -239,106 +239,103 @@ function App() {
         <div className="relative z-10 text-center max-w-6xl mx-auto px-6">
           <div className="mb-12 animate-fade-in-up">
             <div className="inline-block mb-6">
-              <Badge className="glass-strong border-primary/30 text-primary font-mono text-sm px-4 py-2 animate-neon-pulse">
-                <span className="inline-block w-2 h-2 bg-primary rounded-full mr-2 animate-pulse"></span>
-                Available for Elite Projects
+              <Badge className="glass-strong border-primary/30 text-primary font-mono text-sm px-4 py-2">
+                <span className="inline-block w-2 h-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
+                Available for Hire • Remote & Contract
               </Badge>
             </div>
             
-            <h1 className="text-6xl md:text-8xl font-bold mb-6 leading-tight">
-              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient text-glow">
-                TUSHAR
-              </span>
-              <br />
-              <span className="bg-gradient-to-r from-accent via-primary to-accent bg-clip-text text-transparent animate-gradient text-glow">
-                KHOKHAR
+            <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+              <span className="bg-gradient-to-r from-primary via-accent to-primary bg-clip-text text-transparent animate-gradient">
+                Tushar Khokhar
               </span>
             </h1>
             
             <div className="space-y-4 mb-8">
-              <h2 className="text-3xl md:text-4xl text-foreground/90 font-light">
-                Elite <span className="text-primary font-semibold text-glow">Blockchain</span> & <span className="text-accent font-semibold text-glow">Backend</span> Engineer
+              <h2 className="text-2xl md:text-3xl text-foreground/90 font-medium">
+                Senior <span className="text-primary font-semibold">Blockchain Developer</span> & <span className="text-accent font-semibold">Backend Engineer</span>
               </h2>
-              <p className="text-xl text-primary/80 font-mono tracking-wider">
-                → IIT Kharagpur Graduate → Building the Future
+              <p className="text-lg text-foreground/80 font-mono">
+                IIT Kharagpur • 5+ Years Experience • $8M+ Assets Managed
               </p>
             </div>
           </div>
 
-          <div className="flex flex-wrap justify-center gap-4 mb-12 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
+          <div className="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in-up" style={{animationDelay: '0.3s'}}>
             {[
-              { icon: "🔗", text: "Blockchain Architect", delay: "0s" },
-              { icon: "⚡", text: "Performance Engineer", delay: "0.1s" },
-              { icon: "💰", text: "DeFi Specialist", delay: "0.2s" },
-              { icon: "🤖", text: "AI Systems Builder", delay: "0.3s" },
-              { icon: "🦀", text: "Rust Expert", delay: "0.4s" }
+              { icon: "🏗️", text: "Smart Contract Architect", delay: "0s" },
+              { icon: "⚡", text: "High-Performance Systems", delay: "0.1s" },
+              { icon: "💼", text: "DeFi Protocol Engineer", delay: "0.2s" },
+              { icon: "🤖", text: "Trading Bot Developer", delay: "0.3s" },
+              { icon: "🦀", text: "Rust & Solidity Expert", delay: "0.4s" }
             ].map((tag, index) => (
               <Badge 
                 key={index} 
                 variant="secondary" 
-                className="glass-strong px-6 py-3 text-sm hover:scale-105 transition-all duration-300 neon-border animate-fade-in-up"
+                className="glass-strong px-5 py-2 text-sm hover:scale-105 transition-all duration-300 border border-primary/20 animate-fade-in-up"
                 style={{animationDelay: tag.delay}}
               >
-                <span className="mr-2 text-lg">{tag.icon}</span>
+                <span className="mr-2">{tag.icon}</span>
                 {tag.text}
               </Badge>
             ))}
           </div>
 
-          <p className="text-2xl md:text-3xl text-foreground/90 max-w-5xl mx-auto leading-relaxed mb-12 animate-fade-in-up font-light" style={{animationDelay: '0.6s'}}>
-            Architecting the future of <span className="text-primary font-semibold text-glow">decentralized finance</span>, 
-            <span className="text-accent font-semibold text-glow"> AI-powered ecosystems</span>, and 
-            <span className="text-primary font-semibold text-glow"> ultra-high performance infrastructure</span> 
-            that scales globally and securely.
+          <p className="text-xl md:text-2xl text-foreground/90 max-w-4xl mx-auto leading-relaxed mb-12 animate-fade-in-up font-light" style={{animationDelay: '0.6s'}}>
+            Specializing in building <span className="text-primary font-semibold">scalable blockchain protocols</span>, 
+            <span className="text-accent font-semibold"> automated trading systems</span>, and 
+            <span className="text-primary font-semibold"> enterprise-grade backend infrastructure</span>. 
+            Proven track record with $8M+ in managed protocol assets and 500K+ processed transactions.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center mb-16 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16 animate-fade-in-up" style={{animationDelay: '0.8s'}}>
             <Button 
               size="lg"
-              className="relative overflow-hidden bg-transparent border-2 neon-border text-primary hover:text-background group px-10 py-4 text-lg font-mono"
+              className="relative overflow-hidden bg-transparent border-2 border-primary text-primary hover:text-background group px-8 py-3 text-base font-medium"
               onClick={() => handleNavClick('#projects')}
             >
               <span className="absolute inset-0 bg-gradient-to-r from-primary to-accent opacity-0 group-hover:opacity-100 transition-all duration-500"></span>
               <span className="relative z-10 flex items-center">
-                View Neural Network
-                <ArrowRight size={20} className="ml-3 group-hover:translate-x-2 transition-transform duration-300" />
+                View My Projects
+                <ArrowRight size={18} className="ml-2 group-hover:translate-x-1 transition-transform duration-300" />
               </span>
             </Button>
             
             <Button 
               variant="outline" 
               size="lg"
-              className="glass-strong border-accent/50 hover:border-accent text-accent hover:bg-accent/10 px-10 py-4 text-lg font-mono group"
+              className="glass-strong border-accent/50 hover:border-accent text-accent hover:bg-accent/10 px-8 py-3 text-base font-medium group"
               onClick={() => { 
-                toast.info("🚀 Resume deployment in progress...", {
-                  description: "Compiling latest neural pathways",
+                window.open('mailto:tushar.khokhar@example.com', '_blank');
+                toast.success("📧 Email client opened", {
+                  description: "Ready to discuss your project",
                   duration: 3000
                 }); 
               }}
             >
-              <Download size={20} className="mr-3 group-hover:animate-bounce" />
-              Download Resume.exe
+              <Download size={18} className="mr-2" />
+              Get My Resume
             </Button>
           </div>
 
-          {/* Enhanced Impact Metrics */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8 pt-12 border-t border-primary/20 animate-fade-in-up" style={{animationDelay: '1s'}}>
+          {/* Professional Impact Metrics */}
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-12 border-t border-primary/20 animate-fade-in-up" style={{animationDelay: '1s'}}>
             {[
-              { value: "$8M+", label: "Protocol Assets Under Management", icon: <Shield className="w-6 h-6" /> },
-              { value: "500K+", label: "Blockchain Transactions Processed", icon: <Lightning className="w-6 h-6" /> },
-              { value: "35%", label: "Gas Fee Optimization Achieved", icon: <Rocket className="w-6 h-6" /> },
-              { value: "40%", label: "Infrastructure Cost Reduction", icon: <Cpu className="w-6 h-6" /> }
+              { value: "$8M+", label: "Protocol Assets Managed", icon: <Shield className="w-5 h-5" />, color: "text-green-400" },
+              { value: "500K+", label: "Transactions Processed", icon: <Lightning className="w-5 h-5" />, color: "text-blue-400" },
+              { value: "35%", label: "Gas Cost Reduction", icon: <Rocket className="w-5 h-5" />, color: "text-purple-400" },
+              { value: "99.9%", label: "System Uptime", icon: <Cpu className="w-5 h-5" />, color: "text-cyan-400" }
             ].map((metric, index) => (
               <div key={index} className="text-center group hover:scale-105 transition-all duration-300">
                 <div className="flex justify-center mb-3">
-                  <div className="p-3 glass-strong rounded-xl border border-primary/30 group-hover:border-primary/60 transition-colors">
-                    <div className="text-primary">{metric.icon}</div>
+                  <div className="p-3 glass-strong rounded-xl border border-primary/20 group-hover:border-primary/40 transition-colors">
+                    <div className={metric.color}>{metric.icon}</div>
                   </div>
                 </div>
-                <div className="text-4xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent mb-2 group-hover:text-glow transition-all">
+                <div className={`text-3xl font-bold mb-2 ${metric.color}`}>
                   {metric.value}
                 </div>
-                <div className="text-sm text-muted-foreground font-mono">{metric.label}</div>
+                <div className="text-sm text-muted-foreground">{metric.label}</div>
               </div>
             ))}
           </div>
@@ -356,11 +353,11 @@ function App() {
               <Brain className="w-4 h-4 mr-2" />
               Professional Timeline
             </Badge>
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Elite Engineering Journey
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+              Professional Experience
             </h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-              A proven track record of building revolutionary systems that transform industries
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+              Building enterprise-grade solutions across blockchain, fintech, and high-performance computing
             </p>
           </div>
 
@@ -381,8 +378,8 @@ function App() {
                         <h4 className="text-lg text-primary font-semibold">{exp.company}</h4>
                         <div className="w-2 h-2 bg-accent rounded-full animate-pulse"></div>
                       </div>
-                      <p className="text-sm text-muted-foreground font-mono">
-                        Mission Duration: {exp.period}
+                      <p className="text-sm text-muted-foreground">
+                        {exp.period}
                       </p>
                     </div>
                     <Badge 
@@ -396,7 +393,7 @@ function App() {
                   <div className="grid gap-4">
                     <h5 className="font-semibold text-accent flex items-center gap-2 mb-3">
                       <Rocket className="w-4 h-4" />
-                      Key Achievements & Impact
+                      Key Achievements
                     </h5>
                     {exp.achievements.map((achievement, i) => (
                       <div key={i} className="flex items-start gap-4 group/achievement">
@@ -404,7 +401,7 @@ function App() {
                           <div className="w-2 h-2 bg-primary rounded-full group-hover/achievement:shadow-[0_0_10px_currentColor] transition-all duration-300"></div>
                         </div>
                         <div className="flex-1">
-                          <p className="text-foreground/90 leading-relaxed font-mono text-sm">
+                          <p className="text-foreground/90 leading-relaxed text-sm">
                             {achievement}
                           </p>
                         </div>
@@ -419,7 +416,7 @@ function App() {
           {/* Achievement Summary */}
           <div className="mt-16 glass-strong rounded-2xl p-8 border border-primary/20 text-center">
             <h3 className="text-2xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Mission Summary
+              Career Highlights
             </h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
               {[
@@ -454,11 +451,11 @@ function App() {
               <Cpu className="w-4 h-4 mr-2" />
               Neural Architecture
             </Badge>
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Technical Mastery
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Technical Expertise
             </h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-              Advanced expertise across the full spectrum of modern development technologies
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+              Comprehensive proficiency across modern development stacks and emerging technologies
             </p>
           </div>
 
@@ -476,8 +473,8 @@ function App() {
                       <CardTitle className="text-lg text-primary group-hover:text-glow transition-all duration-300">
                         {skillGroup.category}
                       </CardTitle>
-                      <div className="text-xs text-muted-foreground font-mono">
-                        {skillGroup.items.length} technologies
+                      <div className="text-xs text-muted-foreground">
+                        {skillGroup.items.length} core technologies
                       </div>
                     </div>
                   </div>
@@ -490,7 +487,7 @@ function App() {
                         <div className="w-2 h-2 bg-primary rounded-full group-hover/item:shadow-[0_0_10px_currentColor] transition-all duration-300"></div>
                         <Badge 
                           variant="secondary" 
-                          className="glass border-primary/20 hover:border-primary/50 hover:bg-primary/10 transition-all duration-300 flex-1 justify-start font-mono text-xs"
+                          className="glass border-primary/20 hover:border-primary/40 hover:bg-primary/5 transition-all duration-300 flex-1 justify-start text-xs"
                         >
                           {skill}
                         </Badge>
@@ -534,11 +531,11 @@ function App() {
               <Rocket className="w-4 h-4 mr-2" />
               Portfolio Matrix
             </Badge>
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
-              Featured Neural Networks
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-accent to-primary bg-clip-text text-transparent">
+              Featured Projects
             </h2>
-            <p className="text-xl text-foreground/70 max-w-3xl mx-auto">
-              Breakthrough projects that demonstrate elite engineering capabilities and real-world impact
+            <p className="text-lg text-foreground/70 max-w-3xl mx-auto">
+              Showcase of impactful solutions demonstrating technical excellence and business value
             </p>
           </div>
 
@@ -559,9 +556,9 @@ function App() {
                       <CardTitle className="text-2xl group-hover:text-primary transition-colors duration-300 mb-2">
                         {project.title}
                       </CardTitle>
-                      <div className="flex items-center gap-2 text-xs text-muted-foreground font-mono">
-                        <div className="w-2 h-2 bg-primary rounded-full animate-pulse"></div>
-                        Production Ready
+                      <div className="flex items-center gap-2 text-xs text-muted-foreground">
+                        <div className="w-2 h-2 bg-green-400 rounded-full"></div>
+                        Production System
                       </div>
                     </div>
                   </div>
@@ -581,8 +578,8 @@ function App() {
                       <div className="grid gap-2">
                         {project.highlights.map((highlight, i) => (
                           <div key={i} className="flex items-center gap-3 text-sm group/highlight">
-                            <div className="w-1.5 h-1.5 bg-accent rounded-full group-hover/highlight:shadow-[0_0_10px_currentColor] transition-all duration-300"></div>
-                            <span className="font-mono">{highlight}</span>
+                            <div className="w-1.5 h-1.5 bg-accent rounded-full group-hover/highlight:shadow-[0_0_8px_currentColor] transition-all duration-300"></div>
+                            <span>{highlight}</span>
                           </div>
                         ))}
                       </div>
@@ -599,7 +596,7 @@ function App() {
                           <Badge 
                             key={i} 
                             variant="outline" 
-                            className="text-xs glass border-primary/30 hover:border-primary/60 hover:bg-primary/10 transition-all duration-300 font-mono"
+                            className="text-xs glass border-primary/30 hover:border-primary/50 hover:bg-primary/5 transition-all duration-300"
                           >
                             {tech}
                           </Badge>
@@ -611,18 +608,20 @@ function App() {
                     <div className="flex gap-3 pt-4 border-t border-primary/20">
                       <Button 
                         size="sm" 
-                        className="flex-1 bg-transparent border border-primary/50 text-primary hover:bg-primary/10 font-mono group/btn"
+                        className="flex-1 bg-transparent border border-primary/50 text-primary hover:bg-primary/5 group/btn"
+                        onClick={() => toast.info("🚀 Live demo available upon request")}
                       >
-                        <Globe className="w-4 h-4 mr-2 group-hover/btn:animate-spin" />
+                        <Globe className="w-4 h-4 mr-2" />
                         Live Demo
                       </Button>
                       <Button 
                         size="sm" 
                         variant="outline"
-                        className="flex-1 glass border-accent/50 text-accent hover:bg-accent/10 font-mono group/btn"
+                        className="flex-1 glass border-accent/50 text-accent hover:bg-accent/5 group/btn"
+                        onClick={() => toast.info("📧 Source code available for review")}
                       >
-                        <Code className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
-                        Source Code
+                        <Code className="w-4 h-4 mr-2" />
+                        View Code
                       </Button>
                     </div>
                   </div>
@@ -634,17 +633,17 @@ function App() {
           {/* Call to Action */}
           <div className="text-center mt-16">
             <div className="glass-strong rounded-2xl p-8 border border-primary/20 max-w-2xl mx-auto">
-              <h3 className="text-2xl font-bold mb-4 text-primary">Ready to Build Something Revolutionary?</h3>
-              <p className="text-foreground/80 mb-6 font-mono">
-                Let's collaborate on your next breakthrough project
+              <h3 className="text-2xl font-bold mb-4 text-primary">Ready for Your Next Project?</h3>
+              <p className="text-foreground/80 mb-6">
+                Let's discuss how I can help bring your vision to life with cutting-edge technology
               </p>
               <Button 
                 size="lg"
-                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 font-mono group"
+                className="bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 group"
                 onClick={() => handleNavClick('#contact')}
               >
-                <Terminal className="w-5 h-5 mr-2 group-hover:animate-pulse" />
-                Initialize Project
+                <Terminal className="w-5 h-5 mr-2" />
+                Start a Conversation
                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </Button>
             </div>
@@ -663,12 +662,12 @@ function App() {
               <Terminal className="w-4 h-4 mr-2" />
               Connection Protocol
             </Badge>
-            <h2 className="text-5xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Let's Build the Future
+            <h2 className="text-4xl font-bold mb-6 bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
+              Let's Work Together
             </h2>
-            <p className="text-xl text-foreground/80 max-w-3xl mx-auto leading-relaxed">
-              Ready to transform your vision into reality? Let's collaborate on creating 
-              cutting-edge blockchain solutions and high-performance systems.
+            <p className="text-lg text-foreground/80 max-w-3xl mx-auto leading-relaxed">
+              Interested in collaborating on blockchain solutions, trading systems, or backend infrastructure? 
+              I'm available for freelance projects and consulting opportunities.
             </p>
           </div>
           
@@ -680,18 +679,20 @@ function App() {
                   <div className="inline-flex p-4 glass rounded-2xl border border-primary/30 group-hover:border-primary/60 mb-6 transition-all duration-300">
                     <Terminal className="w-8 h-8 text-primary group-hover:animate-pulse" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-primary">Direct Communication</h3>
-                  <p className="text-foreground/70 mb-6 font-mono text-sm">
-                    Fast response • Professional consultation • Project discussion
+                  <h3 className="text-xl font-semibold mb-4 text-primary">Direct Contact</h3>
+                  <p className="text-foreground/70 mb-6 text-sm">
+                    Professional consultation • Quick response • Project discussion
                   </p>
                   <Button 
                     size="lg" 
-                    className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 font-mono group/btn"
+                    className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary/90 hover:to-accent/90 group/btn"
+                    onClick={() => {
+                      window.open('mailto:tushar.khokhar@example.com', '_blank');
+                      toast.success("📧 Email opened", { description: "tushar.khokhar@example.com" });
+                    }}
                   >
-                    <a href="mailto:tushar.khokhar@example.com" className="flex items-center justify-center gap-2 w-full">
-                      Initialize Contact
-                      <ArrowRight size={18} className="group-hover/btn:translate-x-1 transition-transform" />
-                    </a>
+                    Contact Me
+                    <ArrowRight size={18} className="ml-2 group-hover/btn:translate-x-1 transition-transform" />
                   </Button>
                 </div>
               </CardContent>
@@ -704,9 +705,9 @@ function App() {
                   <div className="inline-flex p-4 glass rounded-2xl border border-accent/30 group-hover:border-accent/60 mb-6 transition-all duration-300">
                     <Globe className="w-8 h-8 text-accent group-hover:animate-spin" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-4 text-accent">Professional Networks</h3>
-                  <p className="text-foreground/70 mb-6 font-mono text-sm">
-                    Code repositories • Professional history • Technical discussions
+                  <h3 className="text-xl font-semibold mb-4 text-accent">Professional Profiles</h3>
+                  <p className="text-foreground/70 mb-6 text-sm">
+                    Portfolio • Work history • Technical discussions
                   </p>
                   <div className="flex justify-center gap-4">
                     <a
@@ -742,8 +743,8 @@ function App() {
                   <span className="text-green-400 font-mono text-sm">ONLINE</span>
                 </div>
                 <div className="w-px h-6 bg-border"></div>
-                <div className="text-sm text-muted-foreground font-mono">
-                  Response Time: &lt; 24hrs
+                <div className="text-sm text-muted-foreground">
+                  Response Time: &lt; 12hrs
                 </div>
               </div>
               
@@ -760,8 +761,8 @@ function App() {
                 ))}
               </div>
               
-              <div className="text-xs text-muted-foreground font-mono">
-                Ready to tackle complex challenges • Specializing in blockchain & high-performance systems
+              <div className="text-xs text-muted-foreground">
+                Available for complex projects • Blockchain & backend specialist • Remote-first
               </div>
             </CardContent>
           </Card>
@@ -784,11 +785,11 @@ function App() {
                 </div>
                 <div>
                   <div className="font-bold text-lg text-glow">Tushar Khokhar</div>
-                  <div className="text-xs text-primary font-mono">Elite Developer</div>
+                  <div className="text-xs text-primary">Professional Developer</div>
                 </div>
               </div>
-              <p className="text-sm text-foreground/70 font-mono">
-                Building tomorrow's technology today
+              <p className="text-sm text-foreground/70">
+                Building scalable solutions with modern technology
               </p>
             </div>
 
@@ -800,9 +801,9 @@ function App() {
                   <button
                     key={item}
                     onClick={() => handleNavClick(`#${item.toLowerCase()}`)}
-                    className="block text-sm text-foreground/70 hover:text-primary transition-colors font-mono"
+                    className="block text-sm text-foreground/70 hover:text-primary transition-colors"
                   >
-                    → {item}
+                    {item}
                   </button>
                 ))}
               </div>
@@ -813,23 +814,23 @@ function App() {
               <h3 className="font-semibold text-accent mb-3">Built With</h3>
               <div className="flex flex-wrap gap-2">
                 {["React", "TypeScript", "Tailwind", "Vite"].map((tech) => (
-                  <Badge key={tech} variant="outline" className="text-xs glass border-accent/30 font-mono">
+                  <Badge key={tech} variant="outline" className="text-xs glass border-accent/30">
                     {tech}
                   </Badge>
                 ))}
               </div>
-              <p className="text-xs text-muted-foreground mt-3 font-mono">
-                Optimized for performance & accessibility
+              <p className="text-xs text-muted-foreground mt-3">
+                Performance optimized & accessible design
               </p>
             </div>
           </div>
 
           <div className="pt-8 border-t border-primary/20 text-center">
-            <p className="text-muted-foreground mb-2 font-mono text-sm">
-              © 2024 Tushar Khokhar. Engineered with precision.
+            <p className="text-muted-foreground mb-2 text-sm">
+              © 2024 Tushar Khokhar. Professional web development.
             </p>
-            <p className="text-xs text-muted-foreground font-mono">
-              Available for revolutionary projects worldwide
+            <p className="text-xs text-muted-foreground">
+              Available worldwide for remote projects
             </p>
           </div>
         </div>
