@@ -1,6 +1,7 @@
 import { Navigation } from "./components/Navigation"
-import { Hero } from "./components/Hero"
+import { Hero3D } from "./components/Hero3D"
 import { About } from "./components/About"
+import { Skills } from "./components/Skills"
 import { Projects } from "./components/Projects"
 import { Contact } from "./components/Contact"
 import { Footer } from "./components/Footer"
@@ -11,8 +12,9 @@ function App() {
     <div className="min-h-screen bg-background">
       <Navigation />
       <main className="relative">
-        <Hero />
+        <Hero3D />
         <About />
+        <Skills />
         <Projects />
         <Contact />
       </main>
