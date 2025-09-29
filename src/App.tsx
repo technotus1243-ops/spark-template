@@ -60,11 +60,6 @@ function App() {
       icon: <Lock className="w-5 h-5" />
     },
     { 
-      category: "Full-Stack Development", 
-      items: ["React/Next.js Frontend", "Node.js/Express Backend", "Database Design", "API Development", "Real-time Systems", "Cloud Integration"],
-      icon: <Code className="w-5 h-5" />
-    },
-    { 
       category: "DevOps & Infrastructure", 
       items: ["Kubernetes Orchestration", "Docker Containerization", "CI/CD Pipelines", "Cloud Deployment", "Load Balancing", "Monitoring Systems"],
       icon: <Database className="w-5 h-5" />
@@ -78,6 +73,11 @@ function App() {
       category: "AI & ML Integration", 
       items: ["Machine Learning Pipelines", "AI Service APIs", "GPU Clustering", "Zero-Knowledge Systems", "Automated Workflows", "Real-time Processing"],
       icon: <Brain className="w-5 h-5" />
+    },
+    { 
+      category: "Algorithmic Trading", 
+      items: ["Trading Bot Development", "Market Data Analysis", "Portfolio Management", "Risk Assessment", "Strategy Backtesting", "Automated Execution"],
+      icon: <ChartLineUp className="w-5 h-5" />
     }
   ]
 
@@ -234,9 +234,9 @@ function App() {
                   <span className="terminal-cursor">end-to-end-solutions</span>
                 </div>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Full-service <span className="text-primary font-semibold">venture studio providing blockchain, DevOps, full-stack, and smart contract development</span>. 
+                  Full-service <span className="text-primary font-semibold">venture studio providing blockchain, DevOps, backend systems, and smart contract development</span>. 
                   From <span className="text-accent font-semibold">concept to deployment</span>, we deliver production-ready solutions across 
-                  <span className="text-primary font-semibold">DeFi, NFTs, AI integration, and enterprise systems</span>
+                  <span className="text-primary font-semibold">DeFi, NFTs, AI integration, algorithmic trading, and enterprise systems</span>
                 </p>
               </div>
             </div>
@@ -300,7 +300,7 @@ function App() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               <span className="text-primary font-semibold">TvaraX operates as a comprehensive venture studio</span> delivering end-to-end technology solutions 
-              across <span className="text-accent font-semibold">blockchain, DevOps, full-stack development, and AI integration</span>. 
+              across <span className="text-accent font-semibold">blockchain, DevOps, backend systems, AI integration, and algorithmic trading</span>. 
               We build <span className="text-primary font-semibold">production-ready systems from concept to deployment</span>.
             </p>
           </div>
@@ -323,7 +323,7 @@ function App() {
                 </div>
                 <span className="font-semibold">Technologies</span>
               </div>
-              <p className="text-muted-foreground text-sm">Solana • Ethereum • React • Node.js</p>
+              <p className="text-muted-foreground text-sm">Solana • Ethereum • Kubernetes • AI/ML • Trading Bots</p>
             </div>
             
             <div className="glass-card p-6 group">
@@ -721,7 +721,7 @@ function App() {
               
               <div className="text-lg text-muted-foreground">
                 <span className="text-primary font-semibold">Specializations:</span> Smart Contracts • 
-                Full-Stack Development • DevOps • Backend Systems • AI Integration
+                DevOps & Backend • AI Integration • Algorithmic Trading • Production Systems
               </div>
             </CardContent>
           </Card>
@@ -751,7 +751,7 @@ function App() {
             <div>
               <h3 className="font-bold text-lg mb-6 gradient-text-accent">Service Areas</h3>
               <div className="space-y-3">
-                {["Blockchain Development", "Smart Contracts", "Full-Stack Applications", "DevOps & Cloud", "AI Integration"].map((item) => (
+                {["Blockchain Development", "Smart Contracts", "DevOps & Backend", "AI Integration", "Algorithmic Trading"].map((item) => (
                   <div
                     key={item}
                     className="text-muted-foreground hover:text-primary transition-colors text-left"
@@ -785,7 +785,7 @@ function App() {
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <span>Blockchain development</span>
                 <div className="w-px h-4 bg-border"></div>
-                <span>Full-stack solutions</span>
+                <span>Blockchain development • DevOps & Backend • AI Integration • Algorithmic Trading</span>
                 <div className="w-px h-4 bg-border"></div>
                 <span className="text-emerald-400">Available for projects</span>
               </div>
