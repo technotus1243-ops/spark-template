@@ -75,8 +75,8 @@ function App() {
       icon: <Brain className="w-5 h-5" />
     },
     { 
-      category: "Algorithmic Trading", 
-      items: ["Trading Bot Development", "Market Data Analysis", "Portfolio Management", "Risk Assessment", "Strategy Backtesting", "Automated Execution"],
+      category: "Crypto Trading Bots", 
+      items: ["DeFi Arbitrage Bots", "MEV Bot Development", "Cross-Chain Trading", "Liquidity Pool Strategies", "DEX Integration", "On-Chain Analytics"],
       icon: <ChartLineUp className="w-5 h-5" />
     }
   ]
@@ -131,11 +131,11 @@ function App() {
       icon: <Rocket className="w-6 h-6" />
     },
     {
-      title: "Go Wallet Tracker Service",
-      description: "Developed Go microservice that tracks wallet activity, parses transactions, identifies buys/sells, and enriches tokens with price, liquidity, and market cap metrics for real-time portfolio analysis.",
+      title: "DeFi Arbitrage Trading Bot",
+      description: "Built sophisticated MEV arbitrage bot exploiting price differences across DEXs. Features real-time mempool monitoring, gas optimization, flash loan integration, and automated profit extraction with risk management systems.",
       stage: "Live",
-      valuation: "Production", 
-      metrics: "Real-time tracking • Transaction parsing • Price enrichment • Market cap analysis",
+      valuation: "Production",
+      metrics: "Cross-DEX arbitrage • MEV opportunities • Flash loan integration • Real-time execution",
       icon: <ChartLineUp className="w-6 h-6" />
     }
   ]
@@ -236,7 +236,7 @@ function App() {
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
                   Full-service <span className="text-primary font-semibold">venture studio providing blockchain, DevOps, backend systems, and smart contract development</span>. 
                   From <span className="text-accent font-semibold">concept to deployment</span>, we deliver production-ready solutions across 
-                  <span className="text-primary font-semibold">DeFi, NFTs, AI integration, algorithmic trading, and enterprise systems</span>
+                  <span className="text-primary font-semibold">DeFi, NFTs, AI integration, crypto trading bots, and enterprise systems</span>
                 </p>
               </div>
             </div>
@@ -300,7 +300,7 @@ function App() {
             </h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
               <span className="text-primary font-semibold">TvaraX operates as a comprehensive venture studio</span> delivering end-to-end technology solutions 
-              across <span className="text-accent font-semibold">blockchain, DevOps, backend systems, AI integration, and algorithmic trading</span>. 
+              across <span className="text-accent font-semibold">blockchain, DevOps, backend systems, AI integration, and crypto trading bots</span>. 
               We build <span className="text-primary font-semibold">production-ready systems from concept to deployment</span>.
             </p>
           </div>
@@ -721,7 +721,7 @@ function App() {
               
               <div className="text-lg text-muted-foreground">
                 <span className="text-primary font-semibold">Specializations:</span> Smart Contracts • 
-                DevOps & Backend • AI Integration • Algorithmic Trading • Production Systems
+                DevOps & Backend • AI Integration • Crypto Trading Bots • Production Systems
               </div>
             </CardContent>
           </Card>
@@ -751,7 +751,7 @@ function App() {
             <div>
               <h3 className="font-bold text-lg mb-6 gradient-text-accent">Service Areas</h3>
               <div className="space-y-3">
-                {["Blockchain Development", "Smart Contracts", "DevOps & Backend", "AI Integration", "Algorithmic Trading"].map((item) => (
+                {["Blockchain Development", "Smart Contracts", "DevOps & Backend", "AI Integration", "Crypto Trading Bots"].map((item) => (
                   <div
                     key={item}
                     className="text-muted-foreground hover:text-primary transition-colors text-left"
@@ -783,11 +783,9 @@ function App() {
                 © 2024 TvaraX. Expert blockchain development & technical solutions.
               </p>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <span>Blockchain development</span>
+                <span>Blockchain development • DevOps & Backend • AI Integration • Crypto Trading Bots</span>
                 <div className="w-px h-4 bg-border"></div>
-                <span>Blockchain development • DevOps & Backend • AI Integration • Algorithmic Trading</span>
-                <div className="w-px h-4 bg-border"></div>
-                <span className="text-emerald-400">Available for projects</span>
+                <span className="text-emerald-400\">Available for projects</span>
               </div>
             </div>
           </div>
