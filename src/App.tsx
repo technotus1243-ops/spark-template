@@ -55,8 +55,8 @@ function App() {
 
   const services = [
     { 
-      category: "Venture Building", 
-      items: ["Concept to MVP", "Technical Architecture", "Go-to-Market Strategy", "Product Development", "Team Assembly", "Legal Structure"],
+      category: "Product Development", 
+      items: ["Concept to MVP", "Technical Architecture", "Product Strategy", "Full-Stack Development", "Team Leadership", "Quality Assurance"],
       icon: <Rocket className="w-5 h-5" />
     },
     { 
@@ -70,8 +70,8 @@ function App() {
       icon: <Database className="w-5 h-5" />
     },
     { 
-      category: "Investment & Growth", 
-      items: ["Seed Funding", "Series A Preparation", "Investor Relations", "Strategic Partnerships", "Market Expansion", "Exit Strategy"],
+      category: "Business Growth", 
+      items: ["Strategic Planning", "Market Expansion", "Partnership Development", "Revenue Optimization", "Operations Scaling", "Exit Strategy"],
       icon: <TrendUp className="w-5 h-5" />
     },
     { 
@@ -156,7 +156,6 @@ function App() {
               </div>
               <div>
                 <div className="font-bold text-xl terminal-text gradient-text">TvaraX</div>
-                <div className="text-xs text-muted-foreground">Venture Studio</div>
               </div>
             </div>
             
@@ -204,7 +203,7 @@ function App() {
               
               <div className="space-y-4">
                 <h2 className="text-2xl md:text-3xl text-foreground font-medium">
-                  Premier <span className="gradient-text-accent font-bold">Venture Studio</span>
+                  Premier <span className="gradient-text-accent font-bold">Technology Company</span>
                 </h2>
                 <div className="terminal-text text-lg mb-6">
                   <span className="text-muted-foreground">~/ventures/</span>
@@ -270,15 +269,15 @@ function App() {
           <div className="text-center mb-12">
             <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
               <Rocket className="w-4 h-4 mr-2" />
-              Venture Excellence
+              Technology Excellence
             </Badge>
             <h2 className="text-3xl font-bold mb-6 gradient-text">
               Building Tomorrow's Market Leaders
             </h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              <span className="text-primary font-semibold">TvaraX is a premier venture studio</span> that combines deep technical expertise 
-              with strategic business acumen to create <span className="text-accent font-semibold">category-defining companies</span>. 
-              We partner with visionary founders to transform breakthrough ideas into 
+              <span className="text-primary font-semibold">TvaraX is a premier technology company</span> that combines deep technical expertise 
+              with strategic business acumen to create <span className="text-accent font-semibold">category-defining solutions</span>. 
+              We partner with visionary leaders to transform breakthrough ideas into 
               <span className="text-primary font-semibold"> market-leading enterprises</span>.
             </p>
           </div>
@@ -291,7 +290,7 @@ function App() {
                 </div>
                 <span className="font-semibold">Approach</span>
               </div>
-              <p className="text-muted-foreground text-sm">Studio-First Model</p>
+              <p className="text-muted-foreground text-sm">Technology-First Innovation</p>
             </div>
             
             <div className="glass-card p-6 group">
@@ -381,10 +380,10 @@ function App() {
           <div className="mt-12 text-center">
             <Card className="glass-card max-w-3xl mx-auto">
               <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-4 gradient-text">Studio Model Advantage</h3>
+                <h3 className="text-xl font-bold mb-4 gradient-text">Innovation Excellence</h3>
                 <p className="text-muted-foreground leading-relaxed mb-6">
-                  Unlike traditional VCs, TvaraX co-creates companies from inception. We provide technical leadership, 
-                  strategic guidance, and operational expertise to maximize success probability and value creation.
+                  TvaraX builds breakthrough solutions from conception. We provide technical leadership, 
+                  strategic guidance, and operational expertise to maximize innovation impact and value creation.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <Button 
@@ -392,7 +391,7 @@ function App() {
                     onClick={() => handleNavClick('#ventures')}
                   >
                     <Rocket size={18} className="mr-2" />
-                    View Ventures
+                    View Projects
                   </Button>
                   <Button 
                     variant="outline"
@@ -418,9 +417,9 @@ function App() {
               <Strategy className="w-4 h-4 mr-2" />
               Comprehensive Solutions
             </Badge>
-            <h2 className="text-3xl font-bold mb-6 gradient-text">End-to-End Venture Building</h2>
+            <h2 className="text-3xl font-bold mb-6 gradient-text\">End-to-End Technology Solutions</h2>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              From ideation to IPO, we provide comprehensive support across every stage of company development
+              From ideation to implementation, we provide comprehensive support across every stage of technology development
             </p>
           </div>
 
@@ -494,9 +493,9 @@ function App() {
               <Rocket className="w-4 h-4 mr-2" />
               Portfolio Companies
             </Badge>
-            <h2 className="text-3xl font-bold mb-6 gradient-text">Our Venture Portfolio</h2>
+            <h2 className="text-3xl font-bold mb-6 gradient-text">Our Project Portfolio</h2>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Building the next generation of market-leading companies across blockchain, AI, and enterprise technology
+              Building the next generation of market-leading solutions across blockchain, AI, and enterprise technology
             </p>
           </div>
 
@@ -566,10 +565,10 @@ function App() {
             <Card className="glass-card max-w-3xl mx-auto">
               <CardContent className="p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-4 gradient-text">Ready to Build the Next Unicorn?</h3>
+                  <h3 className="text-2xl font-bold mb-4 gradient-text">Ready to Build the Next Innovation?</h3>
                   <p className="text-base text-muted-foreground leading-relaxed">
-                    Join forces with TvaraX to transform your breakthrough idea into a market-leading company. 
-                    We provide the technical expertise, strategic guidance, and capital needed to achieve extraordinary outcomes.
+                    Partner with TvaraX to transform your breakthrough idea into a market-leading solution. 
+                    We provide the technical expertise, strategic guidance, and resources needed to achieve extraordinary outcomes.
                   </p>
                 </div>
                 
@@ -580,17 +579,17 @@ function App() {
                     onClick={() => handleNavClick('#contact')}
                   >
                     <Rocket className="w-4 h-4 mr-2" />
-                    Start Your Venture
+                    Start Your Project
                     <ArrowRight className="w-4 h-4 ml-2" />
                   </Button>
                   <Button 
                     size="lg"
                     variant="outline"
                     className="glass-card border-border text-foreground hover:text-primary text-base px-6 py-3"
-                    onClick={() => toast.info("Investment opportunities", {description: "LP positions available for qualified investors"})}
+                    onClick={() => toast.info("Investment opportunities", {description: "Partnership positions available for qualified partners"})}
                   >
                     <TrendUp className="w-4 h-4 mr-2" />
-                    Become an LP
+                    Become a Partner
                   </Button>
                 </div>
               </CardContent>
@@ -609,7 +608,7 @@ function App() {
             </Badge>
             <h2 className="text-4xl font-bold mb-8 gradient-text">Ready to Build the Future Together?</h2>
             <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-              Whether you're a visionary founder with a breakthrough idea or an investor seeking extraordinary returns, 
+              Whether you're a visionary leader with a breakthrough idea or a partner seeking innovative solutions, 
               TvaraX is your partner in creating tomorrow's market leaders.
             </p>
           </div>
@@ -621,20 +620,20 @@ function App() {
                   <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                     <Rocket className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-6 gradient-text-accent">Founders & Entrepreneurs</h3>
+                  <h3 className="text-xl font-bold mb-6 gradient-text-accent">Leaders & Entrepreneurs</h3>
                   <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
-                    Have a breakthrough idea? Let's co-create your venture from concept to market leadership.
+                    Have a breakthrough idea? Let's co-create your solution from concept to market leadership.
                   </p>
                   <Button 
                     size="lg" 
                     className="w-full btn-primary text-lg py-4"
                     onClick={() => {
-                      window.open('mailto:founders@tvarax.com?subject=Venture Partnership Inquiry', '_blank');
+                      window.open('mailto:partners@tvarax.com?subject=Partnership Inquiry', '_blank');
                       toast.success("Opening partnership inquiry", { description: "Let's build something extraordinary together" });
                     }}
                   >
                     <span className="relative z-10 flex items-center justify-center">
-                      Start Your Venture
+                      Start Your Project
                       <ArrowRight size={20} className="ml-3" />
                     </span>
                   </Button>
@@ -648,9 +647,9 @@ function App() {
                   <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
                     <TrendUp className="w-8 h-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold mb-6 gradient-text">Investors & LPs</h3>
+                  <h3 className="text-xl font-bold mb-6 gradient-text">Partners & Clients</h3>
                   <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
-                    Join our network of strategic investors and gain access to high-potential venture opportunities.
+                    Join our network of strategic partners and gain access to cutting-edge technology solutions.
                   </p>
                   <div className="flex justify-center gap-6">
                     <a
@@ -666,12 +665,12 @@ function App() {
                       variant="outline"
                       className="glass-card border-border text-foreground hover:text-accent"
                       onClick={() => {
-                        window.open('mailto:investors@tvarax.com?subject=Investment Partnership', '_blank');
-                        toast.success("Opening investor inquiry", { description: "Investment opportunities available" });
+                        window.open('mailto:partners@tvarax.com?subject=Strategic Partnership', '_blank');
+                        toast.success("Opening partnership inquiry", { description: "Partnership opportunities available" });
                       }}
                     >
                       <TrendUp size={20} className="mr-2" />
-                      Investment Info
+                      Partnership Info
                     </Button>
                   </div>
                 </div>
@@ -694,9 +693,9 @@ function App() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {[
-                  { label: "Active Ventures", status: "12 Companies", color: "text-emerald-400" },
-                  { label: "Success Rate", status: "95% Series A", color: "text-blue-400" },
-                  { label: "Average Return", status: "25x Multiple", color: "text-purple-400" }
+                  { label: "Active Projects", status: "12 Solutions", color: "text-emerald-400" },
+                  { label: "Success Rate", status: "95% Delivery", color: "text-blue-400" },
+                  { label: "Client Satisfaction", status: "98% Rating", color: "text-purple-400" }
                 ].map((item, index) => (
                   <div key={index} className="text-center glass-card p-4 rounded-lg">
                     <div className="text-sm text-muted-foreground mb-2">{item.label}</div>
@@ -726,17 +725,16 @@ function App() {
                 </div>
                 <div>
                   <div className="font-bold text-xl gradient-text">TvaraX</div>
-                  <div className="text-sm text-muted-foreground">Venture Studio</div>
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Building tomorrow's market leaders through strategic venture creation, 
+                Building tomorrow's market leaders through strategic technology creation, 
                 technical excellence, and visionary partnerships.
               </p>
             </div>
 
             <div>
-              <h3 className="font-bold text-lg mb-6 gradient-text-accent">Venture Focus</h3>
+              <h3 className="font-bold text-lg mb-6 gradient-text-accent">Technology Focus</h3>
               <div className="space-y-3">
                 {["Blockchain Protocols", "AI & Machine Learning", "Enterprise SaaS", "Deep Tech", "Strategic Partnerships"].map((item) => (
                   <div
@@ -750,16 +748,16 @@ function App() {
             </div>
 
             <div>
-              <h3 className="font-bold text-lg mb-6 gradient-text-accent">Portfolio Stats</h3>
+              <h3 className="font-bold text-lg mb-6 gradient-text-accent">Project Stats</h3>
               <div className="flex flex-wrap gap-2 mb-6">
-                {["$50M+ Portfolio", "95% Success", "25x Returns", "12 Ventures", "Global"].map((stat) => (
+                {["$50M+ Portfolio", "95% Success", "98% Satisfaction", "12 Projects", "Global"].map((stat) => (
                   <span key={stat} className="skill-badge text-xs">
                     {stat}
                   </span>
                 ))}
               </div>
               <p className="text-sm text-muted-foreground">
-                Studio-first approach • Co-creation model • Long-term partnerships
+                Technology-first approach • Innovation model • Long-term partnerships
               </p>
             </div>
           </div>
@@ -767,12 +765,12 @@ function App() {
           <div className="pt-12 border-t border-border text-center">
             <div className="flex flex-col md:flex-row justify-between items-center gap-6">
               <p className="text-muted-foreground">
-                © 2024 TvaraX Venture Studio. Building the future of technology.
+                © 2024 TvaraX. Building the future of technology.
               </p>
               <div className="flex items-center gap-4 text-sm text-muted-foreground">
                 <span>Global partnerships</span>
                 <div className="w-px h-4 bg-border"></div>
-                <span>Strategic investments</span>
+                <span>Technology solutions</span>
                 <div className="w-px h-4 bg-border"></div>
                 <span className="text-emerald-400">Actively building</span>
               </div>
