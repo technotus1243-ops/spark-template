@@ -14,7 +14,7 @@ function App() {
     setMounted(true)
     
     const handleScroll = () => {
-      const sections = ["home", "about", "portfolio", "services", "ventures", "contact"]
+      const sections = ["home", "about", "services", "ventures", "contact"]
       const current = sections.find(section => {
         const element = document.getElementById(section)
         if (element) {
@@ -113,14 +113,38 @@ function App() {
       valuation: "Production",
       metrics: "Real-time multiplayer • AI asset generation • Google Cloud deployment • WebSocket architecture",
       icon: <Globe className="w-6 h-6" />
+    },
+    {
+      title: "Solana Card Game Platform",
+      description: "Developed Solana NFT card game with on-chain matchmaking, real-time multiplayer interactions, and secure tokenized assets using Rust (Anchor framework). Features competitive gameplay and reward distribution.",
+      stage: "Live",
+      valuation: "Production",
+      metrics: "On-chain matchmaking • Real-time multiplayer • NFT-based assets • Rust/Anchor framework",
+      icon: <Lightning className="w-6 h-6" />
+    },
+    {
+      title: "Telegram AI Launchpad",
+      description: "Built Telegram-integrated launchpad enabling users to launch tokens/NFTs via chat commands or AI-assisted workflows. Implemented AI-driven onboarding and automated asset generation without manual intervention.",
+      stage: "Live",
+      valuation: "Production",
+      metrics: "AI-assisted workflows • Chat-based launching • Automated generation • Zero manual intervention",
+      icon: <Rocket className="w-6 h-6" />
+    },
+    {
+      title: "Go Wallet Tracker Service",
+      description: "Developed Go microservice that tracks wallet activity, parses transactions, identifies buys/sells, and enriches tokens with price, liquidity, and market cap metrics for real-time portfolio analysis.",
+      stage: "Live",
+      valuation: "Production", 
+      metrics: "Real-time tracking • Transaction parsing • Price enrichment • Market cap analysis",
+      icon: <ChartLineUp className="w-6 h-6" />
     }
   ]
 
   const portfolioHighlights = [
     {
-      title: "Blockchain Projects", 
-      count: "10+",
-      description: "Smart contracts deployed in production",
+      title: "Live Projects", 
+      count: "7+",
+      description: "Production systems deployed and active",
       icon: <Lock className="w-6 h-6" />
     },
     {
@@ -136,9 +160,9 @@ function App() {
       icon: <Shield className="w-6 h-6" />
     },
     {
-      title: "Gas Optimization", 
-      count: "40%",
-      description: "Average cost reduction achieved",
+      title: "Performance Boost", 
+      count: "60%",
+      description: "Average optimization achieved",
       icon: <Lightning className="w-6 h-6" />
     }
   ]
@@ -160,7 +184,7 @@ function App() {
             </div>
             
             <div className="hidden md:flex items-center space-x-8">
-              {["Home", "About", "Portfolio", "Services", "Ventures", "Contact"].map((item) => (
+              {["Home", "About", "Services", "Ventures", "Contact"].map((item) => (
                 <button
                   key={item}
                   onClick={() => handleNavClick(`#${item.toLowerCase()}`)}
@@ -194,7 +218,7 @@ function App() {
           <div className="text-center mb-16">
             <div className="mb-8 animate-slide-up">
               <Badge className="mb-6 bg-emerald-500/20 text-emerald-400 border-emerald-500/30 status-online">
-                Expert Blockchain Developer
+                Venture Studio & Tech Solutions
               </Badge>
               
               <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight">
@@ -203,16 +227,16 @@ function App() {
               
               <div className="space-y-4">
                 <h2 className="text-2xl md:text-3xl text-foreground font-medium">
-                  Expert <span className="gradient-text-accent font-bold">Blockchain Developer</span>
+                  <span className="gradient-text-accent font-bold">Venture Studio</span> & Tech Solutions
                 </h2>
                 <div className="terminal-text text-lg mb-6">
-                  <span className="text-muted-foreground">~/blockchain/</span>
-                  <span className="terminal-cursor">fullstack-solutions</span>
+                  <span className="text-muted-foreground">~/ventures/</span>
+                  <span className="terminal-cursor">end-to-end-solutions</span>
                 </div>
                 <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-                  Specialized in <span className="text-primary font-semibold">blockchain development, smart contracts, and full-stack solutions</span>. 
-                  From <span className="text-accent font-semibold">concept to deployment</span>, delivering production-ready applications across 
-                  <span className="text-primary font-semibold"> DeFi, NFTs, and enterprise blockchain systems</span>
+                  Full-service <span className="text-primary font-semibold">venture studio providing blockchain, DevOps, full-stack, and smart contract development</span>. 
+                  From <span className="text-accent font-semibold">concept to deployment</span>, we deliver production-ready solutions across 
+                  <span className="text-primary font-semibold">DeFi, NFTs, AI integration, and enterprise systems</span>
                 </p>
               </div>
             </div>
@@ -275,10 +299,9 @@ function App() {
               Building Production-Ready Solutions
             </h2>
             <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
-              <span className="text-primary font-semibold">TvaraX specializes in comprehensive blockchain development</span> combining technical expertise 
-              with full-stack solutions to deliver <span className="text-accent font-semibold">production-ready applications</span>. 
-              From smart contracts to complete ecosystems, we build 
-              <span className="text-primary font-semibold"> scalable blockchain solutions</span>.
+              <span className="text-primary font-semibold">TvaraX operates as a comprehensive venture studio</span> delivering end-to-end technology solutions 
+              across <span className="text-accent font-semibold">blockchain, DevOps, full-stack development, and AI integration</span>. 
+              We build <span className="text-primary font-semibold">production-ready systems from concept to deployment</span>.
             </p>
           </div>
 
@@ -342,68 +365,6 @@ function App() {
                 Get In Touch
               </Button>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Portfolio Section */}
-      <section id="portfolio" className="py-16 px-6 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-primary/5 to-accent/5"></div>
-        <div className="max-w-6xl mx-auto relative">
-          <div className="text-center mb-12">
-            <Badge className="mb-6 bg-accent/20 text-accent border-accent/30">
-              <TrendUp className="w-4 h-4 mr-2" />
-              Investment Excellence
-            </Badge>
-            <h2 className="text-3xl font-bold mb-6 gradient-text">Technical Expertise</h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Comprehensive blockchain and full-stack development experience delivering production-ready solutions
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {portfolioHighlights.map((highlight, index) => (
-              <Card key={index} className="glass-card group">
-                <CardContent className="p-6 text-center">
-                  <div className="flex justify-center mb-4">
-                    <div className="p-4 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
-                      {highlight.icon}
-                    </div>
-                  </div>
-                  <div className="text-2xl font-bold mb-2 gradient-text-accent">{highlight.count}</div>
-                  <div className="text-sm text-muted-foreground">{highlight.description}</div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-          
-          <div className="mt-12 text-center">
-            <Card className="glass-card max-w-3xl mx-auto">
-              <CardContent className="p-8">
-                <h3 className="text-xl font-bold mb-4 gradient-text">Development Excellence</h3>
-                <p className="text-muted-foreground leading-relaxed mb-6">
-                  TvaraX delivers comprehensive blockchain solutions from smart contract development to full-stack applications. 
-                  Specialized in production-ready systems with proven performance and scalability.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button 
-                    className="btn-primary"
-                    onClick={() => handleNavClick('#ventures')}
-                  >
-                    <Rocket size={18} className="mr-2" />
-                    View Projects
-                  </Button>
-                  <Button 
-                    variant="outline"
-                    className="glass-card border-border text-foreground hover:text-primary"
-                    onClick={() => handleNavClick('#services')}
-                  >
-                    <Strategy size={18} className="mr-2" />
-                    Our Services
-                  </Button>
-                </div>
-              </CardContent>
-            </Card>
           </div>
         </div>
       </section>
@@ -545,15 +506,15 @@ function App() {
           <div className="text-center mb-12">
             <Badge className="mb-6 bg-accent/20 text-accent border-accent/30">
               <Rocket className="w-4 h-4 mr-2" />
-              Portfolio Companies
+              Studio Portfolio
             </Badge>
-            <h2 className="text-3xl font-bold mb-6 gradient-text">Live Projects</h2>
+            <h2 className="text-3xl font-bold mb-6 gradient-text">Production Projects</h2>
             <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-              Production-ready blockchain applications and systems currently deployed and serving users
+              Live applications and systems developed across blockchain, AI, and full-stack technologies serving users in production
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-8 mb-12">
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
             {ventures.map((venture, index) => (
               <Card key={index} className="project-card group h-fit">
                 <CardHeader className="pb-4">
@@ -747,7 +708,7 @@ function App() {
               
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
                 {[
-                  { label: "Live Projects", status: "4 Active", color: "text-emerald-400" },
+                  { label: "Live Projects", status: "7 Active", color: "text-emerald-400" },
                   { label: "Technologies", status: "10+ Stacks", color: "text-blue-400" },
                   { label: "Experience", status: "Production Ready", color: "text-purple-400" }
                 ].map((item, index) => (
@@ -782,13 +743,13 @@ function App() {
                 </div>
               </div>
               <p className="text-muted-foreground leading-relaxed">
-                Delivering innovative blockchain solutions, full-stack applications, and comprehensive technical expertise 
-                for the next generation of decentralized systems.
+                Comprehensive venture studio delivering innovative blockchain solutions, full-stack applications, DevOps infrastructure, 
+                and AI-integrated systems for the next generation of decentralized and scalable technologies.
               </p>
             </div>
 
             <div>
-              <h3 className="font-bold text-lg mb-6 gradient-text-accent">Core Technologies</h3>
+              <h3 className="font-bold text-lg mb-6 gradient-text-accent">Service Areas</h3>
               <div className="space-y-3">
                 {["Blockchain Development", "Smart Contracts", "Full-Stack Applications", "DevOps & Cloud", "AI Integration"].map((item) => (
                   <div
