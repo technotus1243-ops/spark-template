@@ -171,15 +171,15 @@ function App() {
     <div className="min-h-screen bg-background">
       {/* Navigation */}
       <nav className="fixed top-0 w-full z-50 enterprise-nav">
-        <div className="max-w-7xl mx-auto px-6">
+        <div className="max-w-7xl mx-auto px-4 lg:px-6">
           <div className="flex items-center justify-between h-16">
-            <div className="flex items-center space-x-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center relative">
-                <div className="text-2xl font-bold text-white font-mono">T</div>
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"></div>
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 md:w-12 md:h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center relative">
+                <div className="text-xl md:text-2xl font-bold text-white font-mono">T</div>
+                <div className="absolute -top-1 -right-1 w-3 h-3 md:w-4 md:h-4 bg-emerald-400 rounded-full animate-pulse"></div>
               </div>
               <div>
-                <div className="font-bold text-xl terminal-text gradient-text">TvaraX</div>
+                <div className="font-bold text-lg md:text-xl terminal-text gradient-text">TvaraX</div>
               </div>
             </div>
             
@@ -208,32 +208,43 @@ function App() {
                 <span className="relative z-10">Partner With Us</span>
               </Button>
             </div>
+
+            {/* Mobile menu button */}
+            <div className="md:hidden">
+              <Button 
+                onClick={() => handleNavClick('#contact')}
+                className="btn-primary"
+                size="sm"
+              >
+                <Phone size={16} />
+              </Button>
+            </div>
           </div>
         </div>
       </nav>
 
       {/* Hero Section */}
-      <section id="home" className="pt-24 pb-20 px-6 relative overflow-hidden">
+      <section id="home" className="pt-20 pb-16 px-4 lg:px-6 relative overflow-hidden">
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-16">
-            <div className="mb-8 animate-slide-up">
-              <Badge className="mb-6 bg-emerald-500/20 text-emerald-400 border-emerald-500/30 status-online">
+          <div className="text-center mb-12 lg:mb-16">
+            <div className="mb-6 lg:mb-8 animate-slide-up">
+              <Badge className="mb-4 lg:mb-6 bg-emerald-500/20 text-emerald-400 border-emerald-500/30 status-online text-xs lg:text-sm">
                 Venture Studio & Tech Solutions
               </Badge>
               
-              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 gradient-text leading-tight">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 lg:mb-6 gradient-text leading-tight">
                 TvaraX
               </h1>
               
-              <div className="space-y-4">
-                <h2 className="text-2xl md:text-3xl text-foreground font-medium">
+              <div className="space-y-3 lg:space-y-4">
+                <h2 className="text-xl md:text-2xl lg:text-3xl text-foreground font-medium">
                   <span className="gradient-text-accent font-bold">Venture Studio</span> & Tech Solutions
                 </h2>
-                <div className="terminal-text text-lg mb-6">
+                <div className="terminal-text text-base lg:text-lg mb-4 lg:mb-6">
                   <span className="text-muted-foreground">~/ventures/</span>
                   <span className="terminal-cursor">end-to-end-solutions</span>
                 </div>
-                <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+                <p className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4 lg:px-0">
                   Full-service <span className="text-primary font-semibold">venture studio providing blockchain, DevOps, backend systems, and smart contract development</span>. 
                   From <span className="text-accent font-semibold">concept to deployment</span>, we deliver production-ready solutions across 
                   <span className="text-primary font-semibold">DeFi, NFTs, AI integration, crypto trading bots, and enterprise systems</span>
@@ -241,45 +252,45 @@ function App() {
               </div>
             </div>
 
-            <div className="flex flex-col sm:flex-row gap-6 justify-center mb-16 animate-slide-up">
+            <div className="flex flex-col sm:flex-row gap-4 lg:gap-6 justify-center mb-12 lg:mb-16 animate-slide-up px-4 lg:px-0">
               <Button 
                 size="lg"
-                className="btn-primary text-lg px-8 py-4"
+                className="btn-primary text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4"
                 onClick={() => handleNavClick('#ventures')}
               >
                 <span className="relative z-10 flex items-center">
                   View Projects
-                  <ArrowRight size={20} className="ml-3" />
+                  <ArrowRight size={18} className="ml-2 lg:ml-3" />
                 </span>
               </Button>
               
               <Button 
                 variant="outline" 
                 size="lg"
-                className="glass-card text-lg px-8 py-4 border-border text-foreground hover:text-primary"
+                className="glass-card text-base lg:text-lg px-6 lg:px-8 py-3 lg:py-4 border-border text-foreground hover:text-primary"
                 onClick={() => { 
                   window.open('mailto:tusharkhokhar.iit@gmail.com', '_blank');
                   toast.success("Opening contact email", {description: "Let's discuss your next project"}); 
                 }}
               >
-                <Phone size={20} className="mr-3" />
+                <Phone size={18} className="mr-2 lg:mr-3" />
                 Get In Touch
               </Button>
             </div>
 
             {/* Venture Metrics */}
-            <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 pt-12 border-t border-border animate-slide-up">
+            <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 pt-8 lg:pt-12 border-t border-border animate-slide-up px-4 lg:px-0">
               {portfolioHighlights.map((metric, index) => (
                 <div key={index} className="metric-card group">
-                  <div className="flex justify-center mb-3">
-                    <div className="p-3 bg-card rounded-lg text-primary group-hover:scale-110 transition-transform">
+                  <div className="flex justify-center mb-2 lg:mb-3">
+                    <div className="p-2 lg:p-3 bg-card rounded-lg text-primary group-hover:scale-110 transition-transform">
                       {metric.icon}
                     </div>
                   </div>
-                  <div className="text-3xl font-bold mb-2 terminal-text text-primary">
+                  <div className="text-2xl lg:text-3xl font-bold mb-1 lg:mb-2 terminal-text text-primary">
                     {metric.count}
                   </div>
-                  <div className="text-sm text-muted-foreground">{metric.description}</div>
+                  <div className="text-xs lg:text-sm text-muted-foreground">{metric.description}</div>
                 </div>
               ))}
             </div>
@@ -288,72 +299,72 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-16 px-6 relative">
+      <section id="about" className="py-12 lg:py-16 px-4 lg:px-6 relative">
         <div className="max-w-6xl mx-auto relative">
-          <div className="text-center mb-12">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+          <div className="text-center mb-8 lg:mb-12">
+            <Badge className="mb-4 lg:mb-6 bg-primary/20 text-primary border-primary/30">
               <Code className="w-4 h-4 mr-2" />
               Technical Excellence
             </Badge>
-            <h2 className="text-3xl font-bold mb-6 gradient-text">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4 lg:mb-6 gradient-text">
               Building Production-Ready Solutions
             </h2>
-            <p className="text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed">
+            <p className="text-base lg:text-lg text-muted-foreground max-w-4xl mx-auto leading-relaxed px-4 lg:px-0">
               <span className="text-primary font-semibold">TvaraX operates as a comprehensive venture studio</span> delivering end-to-end technology solutions 
               across <span className="text-accent font-semibold">blockchain, DevOps, backend systems, AI integration, and crypto trading bots</span>. 
               We build <span className="text-primary font-semibold">production-ready systems from concept to deployment</span>.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-4 gap-6">
-            <div className="glass-card p-6 group">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-primary/20 rounded-lg text-primary group-hover:scale-110 transition-transform">
-                  <Strategy className="w-5 h-5" />
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 px-4 lg:px-0">
+            <div className="glass-card p-4 lg:p-6 group">
+              <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
+                <div className="p-1.5 lg:p-2 bg-primary/20 rounded-lg text-primary group-hover:scale-110 transition-transform">
+                  <Strategy className="w-4 lg:w-5 h-4 lg:h-5" />
                 </div>
-                <span className="font-semibold">Specialization</span>
+                <span className="font-semibold text-sm lg:text-base">Specialization</span>
               </div>
-              <p className="text-muted-foreground text-sm">Blockchain & Full-Stack</p>
+              <p className="text-muted-foreground text-xs lg:text-sm">Blockchain & Full-Stack</p>
             </div>
             
-            <div className="glass-card p-6 group">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-accent/20 rounded-lg text-accent group-hover:scale-110 transition-transform">
-                  <Target className="w-5 h-5" />
+            <div className="glass-card p-4 lg:p-6 group">
+              <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
+                <div className="p-1.5 lg:p-2 bg-accent/20 rounded-lg text-accent group-hover:scale-110 transition-transform">
+                  <Target className="w-4 lg:w-5 h-4 lg:h-5" />
                 </div>
-                <span className="font-semibold">Technologies</span>
+                <span className="font-semibold text-sm lg:text-base">Technologies</span>
               </div>
-              <p className="text-muted-foreground text-sm">Solana • Ethereum • Kubernetes • AI/ML • Trading Bots</p>
+              <p className="text-muted-foreground text-xs lg:text-sm">Solana • Ethereum • Kubernetes • AI/ML • Trading Bots</p>
             </div>
             
-            <div className="glass-card p-6 group">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-emerald-500/20 rounded-lg text-emerald-400 group-hover:scale-110 transition-transform">
-                  <TrendUp className="w-5 h-5" />
+            <div className="glass-card p-4 lg:p-6 group">
+              <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
+                <div className="p-1.5 lg:p-2 bg-emerald-500/20 rounded-lg text-emerald-400 group-hover:scale-110 transition-transform">
+                  <TrendUp className="w-4 lg:w-5 h-4 lg:h-5" />
                 </div>
-                <span className="font-semibold">Experience</span>
+                <span className="font-semibold text-sm lg:text-base">Experience</span>
               </div>
-              <p className="text-muted-foreground text-sm">Production Systems</p>
+              <p className="text-muted-foreground text-xs lg:text-sm">Production Systems</p>
             </div>
             
-            <div className="glass-card p-6 group">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="p-2 bg-blue-500/20 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">
-                  <Users className="w-5 h-5" />
+            <div className="glass-card p-4 lg:p-6 group">
+              <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
+                <div className="p-1.5 lg:p-2 bg-blue-500/20 rounded-lg text-blue-400 group-hover:scale-110 transition-transform">
+                  <Users className="w-4 lg:w-5 h-4 lg:h-5" />
                 </div>
-                <span className="font-semibold">Services</span>
+                <span className="font-semibold text-sm lg:text-base">Services</span>
               </div>
-              <p className="text-muted-foreground text-sm">End-to-End Development</p>
+              <p className="text-muted-foreground text-xs lg:text-sm">End-to-End Development</p>
             </div>
           </div>
           
-          <div className="mt-12 text-center">
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <div className="mt-8 lg:mt-12 text-center">
+            <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center px-4 lg:px-0">
               <Button 
                 className="btn-primary"
                 onClick={() => handleNavClick('#ventures')}
               >
-                <Rocket size={18} className="mr-2" />
+                <Rocket size={16} className="mr-2" />
                 View Projects
               </Button>
               <Button 
@@ -361,7 +372,7 @@ function App() {
                 className="glass-card border-border text-foreground hover:text-primary"
                 onClick={() => handleNavClick('#contact')}
               >
-                <Terminal size={18} className="mr-2" />
+                <Terminal size={16} className="mr-2" />
                 Get In Touch
               </Button>
             </div>
@@ -370,30 +381,30 @@ function App() {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-16 px-6 relative">
+      <section id="services" className="py-12 lg:py-16 px-4 lg:px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-accent/5 to-primary/5"></div>
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-12">
-            <Badge className="mb-6 bg-primary/20 text-primary border-primary/30">
+          <div className="text-center mb-8 lg:mb-12">
+            <Badge className="mb-4 lg:mb-6 bg-primary/20 text-primary border-primary/30">
               <Strategy className="w-4 h-4 mr-2" />
               Comprehensive Solutions
             </Badge>
-            <h2 className="text-3xl font-bold mb-6 gradient-text\">Comprehensive Development Services</h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4 lg:mb-6 gradient-text">Comprehensive Development Services</h2>
+            <p className="text-sm lg:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4 lg:px-0">
               From blockchain protocols to full-stack applications, delivering end-to-end technology solutions
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 lg:gap-6">
             {services.map((serviceGroup, index) => (
               <Card key={index} className="glass-card group h-fit">
-                <CardHeader className="pb-3">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
+                <CardHeader className="pb-2 lg:pb-3 p-4 lg:p-6">
+                  <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
+                    <div className="p-2 lg:p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
                       {serviceGroup.icon}
                     </div>
                     <div>
-                      <CardTitle className="text-base gradient-text-accent">{serviceGroup.category}</CardTitle>
+                      <CardTitle className="text-sm lg:text-base gradient-text-accent">{serviceGroup.category}</CardTitle>
                       <div className="text-xs text-muted-foreground">
                         {serviceGroup.items.length} services
                       </div>
@@ -401,7 +412,7 @@ function App() {
                   </div>
                 </CardHeader>
                 
-                <CardContent>
+                <CardContent className="p-4 lg:p-6 pt-0">
                   <div className="space-y-2">
                     {serviceGroup.items.slice(0, 4).map((service, i) => (
                       <div 
@@ -425,18 +436,18 @@ function App() {
           </div>
           
           {/* Experience Highlights */}
-          <div className="mt-16">
-            <h3 className="text-2xl font-bold mb-8 gradient-text text-center">Notable Achievements</h3>
-            <div className="grid md:grid-cols-3 gap-8">
+          <div className="mt-12 lg:mt-16">
+            <h3 className="text-xl lg:text-2xl font-bold mb-6 lg:mb-8 gradient-text text-center">Notable Achievements</h3>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
               <Card className="glass-card">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-primary/20 rounded-lg">
-                      <Shield className="w-6 h-6 text-primary" />
+                <CardContent className="p-4 lg:p-6">
+                  <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
+                    <div className="p-2 lg:p-3 bg-primary/20 rounded-lg">
+                      <Shield className="w-5 lg:w-6 h-5 lg:h-6 text-primary" />
                     </div>
-                    <h4 className="font-bold text-lg gradient-text-accent">Mode Network</h4>
+                    <h4 className="font-bold text-base lg:text-lg gradient-text-accent">Mode Network</h4>
                   </div>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <ul className="space-y-2 text-xs lg:text-sm text-muted-foreground">
                     <li>• Built DAO governance managing $8M+ assets</li>
                     <li>• Integrated Velodrome with 35% gas reduction</li>
                     <li>• Full-stack dashboard implementation</li>
@@ -445,14 +456,14 @@ function App() {
               </Card>
 
               <Card className="glass-card">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-accent/20 rounded-lg">
-                      <Code className="w-6 h-6 text-accent" />
+                <CardContent className="p-4 lg:p-6">
+                  <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
+                    <div className="p-2 lg:p-3 bg-accent/20 rounded-lg">
+                      <Code className="w-5 lg:w-6 h-5 lg:h-6 text-accent" />
                     </div>
-                    <h4 className="font-bold text-lg gradient-text-accent">Eclipse</h4>
+                    <h4 className="font-bold text-base lg:text-lg gradient-text-accent">Eclipse</h4>
                   </div>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <ul className="space-y-2 text-xs lg:text-sm text-muted-foreground">
                     <li>• NFT marketplace with 500K+ transactions</li>
                     <li>• Bulk minting for 1,000+ creators</li>
                     <li>• Telegram staking bot in Rust</li>
@@ -461,14 +472,14 @@ function App() {
               </Card>
 
               <Card className="glass-card">
-                <CardContent className="p-6">
-                  <div className="flex items-center gap-3 mb-4">
-                    <div className="p-3 bg-emerald-500/20 rounded-lg">
-                      <Brain className="w-6 h-6 text-emerald-400" />
+                <CardContent className="p-4 lg:p-6">
+                  <div className="flex items-center gap-2 lg:gap-3 mb-3 lg:mb-4">
+                    <div className="p-2 lg:p-3 bg-emerald-500/20 rounded-lg">
+                      <Brain className="w-5 lg:w-6 h-5 lg:h-6 text-emerald-400" />
                     </div>
-                    <h4 className="font-bold text-lg gradient-text-accent">zkAGI</h4>
+                    <h4 className="font-bold text-base lg:text-lg gradient-text-accent">zkAGI</h4>
                   </div>
-                  <ul className="space-y-2 text-sm text-muted-foreground">
+                  <ul className="space-y-2 text-xs lg:text-sm text-muted-foreground">
                     <li>• Zero-knowledge GPU clustering platform</li>
                     <li>• 40% cost reduction, 60% throughput boost</li>
                     <li>• Kubernetes + Ray orchestration</li>
@@ -479,19 +490,19 @@ function App() {
           </div>
           
           {/* Process Overview */}
-          <div className="mt-12 text-center">
-            <h3 className="text-xl font-bold mb-6 gradient-text">Development Process</h3>
-            <div className="grid md:grid-cols-4 gap-6">
+          <div className="mt-8 lg:mt-12 text-center">
+            <h3 className="text-lg lg:text-xl font-bold mb-4 lg:mb-6 gradient-text">Development Process</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
               {[
                 { title: "Discovery & Planning", subtitle: "Requirements & architecture", icon: "🔍" },
                 { title: "Development", subtitle: "Smart contracts & applications", icon: "⚡" },
                 { title: "Testing & Deployment", subtitle: "Security audits & launch", icon: "🚀" },
                 { title: "Maintenance & Support", subtitle: "Monitoring & optimization", icon: "📈" }
               ].map((phase, index) => (
-                <div key={index} className="glass-card p-6 text-center group">
-                  <div className="text-3xl mb-3 group-hover:scale-110 transition-transform">{phase.icon}</div>
-                  <h4 className="font-bold text-base mb-2 text-primary">{phase.title}</h4>
-                  <p className="text-muted-foreground text-sm">{phase.subtitle}</p>
+                <div key={index} className="glass-card p-4 lg:p-6 text-center group">
+                  <div className="text-2xl lg:text-3xl mb-2 lg:mb-3 group-hover:scale-110 transition-transform">{phase.icon}</div>
+                  <h4 className="font-bold text-sm lg:text-base mb-1 lg:mb-2 text-primary">{phase.title}</h4>
+                  <p className="text-muted-foreground text-xs lg:text-sm">{phase.subtitle}</p>
                 </div>
               ))}
             </div>
@@ -500,48 +511,48 @@ function App() {
       </section>
 
       {/* Ventures Section */}
-      <section id="ventures" className="py-16 px-6 relative">
+      <section id="ventures" className="py-12 lg:py-16 px-4 lg:px-6 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-primary/5"></div>
         <div className="max-w-7xl mx-auto relative">
-          <div className="text-center mb-12">
-            <Badge className="mb-6 bg-accent/20 text-accent border-accent/30">
+          <div className="text-center mb-8 lg:mb-12">
+            <Badge className="mb-4 lg:mb-6 bg-accent/20 text-accent border-accent/30">
               <Rocket className="w-4 h-4 mr-2" />
               Studio Portfolio
             </Badge>
-            <h2 className="text-3xl font-bold mb-6 gradient-text">Production Projects</h2>
-            <p className="text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed">
+            <h2 className="text-2xl lg:text-3xl font-bold mb-4 lg:mb-6 gradient-text">Production Projects</h2>
+            <p className="text-sm lg:text-base text-muted-foreground max-w-2xl mx-auto leading-relaxed px-4 lg:px-0">
               Live applications and systems developed across blockchain, AI, and full-stack technologies serving users in production
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8 mb-8 lg:mb-12">
             {ventures.map((venture, index) => (
               <Card key={index} className="project-card group h-fit">
-                <CardHeader className="pb-4">
-                  <div className="flex items-start gap-4 mb-4">
-                    <div className="p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
+                <CardHeader className="pb-3 lg:pb-4 p-4 lg:p-6">
+                  <div className="flex items-start gap-3 lg:gap-4 mb-3 lg:mb-4">
+                    <div className="p-2 lg:p-3 bg-gradient-to-br from-primary/20 to-accent/20 rounded-xl text-primary group-hover:scale-110 transition-transform">
                       {venture.icon}
                     </div>
                     <div className="flex-1">
-                      <CardTitle className="text-lg mb-2 gradient-text-accent">{venture.title}</CardTitle>
-                      <div className="flex items-center gap-4 text-xs mb-2">
+                      <CardTitle className="text-base lg:text-lg mb-2 gradient-text-accent">{venture.title}</CardTitle>
+                      <div className="flex items-center gap-3 lg:gap-4 text-xs mb-2">
                         <div className="flex items-center gap-2">
                           <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
                           <span className="text-emerald-400 font-semibold">{venture.stage}</span>
                         </div>
                         <div className="w-px h-3 bg-border"></div>
-                        <span className="text-primary font-semibold">{venture.valuation} valuation</span>
+                        <span className="text-primary font-semibold">{venture.valuation}</span>
                       </div>
                     </div>
                   </div>
-                  <CardDescription className="text-sm leading-relaxed text-muted-foreground">
+                  <CardDescription className="text-xs lg:text-sm leading-relaxed text-muted-foreground">
                     {venture.description}
                   </CardDescription>
                 </CardHeader>
                 
-                <CardContent className="space-y-6">
+                <CardContent className="space-y-4 lg:space-y-6 p-4 lg:p-6 pt-0">
                   <div>
-                    <h4 className="font-bold text-sm mb-3 text-accent flex items-center gap-2">
+                    <h4 className="font-bold text-xs lg:text-sm mb-2 lg:mb-3 text-accent flex items-center gap-2">
                       <div className="p-1 bg-accent/20 rounded">
                         <TrendUp className="w-3 h-3" />
                       </div>
@@ -552,7 +563,7 @@ function App() {
                     </div>
                   </div>
 
-                  <div className="flex gap-3 pt-4 border-t border-white/10">
+                  <div className="flex gap-2 lg:gap-3 pt-3 lg:pt-4 border-t border-white/10">
                     <Button 
                       size="sm" 
                       className="btn-primary flex-1 text-xs py-2"
@@ -576,21 +587,21 @@ function App() {
             ))}
           </div>
 
-          <div className="text-center">
+          <div className="text-center px-4 lg:px-0">
             <Card className="glass-card max-w-3xl mx-auto">
-              <CardContent className="p-8">
+              <CardContent className="p-6 lg:p-8">
                 <div className="mb-6">
-                  <h3 className="text-2xl font-bold mb-4 gradient-text">Ready to Build Your Next Project?</h3>
-                  <p className="text-base text-muted-foreground leading-relaxed">
+                  <h3 className="text-xl lg:text-2xl font-bold mb-4 gradient-text">Ready to Build Your Next Project?</h3>
+                  <p className="text-sm lg:text-base text-muted-foreground leading-relaxed">
                     Let's collaborate to bring your blockchain ideas to life. From smart contracts to full-stack applications, 
                     I provide the technical expertise and development skills needed to deliver production-ready solutions.
                   </p>
                 </div>
                 
-                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <div className="flex flex-col sm:flex-row gap-3 lg:gap-4 justify-center">
                   <Button 
                     size="lg"
-                    className="btn-primary text-base px-6 py-3"
+                    className="btn-primary text-sm lg:text-base px-5 lg:px-6 py-2.5 lg:py-3"
                     onClick={() => handleNavClick('#contact')}
                   >
                     <Rocket className="w-4 h-4 mr-2" />
@@ -600,7 +611,7 @@ function App() {
                   <Button 
                     size="lg"
                     variant="outline"
-                    className="glass-card border-border text-foreground hover:text-primary text-base px-6 py-3"
+                    className="glass-card border-border text-foreground hover:text-primary text-sm lg:text-base px-5 lg:px-6 py-2.5 lg:py-3"
                     onClick={() => window.open('https://www.linkedin.com/in/tushar-khokhar-642569387/', '_blank')}
                   >
                     <LinkedinLogo className="w-4 h-4 mr-2" />
@@ -614,34 +625,34 @@ function App() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 px-6 relative">
+      <section id="contact" className="py-16 lg:py-20 px-4 lg:px-6 relative">
         <div className="max-w-6xl mx-auto text-center relative">
-          <div className="mb-16">
-            <Badge className="mb-8 bg-primary/20 text-primary border-primary/30">
+          <div className="mb-12 lg:mb-16">
+            <Badge className="mb-6 lg:mb-8 bg-primary/20 text-primary border-primary/30">
               <Phone className="w-4 h-4 mr-2" />
               Let's Build Together
             </Badge>
-            <h2 className="text-4xl font-bold mb-8 gradient-text">Ready to Start Your Next Project?</h2>
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-3xl lg:text-4xl font-bold mb-6 lg:mb-8 gradient-text">Ready to Start Your Next Project?</h2>
+            <p className="text-base lg:text-lg text-muted-foreground max-w-3xl mx-auto leading-relaxed px-4 lg:px-0">
               Whether you need smart contract development, full-stack blockchain applications, or comprehensive technical solutions, 
               let's discuss how we can bring your ideas to life.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-10 mb-16">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 mb-12 lg:mb-16">
             <Card className="glass-card group">
-              <CardContent className="p-10">
+              <CardContent className="p-6 lg:p-10">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
-                    <Rocket className="w-8 h-8 text-primary" />
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-primary/20 to-accent/20 rounded-lg flex items-center justify-center mx-auto mb-6 lg:mb-8 group-hover:scale-110 transition-transform">
+                    <Rocket className="w-6 h-6 lg:w-8 lg:h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-bold mb-6 gradient-text-accent">Project Inquiry</h3>
-                  <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                  <h3 className="text-lg lg:text-xl font-bold mb-4 lg:mb-6 gradient-text-accent">Project Inquiry</h3>
+                  <p className="text-muted-foreground mb-6 lg:mb-8 text-base lg:text-lg leading-relaxed">
                     Have a blockchain project in mind? Let's discuss your requirements and create a custom solution.
                   </p>
                   <Button 
                     size="lg" 
-                    className="w-full btn-primary text-lg py-4"
+                    className="w-full btn-primary text-base lg:text-lg py-3 lg:py-4"
                     onClick={() => {
                       window.open('mailto:tusharkhokhar.iit@gmail.com?subject=Project Inquiry', '_blank');
                       toast.success("Opening email client", { description: "Let's discuss your project requirements" });
@@ -649,7 +660,7 @@ function App() {
                   >
                     <span className="relative z-10 flex items-center justify-center">
                       Start Discussion
-                      <ArrowRight size={20} className="ml-3" />
+                      <ArrowRight size={18} className="ml-2 lg:ml-3" />
                     </span>
                   </Button>
                 </div>
@@ -657,24 +668,24 @@ function App() {
             </Card>
 
             <Card className="glass-card group">
-              <CardContent className="p-10">
+              <CardContent className="p-6 lg:p-10">
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg flex items-center justify-center mx-auto mb-8 group-hover:scale-110 transition-transform">
-                    <TrendUp className="w-8 h-8 text-accent" />
+                  <div className="w-12 h-12 lg:w-16 lg:h-16 bg-gradient-to-br from-accent/20 to-primary/20 rounded-lg flex items-center justify-center mx-auto mb-6 lg:mb-8 group-hover:scale-110 transition-transform">
+                    <TrendUp className="w-6 h-6 lg:w-8 lg:h-8 text-accent" />
                   </div>
-                  <h3 className="text-xl font-bold mb-6 gradient-text">Connect & Collaborate</h3>
-                  <p className="text-muted-foreground mb-8 text-lg leading-relaxed">
+                  <h3 className="text-lg lg:text-xl font-bold mb-4 lg:mb-6 gradient-text">Connect & Collaborate</h3>
+                  <p className="text-muted-foreground mb-6 lg:mb-8 text-base lg:text-lg leading-relaxed">
                     Connect on LinkedIn or reach out directly to explore collaboration opportunities.
                   </p>
-                  <div className="flex justify-center gap-6">
+                  <div className="flex justify-center gap-4 lg:gap-6">
                     <a
                       href="https://www.linkedin.com/in/tushar-khokhar-642569387/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="glass-card p-4 border-border hover:border-primary/50 transition-all hover:scale-110 group"
+                      className="glass-card p-3 lg:p-4 border-border hover:border-primary/50 transition-all hover:scale-110 group"
                       aria-label="LinkedIn"
                     >
-                      <LinkedinLogo size={28} className="text-foreground group-hover:text-primary transition-colors" />
+                      <LinkedinLogo size={24} className="lg:w-7 lg:h-7 text-foreground group-hover:text-primary transition-colors" />
                     </a>
                     <Button 
                       variant="outline"
@@ -684,7 +695,7 @@ function App() {
                         toast.success("Opening email client", { description: "Let's explore working together" });
                       }}
                     >
-                      <Phone size={20} className="mr-2" />
+                      <Phone size={18} className="mr-2" />
                       Send Email
                     </Button>
                   </div>
@@ -694,32 +705,32 @@ function App() {
           </div>
           
           <Card className="glass-card max-w-4xl mx-auto">
-            <CardContent className="p-10">
-              <div className="flex items-center justify-center gap-6 mb-8">
+            <CardContent className="p-6 lg:p-10">
+              <div className="flex flex-col lg:flex-row items-center justify-center gap-4 lg:gap-6 mb-6 lg:mb-8">
                 <div className="flex items-center gap-3">
                   <div className="w-3 h-3 bg-emerald-400 rounded-full animate-pulse"></div>
-                  <span className="text-emerald-400 font-bold text-lg status-online">AVAILABLE FOR PROJECTS</span>
+                  <span className="text-emerald-400 font-bold text-base lg:text-lg status-online">AVAILABLE FOR PROJECTS</span>
                 </div>
-                <div className="w-px h-8 bg-border"></div>
-                <div className="text-lg text-muted-foreground">
+                <div className="w-px h-6 lg:h-8 bg-border hidden lg:block"></div>
+                <div className="text-base lg:text-lg text-muted-foreground text-center lg:text-left">
                   Contact: <span className="text-primary font-semibold">tusharkhokhar.iit@gmail.com</span>
                 </div>
               </div>
               
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 lg:gap-6 mb-6 lg:mb-8">
                 {[
                   { label: "Live Projects", status: "7 Active", color: "text-emerald-400" },
                   { label: "Technologies", status: "10+ Stacks", color: "text-blue-400" },
                   { label: "Experience", status: "Production Ready", color: "text-purple-400" }
                 ].map((item, index) => (
-                  <div key={index} className="text-center glass-card p-4 rounded-lg">
-                    <div className="text-sm text-muted-foreground mb-2">{item.label}</div>
-                    <div className={`text-lg font-bold ${item.color}`}>{item.status}</div>
+                  <div key={index} className="text-center glass-card p-3 lg:p-4 rounded-lg">
+                    <div className="text-xs lg:text-sm text-muted-foreground mb-1 lg:mb-2">{item.label}</div>
+                    <div className={`text-base lg:text-lg font-bold ${item.color}`}>{item.status}</div>
                   </div>
                 ))}
               </div>
               
-              <div className="text-lg text-muted-foreground">
+              <div className="text-base lg:text-lg text-muted-foreground text-center">
                 <span className="text-primary font-semibold">Specializations:</span> Smart Contracts • 
                 DevOps & Backend • AI Integration • Crypto Trading Bots • Production Systems
               </div>
@@ -729,32 +740,32 @@ function App() {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 px-6 enterprise-footer">
+      <footer className="py-12 lg:py-16 px-4 lg:px-6 enterprise-footer">
         <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 mb-8 lg:mb-12">
             <div>
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-12 h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center relative">
-                  <div className="text-2xl font-bold text-white font-mono">T</div>
-                  <div className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-400 rounded-full animate-pulse"></div>
+              <div className="flex items-center gap-3 lg:gap-4 mb-4 lg:mb-6">
+                <div className="w-10 h-10 lg:w-12 lg:h-12 bg-gradient-to-br from-primary to-accent rounded-xl flex items-center justify-center relative">
+                  <div className="text-xl lg:text-2xl font-bold text-white font-mono">T</div>
+                  <div className="absolute -top-1 -right-1 w-3 h-3 lg:w-4 lg:h-4 bg-emerald-400 rounded-full animate-pulse"></div>
                 </div>
                 <div>
-                  <div className="font-bold text-xl gradient-text">TvaraX</div>
+                  <div className="font-bold text-lg lg:text-xl gradient-text">TvaraX</div>
                 </div>
               </div>
-              <p className="text-muted-foreground leading-relaxed">
+              <p className="text-muted-foreground leading-relaxed text-sm lg:text-base">
                 Comprehensive venture studio delivering innovative blockchain solutions, full-stack applications, DevOps infrastructure, 
                 and AI-integrated systems for the next generation of decentralized and scalable technologies.
               </p>
             </div>
 
             <div>
-              <h3 className="font-bold text-lg mb-6 gradient-text-accent">Service Areas</h3>
-              <div className="space-y-3">
+              <h3 className="font-bold text-base lg:text-lg mb-4 lg:mb-6 gradient-text-accent">Service Areas</h3>
+              <div className="space-y-2 lg:space-y-3">
                 {["Blockchain Development", "Smart Contracts", "DevOps & Backend", "AI Integration", "Crypto Trading Bots"].map((item) => (
                   <div
                     key={item}
-                    className="text-muted-foreground hover:text-primary transition-colors text-left"
+                    className="text-muted-foreground hover:text-primary transition-colors text-left text-sm lg:text-base"
                   >
                     {item}
                   </div>
@@ -763,29 +774,29 @@ function App() {
             </div>
 
             <div>
-              <h3 className="font-bold text-lg mb-6 gradient-text-accent">Project Status</h3>
-              <div className="flex flex-wrap gap-2 mb-6">
+              <h3 className="font-bold text-base lg:text-lg mb-4 lg:mb-6 gradient-text-accent">Project Status</h3>
+              <div className="flex flex-wrap gap-2 mb-4 lg:mb-6">
                 {["Live Production", "500K+ Transactions", "$8M+ Managed", "Multi-Chain", "Available"].map((stat) => (
                   <span key={stat} className="skill-badge text-xs">
                     {stat}
                   </span>
                 ))}
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs lg:text-sm text-muted-foreground">
                 Production-ready solutions • Proven performance • Scalable architecture
               </p>
             </div>
           </div>
 
-          <div className="pt-12 border-t border-border text-center">
-            <div className="flex flex-col md:flex-row justify-between items-center gap-6">
-              <p className="text-muted-foreground">
+          <div className="pt-8 lg:pt-12 border-t border-border text-center">
+            <div className="flex flex-col md:flex-row justify-between items-center gap-4 lg:gap-6">
+              <p className="text-muted-foreground text-sm lg:text-base">
                 © 2024 TvaraX. Expert blockchain development & technical solutions.
               </p>
-              <div className="flex items-center gap-4 text-sm text-muted-foreground">
-                <span>Blockchain development • DevOps & Backend • AI Integration • Crypto Trading Bots</span>
-                <div className="w-px h-4 bg-border"></div>
-                <span className="text-emerald-400\">Available for projects</span>
+              <div className="flex flex-col md:flex-row items-center gap-2 lg:gap-4 text-xs lg:text-sm text-muted-foreground">
+                <span className="text-center md:text-left">Blockchain development • DevOps & Backend • AI Integration • Crypto Trading Bots</span>
+                <div className="w-px h-4 bg-border hidden md:block"></div>
+                <span className="text-emerald-400">Available for projects</span>
               </div>
             </div>
           </div>

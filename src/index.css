@@ -69,6 +69,13 @@
     background: linear-gradient(45deg, #0284c7, #2563eb);
   }
 
+  /* Responsive scrollbar for mobile */
+  @media (max-width: 768px) {
+    ::-webkit-scrollbar {
+      width: 4px;
+    }
+  }
+
   /* Text selection */
   ::selection {
     background: rgba(14, 165, 233, 0.3);
@@ -222,12 +229,24 @@
     inset 0 1px 0 rgba(148, 163, 184, 0.2);
 }
 
+@media (max-width: 768px) {
+  .glass-card:hover {
+    transform: translateY(-1px);
+  }
+}
+
 /* Enterprise navigation */
 .enterprise-nav {
   background: rgba(10, 10, 15, 0.95);
   backdrop-filter: blur(24px);
   border-bottom: 1px solid rgba(75, 85, 99, 0.2);
   box-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+}
+
+@media (max-width: 768px) {
+  .enterprise-nav {
+    backdrop-filter: blur(16px);
+  }
 }
 
 /* Professional text gradients */
@@ -285,10 +304,16 @@
   backdrop-filter: blur(12px);
   border: 1px solid rgba(75, 85, 99, 0.3);
   border-radius: 8px;
-  padding: 20px;
+  padding: 16px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .metric-card {
+    padding: 20px;
+  }
 }
 
 .metric-card::before {
@@ -311,6 +336,12 @@
   background: rgba(17, 24, 39, 0.8);
   border-color: rgba(14, 165, 233, 0.4);
   transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .metric-card:hover {
+    transform: translateY(-1px);
+  }
 }
 
 /* Technical project cards */
@@ -345,6 +376,13 @@
   border-color: rgba(14, 165, 233, 0.5);
   transform: translateY(-4px);
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.6), 0 0 24px rgba(14, 165, 233, 0.2);
+}
+
+@media (max-width: 768px) {
+  .project-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5), 0 0 16px rgba(14, 165, 233, 0.2);
+  }
 }
 
 /* Technical skill badges */
@@ -402,6 +440,14 @@
   left: -16px;
   transform: translateY(-50%);
   animation: pulse 2s infinite;
+}
+
+@media (max-width: 768px) {
+  .status-online::before {
+    left: -12px;
+    width: 6px;
+    height: 6px;
+  }
 }
 
 @keyframes pulse {
